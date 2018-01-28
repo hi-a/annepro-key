@@ -1,337 +1,778 @@
 # r2 rdb project file
 # flags
-f adc1_handler 4 0x0800a860
-f bkpt_loop 16 0x0800a420
-f blank 1 0x00000000
-f busfault_handler 2 0x08009d3a
-f comp_handler 4 0x0800a86c
-f copy_array 12 0x080077fc
-f copy_data_to_sram 356 0x0800a2b6
-f copy_from_eeprom_to_mem 44 0x080068a8
-f copy_memory_range 118 0x08007b8c
-f cpsr 1 0x00000000
-f dac_handler 4 0x0800a868
-f data1 1 0x0800a8b0
-f data2 1 0x0800a434
-f data3 1 0x0800a530
-f DATA_EEPROM_EraseWord 22 0x08006d8c
-f DATA_EEPROM_FastProgramByte 82 0x08006da2
-f DATA_EEPROM_FastProgramWord 44 0x08006df4
-f debugmon_handler 2 0x08009d40
-f dma1channel1_handler 4 0x0800a84c
-f dma1channel2_handler 30 0x08009e76
-f dma1channel3_handler 4 0x0800a850
-f dma1channel4_handler 4 0x0800a854
-f dma1channel5_handler 4 0x0800a858
-f dma1channel6_handler 4 0x0800a85c
-f dma1channel7_handler 40 0x08009e0c
-f DMA1_Clock_Enable 10 0x08005042
-f DMA1_Clock_Enable_2 10 0x08004f52
-f DMA_ClearFlag 16 0x0800777e
-f DMA_ClearITPendingBit 16 0x080077a8
-f DMA_Cmd 24 0x0800774e
-f DMA_DeInit 236 0x0800762c
-f DMA_GetITStatus 26 0x0800778e
-f DMA_Init 54 0x08007718
-f DMA_ITConfig 20 0x0800776a
-f DMA_SetCurrDataCounter 4 0x08007766
-f entrypoint 1 0x0800a808
-f exit 16 0x0800a7f8
-f exit_error 6 0x0800a41a
-f EXTI_ClearITPendingBit 6 0x080070f6
-f EXTI_GetITStatus 16 0x080070e6
-f EXTI_Init 106 0x0800707c
-f extl0_handler 28 0x08009df0
-f extl15_10_handler 50 0x08009d52
-f extl1_handler 4 0x0800a83c
-f extl2_handler 4 0x0800a840
-f extl3_handler 4 0x0800a844
-f extl4_handler 4 0x0800a848
-f extl9_5_handler 108 0x08009d84
-f EXTl_LowPowerConfig_Maybe 310 0x0800631a
-f EXTl_something 310 0x080044d6
-f fcn.0800460c 42 0x0800460c
-f fcn.08004636 186 0x08004636
-f fcn.080046f0 52 0x080046f0
-f fcn.08004724 96 0x08004724
-f fcn.0800478e 48 0x0800478e
-f fcn.080047be 174 0x080047be
-f fcn.0800486c 316 0x0800486c
-f fcn.080049b0 756 0x080049b0
-f fcn.08004cc0 22 0x08004cc0
-f fcn.08004cd6 44 0x08004cd6
-f fcn.08004d02 20 0x08004d02
-f fcn.08004d16 68 0x08004d16
-f fcn.08004d68 134 0x08004d68
-f fcn.08004dfc 34 0x08004dfc
-f fcn.08004e1e 34 0x08004e1e
-f fcn.08004ec0 146 0x08004ec0
-f fcn.08004f5c 194 0x08004f5c
-f fcn.08005114 186 0x08005114
-f fcn.080051e8 60 0x080051e8
-f fcn.08005228 572 0x08005228
-f fcn.08005468 118 0x08005468
-f fcn.08005576 480 0x08005576
-f fcn.08005756 36 0x08005756
-f fcn.080057a0 174 0x080057a0
-f fcn.08005860 344 0x08005860
-f fcn.080059d0 528 0x080059d0
-f fcn.08006060 70 0x08006060
-f fcn.08006698 44 0x08006698
-f fcn.080066e8 58 0x080066e8
-f fcn.080067ee 48 0x080067ee
-f fcn.0800681e 88 0x0800681e
-f fcn.08006876 50 0x08006876
-f fcn.08006912 20 0x08006912
-f fcn.08007188 42 0x08007188
-f fcn.080071b2 36 0x080071b2
-f fcn.08007400 12 0x08007400
-f fcn.08007808 116 0x08007808
-f fcn.0800787c 136 0x0800787c
-f fcn.08007b42 44 0x08007b42
-f fcn.08007b6e 30 0x08007b6e
-f fcn.080083f4 56 0x080083f4
-f fcn.0800842c 36 0x0800842c
-f fcn.08008450 156 0x08008450
-f fcn.080084ec 112 0x080084ec
-f fcn.0800855c 40 0x0800855c
-f fcn.080087a2 120 0x080087a2
-f fcn.0800881a 562 0x0800881a
-f fcn.08008a4c 146 0x08008a4c
-f fcn.08008ade 322 0x08008ade
-f fcn.08008c20 152 0x08008c20
-f fcn.08008cb8 84 0x08008cb8
-f fcn.08008d0c 104 0x08008d0c
-f fcn.08008d74 340 0x08008d74
-f fcn.08008eec 50 0x08008eec
-f fcn.08008f1e 14 0x08008f1e
-f fcn.08008f2c 6 0x08008f2c
-f fcn.08008f32 54 0x08008f32
-f fcn.08008f68 198 0x08008f68
-f fcn.08009030 20 0x08009030
-f fcn.08009050 92 0x08009050
-f fcn.080090ac 24 0x080090ac
-f fcn.080090c4 34 0x080090c4
-f fcn.080090e6 34 0x080090e6
-f fcn.08009108 20 0x08009108
-f fcn.08009120 152 0x08009120
-f fcn.080091e8 52 0x080091e8
-f fcn.08009240 76 0x08009240
-f fcn.08009336 214 0x08009336
-f fcn.0800940c 126 0x0800940c
-f fcn.0800948a 30 0x0800948a
-f fcn.080094c4 162 0x080094c4
-f fcn.08009566 166 0x08009566
-f fcn.0800960c 218 0x0800960c
-f fcn.080096e6 438 0x080096e6
-f fcn.0800989c 310 0x0800989c
-f fcn.0800990c 198 0x0800990c
-f fcn.0800995e 116 0x0800995e
-f fcn.080099d2 58 0x080099d2
-f fcn.0800a0b0 394 0x0800a0b0
-f fill_array 20 0x08006970
-f fill_memory_range 102 0x08007adc
-f FLASH_ClearFlag 6 0x08006e20
-f FLASH_GetStatus 36 0x08006e26
-f flash_handler 4 0x0800a834
-f FLASH_Lock 14 0x08006d7e
-f FLASH_PrefetchBufferCmd 26 0x08006d18
-f FLASH_ReadAccess64Cmd 26 0x08006d32
-f FLASH_SetLatency 16 0x08006d08
-f FLASH_SLEEPPowerDownCmd 26 0x08006d4c
-f FLASH_Unlock 24 0x08006d66
-f FLASH_WaitForLastOperation 60 0x08006e60
-f fp 1 0x00000000
-f func_0x0800577a 26 0x0800577a
-f func_xxxx 166 0x08008614
-f func_xxxx2 232 0x080086ba
-f GPIO_C15_Write 54 0x08004e40
-f GPIO_Config 264 0x080042d0
-f GPIO_Init 98 0x08006f9c
-f GPIO_LowPowerMode_Maybe 494 0x08006450
-f GPIO_PinAFConfig 38 0x0800702e
-f GPIO_ReadInputDataBit 14 0x08006ffe
-f GPIO_ReadOutputDataBit 14 0x0800700c
-f GPIO_ResetBits 4 0x0800701e
-f GPIO_SetBits 4 0x0800701a
-f GPIO_Something 222 0x080043d8
-f GPIO_WriteBit 12 0x08007022
-f handle_usblp 288 0x08009f78
-f hardfault_handler 2 0x08009d36
-f hit2_0 4 0x00003920
-f hit2_1 4 0x08007920
-f i2c1_er_handler 4 0x0800a88c
-f i2c1_ev_handler 4 0x0800a888
-f i2c2_er_handler 4 0x0800a894
-f i2c2_ev_handler 4 0x0800a890
-f initialize_memory_regions 32 0x0800a778
-f init_some_10_struct2 166 0x08006728
-f init_vars 100 0x080060fe
-f init_vars2 82 0x080060ac
-f init_vars3 278 0x08006984
-f init_vars_from_eeprom 32 0x080067ce
-f ip 1 0x00000000
-f Keyboard_Init 140 0x080040f4
-f Keyboard_LowPowerMode 90 0x0800663e
-f Keyboard_UseHSIClock 88 0x08004270
-f lcd_handler 4 0x0800a870
-f load_byte_from_flash_region 34 0x0800a254
-f loc.08005dcc 18 0x08005dcc
-f lr 1 0x00000000
-f main 12 0x0800a818
-f main 14 0x0800a7ea
-f main2 26 0x0800a7cc
-f main_loop 100 0x080085b0
-f MatrixColumns_Set 32 0x080044b6
-f memmanage_handler 2 0x08009d38
-f nmi_handler 2 0x08009d34
-f NVIC_Init 92 0x08006f0e
-f NVIC_NoSubPriorityGroups 8 0x080042c8
-f NVIC_PriorityGroupConfig 10 0x08006f04
-f Parse_Matrix 1806 0x08007ce6
-f pc 1 0x00000004
-f pendsv_handler 2 0x08009d42
-f Peripherals_Config 190 0x080041ae
-f Periph_LowPowerMode_Maybe 122 0x080062a0
-f Periphs_Reset 238 0x08007924
-f pvd_handler 4 0x0800a828
-f PWR_EnterLowPowerRunMode 40 0x08006eba
-f PWR_GetFlagStatus 16 0x08006ee2
-f PWR_PVDCmd 6 0x08006e9c
-f PWR_UltraLowPowerCmd 6 0x08006ea2
-f PWR_VoltageScalingConfig 18 0x08006ea8
-f r0 1 0x00000000
-f r10 1 0x00000000
-f r1 1 0x00000000
-f r11 1 0x00000000
-f r12 1 0x00000000
-f r13 1 0x00000000
-f r14 1 0x00000000
-f r15 1 0x00000004
-f r2 1 0x00000000
-f r3 1 0x00000000
-f r4 1 0x00000000
-f r5 1 0x00000000
-f r6 1 0x00000000
-f r7 1 0x00000000
-f r8 1 0x00000000
-f r9 1 0x00000000
-f RCC_AHBPeriphClockCmd 22 0x08006c32
-f RCC_APB1PeriphClockCmd 22 0x08006c5e
-f RCC_APB1PeriphResetCmd 22 0x08006c8a
-f RCC_APB2PeriphClockCmd 22 0x08006c48
-f RCC_APB2PeriphResetCmd 22 0x08006c74
-f RCC_DeInit 48 0x08006aa4
-f RCC_GetClocksFreq 164 0x08006b8e
-f RCC_GetFlagStatus 28 0x08006ca0
-f RCC_GetSYSCLKSource 10 0x08006b58
-f rcc_handler 4 0x0800a838
-f RCC_HCLKConfig 14 0x08006b62
-f RCC_HSEConfig 10 0x08006ad4
-f RCC_HSICmd 6 0x08006b24
-f RCC_LSEConfig 10 0x08006b2a
-f RCC_LSICmd 6 0x08006b34
-f RCC_MSICmd 6 0x08006b1e
-f RCC_MSIRangeConfig 14 0x08006b10
-f RCC_PCLK1Config 14 0x08006b70
-f RCC_PCLK2Config 16 0x08006b7e
-f RCC_PLLCmd 6 0x08006b44
-f RCC_PLLConfig 10 0x08006b3a
-f RCC_SYSCLKConfig 14 0x08006b4a
-f RCC_WaitForHSEStartUp 50 0x08006ade
-f reset 8 0x0800a808
-f return_one 4 0x0800a7e6
-f rtc_alarm_handler 4 0x0800a8a4
-f rtcwkup_handler 4 0x0800a830
-f sb 1 0x00000000
-f Scan_Matrix 226 0x08007c04
-f SetSysClock 182 0x0800a5dc
-f sl 1 0x00000000
-f some_math 28 0x08007904
-f sp 1 0x00000000
-f spi1_handler 4 0x0800a898
-f spi2_handler 4 0x0800a89c
-f store_byte_in_sram_region 64 0x0800a276
-f svc_handler 2 0x08009d3e
-f SYSCFG_EXTILineConfig 36 0x08007054
-f SystemInit 60 0x0800a5a0
-f SysTick_CLKSourceConfig 24 0x08006f6a
-f systick_handler 2 0x08009d44
-f tamperstamp_handler 4 0x0800a82c
-f tim10_handler 4 0x0800a878
-f tim11_handler 4 0x0800a87c
-f tim2_handler 4 0x0800a880
-f tim3_handler 4 0x0800a884
-f TIM4_Config 52 0x080068d4
-f TIM4_Disable 36 0x08006234
-f TIM4_Disable_Wrapper 4 0x08006908
-f TIM4_Enable 44 0x08006258
-f TIM4_GetIntCounter 6 0x0800690c
-f tim4_handler 130 0x08009ed8
-f TIM4_HFreqConfig 96 0x080061d4
-f TIM4_LFreqConfig 104 0x08006168
-f TIM4_ReadIntCounter 4 0x08008ee8
-f TIM4_Update_Flag_1 46 0x08004180
-f tim6_handler 4 0x0800a8a8
-f tim7_handler 4 0x0800a8ac
-f tim9_handler 4 0x0800a874
-f TIM_ClearFlag 6 0x08007aac
-f TIM_ClearITPendingBit 6 0x08007aca
-f TIM_Cmd 24 0x08007a7c
-f TIM_GenerateEvent 4 0x08007aa8
-f TIM_GetITStatus 24 0x08007ab2
-f TIM_InternalClockConfig 12 0x08007ad0
-f TIM_ITConfig 20 0x08007a94
-f TIM_TimeBaseInit 74 0x08007a12
-f update_vars_fromeeprom_init_others 36 0x080066c4
-f usagefault_handler 2 0x08009d3c
-f usart1_handler 4 0x0800a8a0
-f USART2_Clock_Enable 10 0x08004eb6
-f usart2_handler 66 0x08009e34
-f USART2_IOConfig 64 0x08004e76
-f USART2_Setup 24 0x08005020
-f USART2_SetupMem_For_DMA1Channel6 74 0x080054de
-f USART3_Clock_Enable 10 0x08005038
-f USART3_Config_Maybe 200 0x0800504c
-f usart3_handler 66 0x08009e96
-f USART3_Setup 20 0x080051ce
-f USART3_SetupMem_For_DMA1Channel3 74 0x0800552c
-f USART_ClearFlag 6 0x080075ce
-f USART_ClearITPendingBit 16 0x0800761c
-f USART_Cmd 24 0x08007560
-f USART_DeInit 154 0x0800740c
-f USART_DMACmd 20 0x08007580
-f USART_GetITStatus 72 0x080075d4
-f USART_Init 164 0x080074a6
-f USART_ITConfig 58 0x08007594
-f USART_ReceiveData 8 0x08007578
-f USB_10 26 0x08007324
-f USB_11 26 0x0800733e
-f USB_1 14 0x080071f8
-f USB_12 24 0x08007358
-f USB_13 20 0x08007370
-f USB_14 18 0x08007384
-f USB_15 58 0x08007396
-f USB_16 22 0x080073d0
-f USB_2 26 0x08007206
-f USB_3 48 0x08007220
-f USB_4 48 0x08007250
-f USB_5 32 0x08007280
-f USB_6 32 0x080072a0
-f USB_7 28 0x080072c0
-f USB_8 36 0x080072dc
-f USB_9 36 0x08007300
-f USB_Clock_Enable 10 0x08004784
-f usbfswkup_handler 8 0x08009d4a
-f usbhp_handler 4 0x0800a864
-f usb_interrupts_config 20 0x0800716c
-f usblp_handler 4 0x08009d46
-f vector_table 244 0x08004000
-f Wait 42 0x08007138
-f Wait_x4000_x125 52 0x08007104
-f Wait_x4_at_AHB_8 42 0x08007138
-f wwdg_handler 4 0x0800a824
-f zero_fill_bss 34 0x080071d6
+fs *
+f adc1_handler 4 0x0800a860 
+fs *
+f bkpt_loop 16 0x0800a420 
+fs *
+f blank 1 0x00000000 
+fs *
+f busfault_handler 2 0x08009d3a 
+fs *
+f comp_handler 4 0x0800a86c 
+fs *
+f copy_array 12 0x080077fc 
+fs *
+f copy_data_to_sram 356 0x0800a2b6 
+fs *
+f copy_from_eeprom_to_mem 44 0x080068a8 
+fs *
+f copy_memory_range 118 0x08007b8c 
+fs *
+f cpsr 1 0x00000000 
+fs *
+f dac_handler 4 0x0800a868 
+fs *
+f data1 1 0x0800a8b0 
+fs *
+f data2 1 0x0800a434 
+fs *
+f data3 1 0x0800a530 
+fs *
+f DATA_EEPROM_EraseWord 22 0x08006d8c 
+fs *
+f DATA_EEPROM_FastProgramByte 82 0x08006da2 
+fs *
+f DATA_EEPROM_FastProgramWord 44 0x08006df4 
+fs *
+f debugmon_handler 2 0x08009d40 
+fs *
+f dma1channel1_handler 4 0x0800a84c 
+fs *
+f dma1channel2_handler 30 0x08009e76 
+fs *
+f dma1channel3_handler 4 0x0800a850 
+fs *
+f dma1channel4_handler 4 0x0800a854 
+fs *
+f dma1channel5_handler 4 0x0800a858 
+fs *
+f dma1channel6_handler 4 0x0800a85c 
+fs *
+f dma1channel7_handler 40 0x08009e0c 
+fs *
+f DMA1_Clock_Enable 10 0x08005042 
+fs *
+f DMA1_Clock_Enable_2 10 0x08004f52 
+fs *
+f DMA_ClearFlag 16 0x0800777e 
+fs *
+f DMA_ClearITPendingBit 16 0x080077a8 
+fs *
+f DMA_Cmd 24 0x0800774e 
+fs *
+f DMA_DeInit 236 0x0800762c 
+fs *
+f DMA_GetITStatus 26 0x0800778e 
+fs *
+f DMA_Init 54 0x08007718 
+fs *
+f DMA_ITConfig 20 0x0800776a 
+fs *
+f DMA_SetCurrDataCounter 4 0x08007766 
+fs *
+f entrypoint 1 0x0800a808 
+fs *
+f exit 16 0x0800a7f8 
+fs *
+f exit_error 6 0x0800a41a 
+fs *
+f EXTI_ClearITPendingBit 6 0x080070f6 
+fs *
+f EXTI_GetITStatus 16 0x080070e6 
+fs *
+f EXTI_Init 106 0x0800707c 
+fs *
+f extl0_handler 28 0x08009df0 
+fs *
+f extl15_10_handler 50 0x08009d52 
+fs *
+f extl1_handler 4 0x0800a83c 
+fs *
+f extl2_handler 4 0x0800a840 
+fs *
+f extl3_handler 4 0x0800a844 
+fs *
+f extl4_handler 4 0x0800a848 
+fs *
+f extl9_5_handler 108 0x08009d84 
+fs *
+f EXTl_LowPowerConfig_Maybe 310 0x0800631a 
+fs *
+f EXTl_something 310 0x080044d6 
+fs *
+f USB_PA11_12_Config 186 0x08004636 
+fs *
+f USB_WakeUpSetup 96 0x08004724 
+fs *
+f num_to_str 48 0x0800478e 
+fs *
+f fcn.080047be 174 0x080047be 
+fs *
+f fcn.0800486c 316 0x0800486c 
+fs *
+f fcn.080049b0 756 0x080049b0 
+fs *
+f MCU_UIDLoad 22 0x08004cc0 
+fs *
+f fcn.08004d16 68 0x08004d16 
+fs *
+f fcn.08004d68 134 0x08004d68 
+fs *
+f BT_P1_0 34 0x08004dfc 
+fs *
+f BT_P1_0Reset 34 0x08004e1e 
+fs *
+f fcn.08004ec0 146 0x08004ec0 
+fs *
+f fcn.08004f5c 194 0x08004f5c 
+fs *
+f fcn.08005114 186 0x08005114 
+fs *
+f fcn.080051e8 60 0x080051e8 
+fs *
+f fcn.08005228 572 0x08005228 
+fs *
+f fcn.08005468 118 0x08005468 
+fs *
+f fcn.08005576 480 0x08005576 
+fs *
+f fcn.08005756 36 0x08005756 
+fs *
+f LED_SendData_Maybe 174 0x080057a0 
+fs *
+f fcn.08005860 344 0x08005860 
+fs *
+f fcn.080059d0 528 0x080059d0 
+fs *
+f fcn.08006060 70 0x08006060 
+fs *
+f fcn.08006698 44 0x08006698 
+fs *
+f EEPROM_Write_Struct_1 58 0x080066e8 
+fs *
+f fcn.080067ee 48 0x080067ee 
+fs *
+f fcn.0800681e 88 0x0800681e 
+fs *
+f fcn.08006876 50 0x08006876 
+fs *
+f update_some_flags 20 0x08006912 
+fs *
+f fcn.08007188 42 0x08007188 
+fs *
+f fcn.080071b2 36 0x080071b2 
+fs *
+f fcn.08007400 12 0x08007400 
+fs *
+f fcn.08007808 116 0x08007808 
+fs *
+f fcn.0800787c 136 0x0800787c 
+fs *
+f fcn.08007b42 44 0x08007b42 
+fs *
+f fcn.08007b6e 30 0x08007b6e 
+fs *
+f fcn.080083f4 56 0x080083f4 
+fs *
+f fcn.0800842c 36 0x0800842c 
+fs *
+f fcn.08008450 156 0x08008450 
+fs *
+f fcn.080084ec 112 0x080084ec 
+fs *
+f clear_some_arrays 40 0x0800855c 
+fs *
+f fcn.080087a2 120 0x080087a2 
+fs *
+f fcn.0800881a 562 0x0800881a 
+fs *
+f fcn.08008a4c 146 0x08008a4c 
+fs *
+f fcn.08008ade 322 0x08008ade 
+fs *
+f fcn.08008c20 152 0x08008c20 
+fs *
+f fcn.08008cb8 84 0x08008cb8 
+fs *
+f fcn.08008d0c 104 0x08008d0c 
+fs *
+f fcn.08008d74 340 0x08008d74 
+fs *
+f fcn.08008eec 50 0x08008eec 
+fs *
+f fcn.08008f1e 14 0x08008f1e 
+fs *
+f fcn.08008f2c 6 0x08008f2c 
+fs *
+f fcn.08008f32 54 0x08008f32 
+fs *
+f fcn.08008f68 198 0x08008f68 
+fs *
+f fcn.08009030 20 0x08009030 
+fs *
+f USB_WakeUpIntDisable_Maybe 92 0x08009050 
+fs *
+f USB_PeriphDisable_Maybe 24 0x080090ac 
+fs *
+f fcn.080090c4 34 0x080090c4 
+fs *
+f fcn.08009108 20 0x08009108 
+fs *
+f fcn.08009120 152 0x08009120 
+fs *
+f fcn.080091e8 52 0x080091e8 
+fs *
+f fcn.08009240 76 0x08009240 
+fs *
+f fcn.08009336 214 0x08009336 
+fs *
+f fcn.0800940c 126 0x0800940c 
+fs *
+f fcn.0800948a 30 0x0800948a 
+fs *
+f fcn.080094c4 162 0x080094c4 
+fs *
+f fcn.08009566 166 0x08009566 
+fs *
+f fcn.0800960c 218 0x0800960c 
+fs *
+f fcn.080096e6 438 0x080096e6 
+fs *
+f fcn.0800989c 310 0x0800989c 
+fs *
+f fcn.0800990c 198 0x0800990c 
+fs *
+f fcn.0800995e 116 0x0800995e 
+fs *
+f fcn.080099d2 58 0x080099d2 
+fs *
+f fcn.0800a0b0 394 0x0800a0b0 
+fs *
+f fill_array 20 0x08006970 
+fs *
+f fill_memory_range 102 0x08007adc 
+fs *
+f FLASH_ClearFlag 6 0x08006e20 
+fs *
+f FLASH_GetStatus 36 0x08006e26 
+fs *
+f flash_handler 4 0x0800a834 
+fs *
+f FLASH_Lock 14 0x08006d7e 
+fs *
+f FLASH_PrefetchBufferCmd 26 0x08006d18 
+fs *
+f FLASH_ReadAccess64Cmd 26 0x08006d32 
+fs *
+f FLASH_SetLatency 16 0x08006d08 
+fs *
+f FLASH_SLEEPPowerDownCmd 26 0x08006d4c 
+fs *
+f FLASH_Unlock 24 0x08006d66 
+fs *
+f FLASH_WaitForLastOperation 60 0x08006e60 
+fs *
+f fp 1 0x00000000 
+fs *
+f func_0x0800577a 26 0x0800577a 
+fs *
+f func_xxxx 166 0x08008614 
+fs *
+f func_xxxx2 232 0x080086ba 
+fs *
+f GPIO_Config 264 0x080042d0 
+fs *
+f GPIO_Init 98 0x08006f9c 
+fs *
+f GPIO_LowPowerMode_Maybe 494 0x08006450 
+fs *
+f GPIO_PinAFConfig 38 0x0800702e 
+fs *
+f GPIO_ReadInputDataBit 14 0x08006ffe 
+fs *
+f GPIO_ReadOutputDataBit 14 0x0800700c 
+fs *
+f GPIO_ResetBits 4 0x0800701e 
+fs *
+f GPIO_SetBits 4 0x0800701a 
+fs *
+f GPIO_Something 222 0x080043d8 
+fs *
+f GPIO_WriteBit 12 0x08007022 
+fs *
+f handle_usblp 288 0x08009f78 
+fs *
+f hardfault_handler 2 0x08009d36 
+fs *
+f i2c1_er_handler 4 0x0800a88c 
+fs *
+f i2c1_ev_handler 4 0x0800a888 
+fs *
+f i2c2_er_handler 4 0x0800a894 
+fs *
+f i2c2_ev_handler 4 0x0800a890 
+fs *
+f initialize_memory_regions 32 0x0800a778 
+fs *
+f init_some_10_struct2 166 0x08006728 
+fs *
+f init_vars 100 0x080060fe 
+fs *
+f init_vars2 82 0x080060ac 
+fs *
+f init_vars3 278 0x08006984 
+fs *
+f init_vars_from_eeprom 32 0x080067ce 
+fs *
+f ip 1 0x00000000 
+fs *
+f Keyboard_Init 140 0x080040f4 
+fs *
+f Keyboard_LowPowerMode 90 0x0800663e 
+fs *
+f Keyboard_UseHSIClock 88 0x08004270 
+fs *
+f lcd_handler 4 0x0800a870 
+fs *
+f load_byte_from_flash_region 34 0x0800a254 
+fs *
+f loc.08005dcc 18 0x08005dcc 
+fs *
+f lr 1 0x00000000 
+fs functions
+f main 14 0x0800a7ea 
+fs *
+f main2 26 0x0800a7cc 
+fs *
+f main_loop 100 0x080085b0 
+fs *
+f MatrixColumns_Set 32 0x080044b6 
+fs *
+f memmanage_handler 2 0x08009d38 
+fs *
+f nmi_handler 2 0x08009d34 
+fs *
+f NVIC_Init 92 0x08006f0e 
+fs *
+f NVIC_NoSubPriorityGroups 8 0x080042c8 
+fs *
+f NVIC_PriorityGroupConfig 10 0x08006f04 
+fs *
+f Parse_Matrix 1806 0x08007ce6 
+fs *
+f pc 1 0x00000004 
+fs *
+f pendsv_handler 2 0x08009d42 
+fs *
+f Peripherals_Config 190 0x080041ae 
+fs *
+f Periph_LowPowerMode_Maybe 122 0x080062a0 
+fs *
+f Periphs_Reset 238 0x08007924 
+fs *
+f pvd_handler 4 0x0800a828 
+fs *
+f PWR_EnterLowPowerRunMode 40 0x08006eba 
+fs *
+f PWR_GetFlagStatus 16 0x08006ee2 
+fs *
+f PWR_PVDCmd 6 0x08006e9c 
+fs *
+f PWR_UltraLowPowerCmd 6 0x08006ea2 
+fs *
+f PWR_VoltageScalingConfig 18 0x08006ea8 
+fs *
+f r0 1 0x00000000 
+fs *
+f r10 1 0x00000000 
+fs *
+f r1 1 0x00000000 
+fs *
+f r11 1 0x00000000 
+fs *
+f r12 1 0x00000000 
+fs *
+f r13 1 0x00000000 
+fs *
+f r14 1 0x00000000 
+fs *
+f r15 1 0x00000004 
+fs *
+f r2 1 0x00000000 
+fs *
+f r3 1 0x00000000 
+fs *
+f r4 1 0x00000000 
+fs *
+f r5 1 0x00000000 
+fs *
+f r6 1 0x00000000 
+fs *
+f r7 1 0x00000000 
+fs *
+f r8 1 0x00000000 
+fs *
+f r9 1 0x00000000 
+fs *
+f RCC_AHBPeriphClockCmd 22 0x08006c32 
+fs *
+f RCC_APB1PeriphClockCmd 22 0x08006c5e 
+fs *
+f RCC_APB1PeriphResetCmd 22 0x08006c8a 
+fs *
+f RCC_APB2PeriphClockCmd 22 0x08006c48 
+fs *
+f RCC_APB2PeriphResetCmd 22 0x08006c74 
+fs *
+f RCC_DeInit 48 0x08006aa4 
+fs *
+f RCC_GetClocksFreq 164 0x08006b8e 
+fs *
+f RCC_GetFlagStatus 28 0x08006ca0 
+fs *
+f RCC_GetSYSCLKSource 10 0x08006b58 
+fs *
+f rcc_handler 4 0x0800a838 
+fs *
+f RCC_HCLKConfig 14 0x08006b62 
+fs *
+f RCC_HSEConfig 10 0x08006ad4 
+fs *
+f RCC_HSICmd 6 0x08006b24 
+fs *
+f RCC_LSEConfig 10 0x08006b2a 
+fs *
+f RCC_LSICmd 6 0x08006b34 
+fs *
+f RCC_MSICmd 6 0x08006b1e 
+fs *
+f RCC_MSIRangeConfig 14 0x08006b10 
+fs *
+f RCC_PCLK1Config 14 0x08006b70 
+fs *
+f RCC_PCLK2Config 16 0x08006b7e 
+fs *
+f RCC_PLLCmd 6 0x08006b44 
+fs *
+f RCC_PLLConfig 10 0x08006b3a 
+fs *
+f RCC_SYSCLKConfig 14 0x08006b4a 
+fs *
+f RCC_WaitForHSEStartUp 50 0x08006ade 
+fs *
+f reset 8 0x0800a808 
+fs *
+f return_one 4 0x0800a7e6 
+fs *
+f rtc_alarm_handler 4 0x0800a8a4 
+fs *
+f rtcwkup_handler 4 0x0800a830 
+fs *
+f sb 1 0x00000000 
+fs *
+f Scan_Matrix 226 0x08007c04 
+fs *
+f SetSysClock 182 0x0800a5dc 
+fs *
+f sl 1 0x00000000 
+fs *
+f some_math 28 0x08007904 
+fs *
+f sp 1 0x00000000 
+fs *
+f spi1_handler 4 0x0800a898 
+fs *
+f spi2_handler 4 0x0800a89c 
+fs *
+f store_byte_in_sram_region 64 0x0800a276 
+fs *
+f svc_handler 2 0x08009d3e 
+fs *
+f SYSCFG_EXTILineConfig 36 0x08007054 
+fs *
+f SystemInit 60 0x0800a5a0 
+fs *
+f SysTick_CLKSourceConfig 24 0x08006f6a 
+fs *
+f systick_handler 2 0x08009d44 
+fs *
+f tamperstamp_handler 4 0x0800a82c 
+fs *
+f tim10_handler 4 0x0800a878 
+fs *
+f tim11_handler 4 0x0800a87c 
+fs *
+f tim2_handler 4 0x0800a880 
+fs *
+f tim3_handler 4 0x0800a884 
+fs *
+f TIM4_Config 52 0x080068d4 
+fs *
+f TIM4_Disable 36 0x08006234 
+fs *
+f TIM4_Disable_Wrapper 4 0x08006908 
+fs *
+f TIM4_Enable 44 0x08006258 
+fs *
+f TIM4_GetIntCounter 6 0x0800690c 
+fs *
+f tim4_handler 130 0x08009ed8 
+fs *
+f TIM4_HFreqConfig 96 0x080061d4 
+fs *
+f TIM4_LFreqConfig 104 0x08006168 
+fs *
+f TIM4_Update_Flag_1 46 0x08004180 
+fs *
+f tim6_handler 4 0x0800a8a8 
+fs *
+f tim7_handler 4 0x0800a8ac 
+fs *
+f tim9_handler 4 0x0800a874 
+fs *
+f TIM_ClearFlag 6 0x08007aac 
+fs *
+f TIM_ClearITPendingBit 6 0x08007aca 
+fs *
+f TIM_Cmd 24 0x08007a7c 
+fs *
+f TIM_GenerateEvent 4 0x08007aa8 
+fs *
+f TIM_GetITStatus 24 0x08007ab2 
+fs *
+f TIM_InternalClockConfig 12 0x08007ad0 
+fs *
+f TIM_ITConfig 20 0x08007a94 
+fs *
+f TIM_TimeBaseInit 74 0x08007a12 
+fs *
+f update_vars_fromeeprom_init_others 36 0x080066c4 
+fs *
+f usagefault_handler 2 0x08009d3c 
+fs *
+f usart1_handler 4 0x0800a8a0 
+fs *
+f USART2_Clock_Enable 10 0x08004eb6 
+fs *
+f usart2_handler 66 0x08009e34 
+fs *
+f USART2_IOConfig 64 0x08004e76 
+fs *
+f USART2_Setup 24 0x08005020 
+fs *
+f USART2_SetupMem_For_DMA1Channel6 74 0x080054de 
+fs *
+f USART3_Clock_Enable 10 0x08005038 
+fs *
+f USART3_Config_Maybe 200 0x0800504c 
+fs *
+f usart3_handler 66 0x08009e96 
+fs *
+f USART3_Setup 20 0x080051ce 
+fs *
+f USART3_SetupMem_For_DMA1Channel3 74 0x0800552c 
+fs *
+f USART_ClearFlag 6 0x080075ce 
+fs *
+f USART_ClearITPendingBit 16 0x0800761c 
+fs *
+f USART_Cmd 24 0x08007560 
+fs *
+f USART_DeInit 154 0x0800740c 
+fs *
+f USART_DMACmd 20 0x08007580 
+fs *
+f USART_GetITStatus 72 0x080075d4 
+fs *
+f USART_Init 164 0x080074a6 
+fs *
+f USART_ITConfig 58 0x08007594 
+fs *
+f USART_ReceiveData 8 0x08007578 
+fs *
+f USB_10 26 0x08007324 
+fs *
+f USB_11 26 0x0800733e 
+fs *
+f USB_1 14 0x080071f8 
+fs *
+f USB_12 24 0x08007358 
+fs *
+f USB_13 20 0x08007370 
+fs *
+f USB_14 18 0x08007384 
+fs *
+f USB_15 58 0x08007396 
+fs *
+f USB_16 22 0x080073d0 
+fs *
+f USB_2 26 0x08007206 
+fs *
+f USB_3 48 0x08007220 
+fs *
+f USB_4 48 0x08007250 
+fs *
+f USB_5 32 0x08007280 
+fs *
+f USB_6 32 0x080072a0 
+fs *
+f USB_7 28 0x080072c0 
+fs *
+f USB_8 36 0x080072dc 
+fs *
+f USB_9 36 0x08007300 
+fs *
+f USB_Clock_Enable 10 0x08004784 
+fs *
+f usbfswkup_handler 8 0x08009d4a 
+fs *
+f usbhp_handler 4 0x0800a864 
+fs *
+f usb_interrupts_config 20 0x0800716c 
+fs *
+f usblp_handler 4 0x08009d46 
+fs *
+f vector_table 244 0x08004000 
+fs *
+f Wait 42 0x08007138 
+fs *
+f Wait_x4000_x125 52 0x08007104 
+fs *
+f Wait_x4_at_AHB_8 42 0x08007138 
+fs *
+f wwdg_handler 4 0x0800a824 
+fs *
+f zero_fill_bss 34 0x080071d6 
+fs *
+f fcn.080091c4 36 0x080091c4 
+fs *
+f fcn.0800921c 36 0x0800921c 
+fs *
+f fcn.0800928c 170 0x0800928c 
+fs *
+f fcn.080094a8 28 0x080094a8 
+fs *
+f eax 1 0x00000000 
+fs *
+f ebx 1 0x00000000 
+fs *
+f ecx 1 0x00000000 
+fs *
+f edx 1 0x00000000 
+fs *
+f r8d 1 0x00000000 
+fs *
+f r9d 1 0x00000000 
+fs *
+f r10d 1 0x00000000 
+fs *
+f r11d 1 0x00000000 
+fs *
+f r12d 1 0x00000000 
+fs *
+f r13d 1 0x00000000 
+fs *
+f r14d 1 0x00000000 
+fs *
+f r15d 1 0x00000000 
+fs *
+f esi 1 0x00000000 
+fs *
+f edi 1 0x00000000 
+fs *
+f esp 1 0x00000000 
+fs *
+f ebp 1 0x00000000 
+fs *
+f eflags 1 0x00000000 
+fs *
+f PWR_SaveMode_FlagUpdate 42 0x0800460c 
+fs *
+f USB_DataPlusCmd 20 0x08004d02 
+fs *
+f BT_P1_0Set 34 0x08004dfc 
+fs *
+f LED_WakeUpCmd 54 0x08004e40 
+fs *
+f TIM4_GetIntCounter_Wrapper 4 0x08008ee8 
+fs functions
+f USB_WakeUpIntEnable 96 0x08004724 
+f USB_DataPlus_LowSpeedSet_Maybe 52 0x080046f0 
+f MCU_UID_GenerateStr 44 0x08004cd6 
+f USB_PowerDown_Maybe 34 0x080090e6 
+f Keyboard_Init 140 0x080040f4 
+f TIM4_Update_Flag_1 46 0x08004180 
+f Peripherals_Config 190 0x080041ae 
+f Keyboard_UseHSIClock 88 0x08004270 
+f NVIC_NoSubPriorityGroups 8 0x080042c8 
+f GPIO_Config 264 0x080042d0 
+f GPIO_Something 222 0x080043d8 
+f MatrixColumns_Set 32 0x080044b6 
+f EXTl_something 310 0x080044d6 
+f PWR_SaveMode_FlagUpdate 42 0x0800460c 
+f USB_PA11_12_Config 186 0x08004636 
+f USB_DataPlus_LowSpeedSet_Maybe 52 0x080046f0 
+f USB_WakeUpIntEnable 96 0x08004724 
+f USB_Clock_Enable 10 0x08004784 
+f MCU_UIDLoad 22 0x08004cc0 
+f MCU_UID_GenerateStr 44 0x08004cd6 
+f USB_DataPlusCmd 20 0x08004d02 
+f BT_P1_0Set 34 0x08004dfc 
+f BT_P1_0Reset 34 0x08004e1e 
+f LED_WakeUpCmd 54 0x08004e40 
+f USART2_IOConfig 64 0x08004e76 
+f USART2_Clock_Enable 10 0x08004eb6 
+f DMA1_Clock_Enable_2 10 0x08004f52 
+f USART2_Setup 24 0x08005020 
+f USART3_Clock_Enable 10 0x08005038 
+f DMA1_Clock_Enable 10 0x08005042 
+f USART3_Config_Maybe 200 0x0800504c 
+f USART3_Setup 20 0x080051ce 
+f USART2_SetupMem_For_DMA1Channel6 74 0x080054de 
+f USART3_SetupMem_For_DMA1Channel3 74 0x0800552c 
+f LED_SendData_Maybe 174 0x080057a0 
+f TIM4_LFreqConfig 104 0x08006168 
+f TIM4_HFreqConfig 96 0x080061d4 
+f TIM4_Disable 36 0x08006234 
+f TIM4_Enable 44 0x08006258 
+f Periph_LowPowerMode_Maybe 122 0x080062a0 
+f EXTl_LowPowerConfig_Maybe 310 0x0800631a 
+f GPIO_LowPowerMode_Maybe 494 0x08006450 
+f Keyboard_LowPowerMode 90 0x0800663e 
+f EEPROM_Write_Struct_1 58 0x080066e8 
+f TIM4_Config 52 0x080068d4 
+f TIM4_Disable_Wrapper 4 0x08006908 
+f TIM4_GetIntCounter 6 0x0800690c 
+f Wait_x4000_x125 52 0x08007104 
+f Wait_x4_at_AHB_8 42 0x08007138 
+f USB_1 14 0x080071f8 
+f USB_2 26 0x08007206 
+f USB_3 48 0x08007220 
+f USB_4 48 0x08007250 
+f USB_5 32 0x08007280 
+f USB_6 32 0x080072a0 
+f USB_7 28 0x080072c0 
+f USB_8 36 0x080072dc 
+f USB_9 36 0x08007300 
+f USB_10 26 0x08007324 
+f USB_11 26 0x0800733e 
+f USB_12 24 0x08007358 
+f USB_13 20 0x08007370 
+f USB_14 18 0x08007384 
+f USB_15 58 0x08007396 
+f USB_16 22 0x080073d0 
+f Periphs_Reset 238 0x08007924 
+f fill_memory_range 102 0x08007adc 
+f copy_memory_range 118 0x08007b8c 
+f Scan_Matrix 226 0x08007c04 
+f Parse_Matrix 1806 0x08007ce6 
+f TIM4_GetIntCounter_Wrapper 4 0x08008ee8 
+f USB_WakeUpIntDisable_Maybe 92 0x08009050 
+f USB_PeriphDisable_Maybe 24 0x080090ac 
+f USB_PowerDown_Maybe 34 0x080090e6 
+f main2 26 0x0800a7cc 
+f main 12 0x0800a818 
 # eval
 "e anal.a2f = false"
 "e anal.afterjmp = true"
@@ -427,6 +868,7 @@ f zero_fill_bss 34 0x080071d6
 "e asm.indentspace = 2"
 "e asm.invhex = false"
 "e asm.jmphints = true"
+"e asm.jmpsub = false"
 "e asm.lbytes = true"
 "e asm.leahints = false"
 "e asm.lines = true"
@@ -582,6 +1024,7 @@ f zero_fill_bss 34 0x080071d6
 "e dir.dbgsnap = ."
 "e dir.magic = /usr/share/radare2/2.2.0-git/magic"
 "e dir.plugins = /usr/lib/radare2/2.2.0-git/"
+"e dir.prefix = /usr"
 "e dir.projects = ~/.config/radare2/projects"
 "e dir.source = "
 "e dir.types = /usr/include"
@@ -723,6 +1166,7 @@ f zero_fill_bss 34 0x080071d6
 "e scr.breakword = "
 "e scr.color = true"
 "e scr.color.bytes = true"
+"e scr.color.grep = false"
 "e scr.color.ops = true"
 "e scr.columns = 0"
 "e scr.echo = false"
@@ -769,7 +1213,7 @@ f zero_fill_bss 34 0x080071d6
 "e search.flags = true"
 "e search.from = -1"
 "e search.in = io.maps"
-"e search.kwidx = 3"
+"e search.kwidx = 17"
 "e search.maxhits = 0"
 "e search.overlap = false"
 "e search.prefix = hit"
@@ -798,11 +1242,6 @@ f zero_fill_bss 34 0x080071d6
 "e zoom.to = 0"
 ofs ../1.4/key.dfu.target0.image0.bin -r-x
 om 3 0x8004000 0x6a82 0x0 -r-x
-om 3 0x8004000 0x6a82 0x0 -r-x
-om 3 0x8004000 0x6a82 0x0 -r-x
-om 3 0x8004000 0x6a82 0x0 -r-x
-om 3 0x8004000 0x6a82 0x0 -r-x
-ofs ../1.4/key.dfu.target0.image0.bin -r-x
 # sections
 # meta
 CCu base64:aW5pdGlhbCBzdGFjayBwb2ludGVyIDsgcmVzZXJ2ZWQh @ 0x08004000
@@ -927,11 +1366,43 @@ CCu base64:RVhUbCBudW1iZXI= @ 0x080043c8
 CCu base64:cG9ydA== @ 0x080043ca
 CCu base64:c2V0IHBvcnQgcGluczogQUREUjpCSVRTX1RPX1NFVA== @ 0x080044b6
 CCu base64:MTQgcGlucyB0byBzZXQgaW4gdG90YWwsIHNlZSAweDIwMDAwNTg4 @ 0x080044b8
-CCu base64:c29tZXRoaW5nIHRoYXQgaGFzIHRvIGRvIHdpdGggZGV2aWNlIGlk @ 0x08004cc0
+CCu base64:VXBkYXRlIFVTQl9QbHVnZ2VkIGZsYWc= @ 0x08004624
+CCu base64:dXBkYXRlIFBXUl9TYXZlTW9kZSBmbGFn @ 0x0800462c
+CCu base64:UG9ydCBBIHBpbiAxMQ== @ 0x0800463e
+CCu base64:b3V0cHV0 @ 0x08004642
+CCu base64:b3R5cGU= @ 0x08004648
+CCu base64:c3BlZWQ= @ 0x0800464e
+CCu base64:cGluIDEy @ 0x0800465c
+CCu base64:aW5wdXQ= @ 0x08004662
+CCu base64:cHVwZA== @ 0x08004666
+CCu base64:c3BlZWQ= @ 0x0800466a
+CCu base64:ZG8gYSB3cml0ZSAxIHRlc3QsIElucHV0IHBpbiBzaG91bGQgbWlycm9yIG91dHB1dCBwaW4= @ 0x0800467e
+CCu base64:ZG8gYSB3cml0ZSAwIHRlc3Q= @ 0x08004698
+CCu base64:c2V0IHBvcnRBIHBpbiAxMSBhcyBhbiBpbnB1dCBpbnN0ZWFkIG9mIGFuIG91dHB1dA== @ 0x080046ca
+CCu base64:UG9ydCBBIHBpbiAxMA== @ 0x080046f6
+CCu base64:bW9kZQ== @ 0x080046fa
+CCu base64:b3R5cGU= @ 0x08004700
+CCu base64:c3BlZWQgbG93IHNwZWVk @ 0x08004706
+CCu base64:RVhUbF9MaW5lMTggY29ubmVjdGVkIHRvIHRoZSBVU0IgZGV2aWNlIEZTIFdha2V1cCBmcm9tIHN1c3BlbmQgZXZlbnQ= @ 0x08004726
+CCu base64:RVhUSV9UcmlnZ2VyX1Jpc2luZw== @ 0x08004734
+CCu base64:RW5hYmxl @ 0x0800473a
+CCu base64:TlZJQ19Qcmlvcml0eUdyb3VwXzI6IDIsMg== @ 0x08004746
+CCu base64:VVNCX0xQX0lSUW4= @ 0x0800474e
+CCu base64:UHJlZW1wdGlvbiBwcmlvcml0eSAy @ 0x08004754
+CCu base64:c3VicHJpb3JpdHkgMA== @ 0x0800475a
+CCu base64:ZW5hYmxl @ 0x08004760
+CCu base64:VVNCX0ZTX1dLVVBfSVJRbiBVU0IgRlMgd2FrZXVwIHRocm91Z2ggRVhUbCBpbnRlcnJ1cHQ= @ 0x0800476c
+CCu base64:cHJlbWVtcHRpb24gcHJpb3JpdHkxLCBzdWJwcmlvcml0eSAw @ 0x08004774
+CCu base64:ZW5hYmxl @ 0x08004778
+CCu base64:cjI6IHNpemUsIHIxOiB3aGVyZSB0byBzdG9yZSBpdCwgcjA6IG51bWJlciB0byBjb252ZXJ0 @ 0x0800478e
+CCu base64:c3RvcmUgZGV2aWNlJ3MgVUlEIGluIG1lbW9yeQ== @ 0x08004cc0
+CCu base64:R2VuZXJhdGUgYSAxMiBjaGFyIHN0cmluZyB1c2luZyB0aGUgTUNVIFVJRA== @ 0x08004cd6
+CCu base64:U2V0cyBvciByZXNldHMgVVNCIEQrIChQQTEwKQ== @ 0x08004d02
+CCu base64:UG9ydEEgcGluIDEw @ 0x08004d04
 CCu base64:cGluIDE1 @ 0x08004e46
 CCu base64:UG9ydCBD @ 0x08004e48
 CCu base64:Y2hlY2sgaWYgcGluIHdhcyBzZXQgdG8gMQ== @ 0x08004e64
-CCu base64:Y2xlYXIgZmxhZyB3aGVuIHBpbiBpcyBzZXQgdG8gMQ== @ 0x08004e6e
+CCu base64:Y2xlYXIgTEVEX01DVV9Bc2xlZXAgZmxhZw== @ 0x08004e6e
 CCu base64:UGlucyAyIGFuZCAz @ 0x08004e78
 CCu base64:YWx0ZXJuYXRlIGZ1bmN0aW9uIG1vZGU= @ 0x08004e7c
 CCu base64:dmVyeSBsb3cgc3BlZWQ= @ 0x08004e82
@@ -954,13 +1425,13 @@ CCu base64:UG9ydEI= @ 0x0800506e
 CCu base64:cGluIDEwIHVzYXJ0MyBhZiB0eA== @ 0x08005080
 CCu base64:cGluIDExIHVzYXJ0MyBhZiByeA== @ 0x0800508a
 CCu base64:VVNBUlQz @ 0x080050a6
-CCu base64:RE1B @ 0x08005136
+CCu base64:RE1BIGNoYW5uZWwy @ 0x08005136
 CCu base64:VVNBUlQz @ 0x08005140
 CCu base64:RE1B @ 0x08005180
-CCu base64:RE1B @ 0x0800520e
-CCu base64:RE1B @ 0x08005382
-CCu base64:RE1B @ 0x08005448
-CCu base64:RE1B @ 0x080054be
+CCu base64:RE1BIGNoYW5uZWwy @ 0x0800520e
+CCu base64:RE1BIGNoYW5uZWwy @ 0x08005382
+CCu base64:RE1BIGNoYW5uZWwy @ 0x08005448
+CCu base64:RE1BIGNoYW5uZWwy @ 0x080054be
 CCu base64:RE1BMSBjaGFubmVsIDY= @ 0x080054e0
 CCu base64:ZGlzYWJsZSBETUExX0NoYW5uZWw2 @ 0x080054e8
 CCu base64:RE1BMV9DaGFubmVsNiBnbG9iYWwgaW50ZXJydXB0IGNsZWFy @ 0x080054f0
@@ -977,8 +1448,8 @@ CCu base64:Y29weSAweDIwMDAwOWQ0LWFkMyB0byAweDIwMDAwMGFkNC1iZDM= @ 0x08005558
 CCu base64:Y2xlYXIgMHgyMDAwMDlkNC1hZDM= @ 0x08005564
 CCu base64:ZW5hYmxlIERNQTFfQ2hhbm5lbDM= @ 0x0800556c
 CCu base64:c2V0IGZsYWc= @ 0x08005572
-CCu base64:RE1B @ 0x08005764
-CCu base64:RE1B @ 0x08005836
+CCu base64:RE1BIGNoYW5uZWw3 @ 0x08005764
+CCu base64:RE1BIGNoYW5uZWwy @ 0x08005836
 CCu base64:REFUQSBFRVBST00= @ 0x080058d8
 CCu base64:VElNNA== @ 0x0800616a
 CCu base64:cmVzZXQgdGltZXIgNA== @ 0x08006170
@@ -1003,7 +1474,6 @@ CCu base64:Z2VuZXJhdGUgdXBkYXRl @ 0x08006262
 CCu base64:Y2xlYXIgdXBkYXRlIGludGVycnVwdCBmbGFnIGluIFRJTTRfU1I= @ 0x0800626a
 CCu base64:ZW5hYmxlIHVwZGF0ZSBpbnRlcnJ1cHQ= @ 0x08006274
 CCu base64:ZW5hYmxlIFRJTTQ= @ 0x08006280
-CCu base64: @ 0x08006450
 CCu base64:cGluIDA= @ 0x08006454
 CCu base64:UG9ydEE= @ 0x0800646e
 CCu base64:cGlucyA2LDcsOCw5 @ 0x0800647a
@@ -1019,7 +1489,6 @@ CCu base64:cGluIDEw @ 0x0800656e
 CCu base64:UG9ydCBB @ 0x0800658c
 CCu base64:cGluIDE1 @ 0x08006592
 CCu base64:UG9ydEM= @ 0x080065ac
-CCu base64: @ 0x0800663e
 CCu base64:MS44ViByYW5nZQ== @ 0x08006644
 CCu base64:U3lzVGljayB0aW1lciBTVEtfQ1RSTA== @ 0x0800666c
 CCu base64:Zmlyc3QgYnl0ZSBpcyAxIHJlc3QgaXMgMHM= @ 0x080066cc
@@ -1089,7 +1558,6 @@ CCu base64:U1lTQ0ZHX0VYVElDUjE= @ 0x08007060
 CCu base64:RVhUSTE= @ 0x08007082
 CCu base64:c2hvdWxkIGNoZWNrIHRoaXMgaXMgdGhlIGNvcnJlY3QgZnVudGlvbiBuYW1l @ 0x080070e6
 CCu base64:U1RLX0NUUkw= @ 0x08007104
-CCu base64: @ 0x0800710e
 CCu base64:bXVsdGlwbHkgYnkgNDAwMCBpZiBUSU00X01vZGUgaXMgMA== @ 0x08007112
 CCu base64:U1RLX0xPQUQgdmFsdWU= @ 0x08007114
 CCu base64:bXVsdGlwbHkgYnkgMTI1IGlmIFRJTTRfTW9kZSBpcyBub3QgMA== @ 0x0800711a
@@ -1148,14 +1616,33 @@ CCu base64:YWxsIHRoZXNlIHNoaWZ0cyBhcmUgdG8gZ2V0IG5leHQgcG9ydDpwaW4gY29tYmluYXRpb
 CCu base64:cmVhZCBpbnB1dCByb3dzIDEgYnkgb25l @ 0x08007caa
 CCu base64:cjQgaGFzIHRoZSBALi4uMTdhOCByOSBpcyAweGUgaW5jcmVtZW50cw== @ 0x08007cb0
 CCu base64:b3IgaXMgdGhpcyB0aGUgZGVib3VuY2luZyBwYXJ0 @ 0x08007cbe
-CCu base64: @ 0x08007ce6
 CCu base64:MCBpbml0aWFsbHk= @ 0x0800861a
 CCu base64:MCBpbml0aWFsbHk= @ 0x08008632
 CCu base64:YW4gRVhUbCBpbnRlcnJ1cHQgY291bnRlcg== @ 0x0800866e
 CCu base64:cmV0dXJuIGlmIDA= @ 0x08008672
+CCu base64:cjA9MHgyMDAwMThiYw== @ 0x08008d76
+CCu base64:RVhUbF9MaW5lMTggY29ubmVjdGVkIHRvIFVTQiBGUyB3YWtldXAgZXZlbnQ= @ 0x08009052
+CCu base64:RVhUSV9UcmlnZ2VyX1Jpc2luZw== @ 0x08009060
+CCu base64:ZGlzYWJsZQ== @ 0x08009066
+CCu base64:TlZJQ19Qcmlvcml0eUdyb3VwXzI6IDIsMg== @ 0x08009072
+CCu base64:VVNCX0xQX0lSUW4= @ 0x0800907a
+CCu base64:UHJlZW1wdGlvbiBwcmlvcml0eSAy @ 0x08009080
+CCu base64:c3VicHJpb3JpdHkgMA== @ 0x08009086
+CCu base64:ZW5hYmxlIG9yIGRpc2FibGU/ @ 0x0800908e
+CCu base64:VVNCX0ZTX1dLVVBfSVJRbg== @ 0x08009092
+CCu base64:cHJlZW1wdGlvbiBwcmlvcml0eSAxIHN1YnByaW9yaXR5IDA= @ 0x0800909a
+CCu base64:ZGlzYWJsZQ== @ 0x080090a0
+CCu base64:ZGlzYWJsZQ== @ 0x080090b6
+CCu base64:VVNCIGNsb2Nr @ 0x080090b8
+CCu base64:VVNCX0NOVFI= @ 0x080090e8
+CCu base64:c2V0IGFsbCBiaXRzIGV4Y2VwdCBGU1VTUCAoRm9yY2UgU3VzcGVuZCk= @ 0x080090ec
+CCu base64:ZGlzYWJsZSBhbGwgaW50ZXJydXB0cyBhbmQgZXhpdCBsb3dwb3dlciBtb2RlIGFuZCByZXNldCBVU0IgcGVyaXBoZXJhbA== @ 0x080090f4
+CCu base64:Y2xlYXIgYWxsIGJpdHMgaW4gVVNCX0lTVFI= @ 0x080090fa
+CCu base64:UmVzZXQgVVNCIEQrIHBpbg== @ 0x080090fc
+CCu base64:cG93ZXJkb3duIGFuZCByZXNldCBVU0IgcGVyaXBoZXJhbA== @ 0x08009102
 CCu base64:Y2xlYXIgaW50ZXJydXB0IHBlbmRpbmcgYml0IFBSMTggKEVYVElfUFIp @ 0x08009d4a
-CCu base64:aGFuZGxlciBzZXRzIGEgdmFyaWFibGU= @ 0x08009d52
-CCu base64:Z2V0IFBSMTQgc3RhdHVz @ 0x08009d54
+CCu base64:aGFuZGxlciBzZXRzIGEgdmFyaWFibGUgVVNCX1BsdWdnZWRfRVhUbA== @ 0x08009d52
+CCu base64:Z2V0IFBSMTAgc3RhdHVz @ 0x08009d54
 CCu base64:Y2xlYXIgaXQgaWYgc2V0 @ 0x08009d61
 CCu base64:Y2xlYXIgaXQgaWYgc2V0 @ 0x08009d64
 CCu base64:Z2V0IFBSMTUgc3RhdHVz @ 0x08009d6c
@@ -1602,20 +2089,6 @@ afb+ 0x080043d8 0x0800447a 4 0x080044b0 0xffffffffffffffff n
 afb+ 0x080043d8 0x0800447e 50 0x080044b0 0xffffffffffffffff n
 afb+ 0x080043d8 0x080044b0 4 0x0800447e 0x080044b4 n
 afb+ 0x080043d8 0x080044b4 2 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x80043dc 0x8004d60
-afxC 0x80043f8 0x8006f9c
-afxC 0x8004400 0x8007054
-afxd 0x8004404 0x8004d64
-afxC 0x8004422 0x8006f9c
-afxd 0x8004426 0x8004df0
-afxC 0x8004444 0x8006f9c
-afxc 0x800444a 0x8004476
-afxd 0x800444c 0x8004df4
-afxC 0x8004470 0x8006f9c
-afxc 0x800447c 0x80044b0
-afxd 0x800447e 0x8004df8
-afxC 0x80044a2 0x8006f9c
-afxC 0x80044aa 0x8007054
 afS 12 @ 0x80043d8
 "f _MatrixColumns_Set 32 0x080044b6"
 "af+ 0x080044b6 _MatrixColumns_Set f n"
@@ -1626,36 +2099,18 @@ afS 0 @ 0x80044b6
 "af+ 0x080044d6 _EXTl_something f n"
 afc arm32 @ 0x080044d6
 afb+ 0x080044d6 0x080044d6 310 0xffffffffffffffff 0xffffffffffffffff n
-afxC 0x80044dc 0x80070f6
-afxC 0x80044fa 0x800707c
-afxC 0x8004502 0x80070f6
-afxC 0x8004520 0x800707c
-afxC 0x8004528 0x80070f6
-afxC 0x8004546 0x800707c
-afxC 0x800454c 0x80070f6
-afxC 0x8004568 0x800707c
-afxC 0x800456e 0x80070f6
-afxC 0x800458a 0x800707c
-afxC 0x8004590 0x80070f6
-afxC 0x80045ac 0x800707c
-afxC 0x80045ca 0x8006f0e
-afxC 0x80045e8 0x8006f0e
-afxC 0x8004606 0x8006f0e
 afS 0 @ 0x80044d6
-"f fcn.0800460c 42 0x0800460c"
-"af+ 0x0800460c fcn.0800460c f n"
+"f _PWR_SaveMode_FlagUpdate 42 0x0800460c"
+"af+ 0x0800460c _PWR_SaveMode_FlagUpdate f n"
 afc arm32 @ 0x0800460c
 afb+ 0x0800460c 0x0800460c 24 0x08004634 0x08004624 n
 afb+ 0x0800460c 0x08004624 6 0x08004630 0x0800462a n
 afb+ 0x0800460c 0x0800462a 6 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x0800460c 0x08004630 4 0x08004634 0xffffffffffffffff n
 afb+ 0x0800460c 0x08004634 2 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x800460e 0x8004d60
-afxC 0x8004616 0x8006ffe
-afxd 0x800461a 0x8004cbc
 afS 0 @ 0x800460c
-"f fcn.08004636 186 0x08004636"
-"af+ 0x08004636 fcn.08004636 f n"
+"f _USB_PA11_12_Config 186 0x08004636"
+"af+ 0x08004636 _USB_PA11_12_Config f n"
 afc arm32 @ 0x08004636
 afb+ 0x08004636 0x08004636 120 0x080046b2 0x080046ae n
 afb+ 0x08004636 0x080046ae 4 0x080046e8 0x080046b2 n
@@ -1663,45 +2118,24 @@ afb+ 0x08004636 0x080046b2 50 0x080046e8 0x080046e4 n
 afb+ 0x08004636 0x080046e4 4 0x080046ec 0x080046e8 n
 afb+ 0x08004636 0x080046e8 4 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08004636 0x080046ec 4 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x800463a 0x80051e4
-afxC 0x8004658 0x8006f9c
-afxC 0x8004674 0x8006f9c
-afxC 0x800467e 0x8007022
-afxC 0x8004684 0x8007138
-afxC 0x800468c 0x8006ffe
-afxC 0x8004698 0x8007022
-afxC 0x800469e 0x8007138
-afxC 0x80046a6 0x8006ffe
-afxC 0x80046ca 0x8006f9c
-afxC 0x80046d2 0x8006ffe
-afxC 0x80046dc 0x8006ffe
 afS 12 @ 0x8004636
-"f fcn.080046f0 52 0x080046f0"
-"af+ 0x080046f0 fcn.080046f0 f n"
+"f _USB_DataPlus_LowSpeedSet_Maybe 52 0x080046f0"
+"af+ 0x080046f0 _USB_DataPlus_LowSpeedSet_Maybe f n"
 afc arm32 @ 0x080046f0
 afb+ 0x080046f0 0x080046f0 52 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x80046f2 0x8004d5c
-afxC 0x8004710 0x8006f9c
-afxC 0x800471e 0x8007104
 afS 0 @ 0x80046f0
-"f fcn.08004724 96 0x08004724"
-"af+ 0x08004724 fcn.08004724 f n"
+"f _USB_WakeUpIntEnable 96 0x08004724"
+"af+ 0x08004724 _USB_WakeUpIntEnable f n"
 afc arm32 @ 0x08004724
 afb+ 0x08004724 0x08004724 96 0xffffffffffffffff 0xffffffffffffffff n
-afxC 0x800472a 0x80070f6
-afxC 0x8004742 0x800707c
-afxC 0x800474a 0x8006f04
-afxC 0x8004768 0x8006f0e
-afxC 0x800477e 0x8006f0e
 afS 0 @ 0x8004724
 "f _USB_Clock_Enable 10 0x08004784"
 "af+ 0x08004784 _USB_Clock_Enable f n"
 afc arm32 @ 0x08004784
 afb+ 0x08004784 0x08004784 10 0x08006c5e 0xffffffffffffffff n
-afxc 0x800478a 0x8006c5e
 afS 0 @ 0x8004784
-"f fcn.0800478e 48 0x0800478e"
-"af+ 0x0800478e fcn.0800478e f n"
+"f num_to_str 48 0x0800478e"
+"af+ 0x0800478e num_to_str f n"
 afc arm32 @ 0x0800478e
 afb+ 0x0800478e 0x0800478e 6 0x080047a8 0xffffffffffffffff n
 afb+ 0x0800478e 0x08004794 6 0x0800479a 0xffffffffffffffff b
@@ -1710,8 +2144,6 @@ afb+ 0x0800478e 0x080047a8 4 0x080047ba 0x080047ac n
 afb+ 0x0800478e 0x080047ac 6 0x08004794 0x080047b2 n
 afb+ 0x0800478e 0x080047b2 8 0x0800479a 0xffffffffffffffff n
 afb+ 0x0800478e 0x080047ba 4 0xffffffffffffffff 0xffffffffffffffff n
-afxc 0x8004792 0x80047a8
-afxc 0x80047b8 0x800479a
 afS 0 @ 0x800478e
 "f fcn.080047be 174 0x080047be"
 "af+ 0x080047be fcn.080047be f n"
@@ -1720,7 +2152,6 @@ afb+ 0x080047be 0x080047be 120 0x08004858 0xffffffffffffffff n
 afb+ 0x080047be 0x08004836 34 0x08004858 0xffffffffffffffff n
 afb+ 0x080047be 0x08004858 6 0x08004836 0x0800485e n
 afb+ 0x080047be 0x0800485e 14 0xffffffffffffffff 0xffffffffffffffff n
-afxc 0x8004834 0x8004858
 afS 20 @ 0x80047be
 "f fcn.0800486c 316 0x0800486c"
 "af+ 0x0800486c fcn.0800486c f n"
@@ -1738,12 +2169,6 @@ afb+ 0x0800486c 0x08004966 12 0x08004994 0xffffffffffffffff n
 afb+ 0x0800486c 0x08004972 34 0x08004994 0xffffffffffffffff n
 afb+ 0x0800486c 0x08004994 6 0x08004972 0x0800499a n
 afb+ 0x0800486c 0x0800499a 14 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8004922 0x8004cbc
-afxd 0x8004948 0x8004cb8
-afxc 0x8004970 0x8004994
-afxc 0x8004962 0x8004966
-afxc 0x8004954 0x800495a
-afxc 0x8004936 0x8004940
 afS 52 @ 0x800486c
 "f fcn.080049b0 756 0x080049b0"
 "af+ 0x080049b0 fcn.080049b0 f n"
@@ -1768,63 +2193,25 @@ afb+ 0x080049b0 0x08004c1a 4 0x08004c8c 0x08004c1e n
 afb+ 0x080049b0 0x08004c1e 110 0x08004c8c 0xffffffffffffffff n
 afb+ 0x080049b0 0x08004c8c 20 0x08004ca0 0xffffffffffffffff n
 afb+ 0x080049b0 0x08004ca0 4 0xffffffffffffffff 0xffffffffffffffff n
-afxC 0x80049da 0x80057a0
-afxc 0x80049de 0x8004ca0
-afxd 0x8004a7c 0x8005528
-afxC 0x8004a86 0x80057a0
-afxc 0x8004a8a 0x8004ca0
-afxd 0x8004aa4 0x8005528
-afxC 0x8004ab8 0x80057a0
-afxd 0x8004c92 0x8005224
-afxC 0x8004c9c 0x80057a0
-afxd 0x8004c82 0x8005224
-afxC 0x8004c86 0x800486c
-afxd 0x8004c0e 0x8005224
-afxC 0x8004c12 0x800486c
-afxc 0x8004c18 0x8004c8c
-afxd 0x8004b9a 0x8005224
-afxC 0x8004b9e 0x800486c
-afxc 0x8004ba4 0x8004c8c
-afxd 0x8004b26 0x8005224
-afxC 0x8004b2a 0x800486c
-afxc 0x8004b30 0x8004c8c
-afxC 0x80049ee 0x80057a0
-afxd 0x80049f2 0x8005224
-afxC 0x8004a5a 0x800486c
-afxC 0x8004a6e 0x80057a0
-afxc 0x8004a72 0x8004ca0
-afxd 0x8004a94 0x8005528
-afxC 0x8004a9e 0x80057a0
-afxc 0x8004aa2 0x8004ca0
-afxc 0x80049ca 0x8004ca0
 afS 100 @ 0x80049b0
-"f fcn.08004cc0 22 0x08004cc0"
-"af+ 0x08004cc0 fcn.08004cc0 f n"
+"f _MCU_UIDLoad 22 0x08004cc0"
+"af+ 0x08004cc0 _MCU_UIDLoad f n"
 afc arm32 @ 0x08004cc0
 afb+ 0x08004cc0 0x08004cc0 22 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8004cc0 0x8005464
-afxd 0x8004cc4 0x800579c
 afS 0 @ 0x8004cc0
-"f fcn.08004cd6 44 0x08004cd6"
-"af+ 0x08004cd6 fcn.08004cd6 f n"
+"f _MCU_UID_GenerateStr 44 0x08004cd6"
+"af+ 0x08004cd6 _MCU_UID_GenerateStr f n"
 afc arm32 @ 0x08004cd6
 afb+ 0x08004cd6 0x08004cd6 16 0x08004d00 0x08004ce6 n
 afb+ 0x08004cd6 0x08004ce6 26 0x0800478e 0xffffffffffffffff n
 afb+ 0x08004cd6 0x08004d00 2 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8004cd8 0x800579c
-afxd 0x8004ce6 0x8005850
-afxC 0x8004cee 0x800478e
-afxc 0x8004cfe 0x800478e
 afS 0 @ 0x8004cd6
-"f fcn.08004d02 20 0x08004d02"
-"af+ 0x08004d02 fcn.08004d02 f n"
+"f _USB_DataPlusCmd 20 0x08004d02"
+"af+ 0x08004d02 _USB_DataPlusCmd f n"
 afc arm32 @ 0x08004d02
 afb+ 0x08004d02 0x08004d02 12 0x08004d12 0x08004d0e n
 afb+ 0x08004d02 0x08004d0e 4 0x0800701a 0xffffffffffffffff n
 afb+ 0x08004d02 0x08004d12 4 0x0800701e 0xffffffffffffffff n
-afxd 0x8004d02 0x8004d5c
-afxc 0x8004d12 0x800701e
-afxc 0x8004d0e 0x800701a
 afS 0 @ 0x8004d02
 "f fcn.08004d16 68 0x08004d16"
 "af+ 0x08004d16 fcn.08004d16 f n"
@@ -1832,11 +2219,6 @@ afc arm32 @ 0x08004d16
 afb+ 0x08004d16 0x08004d16 40 0x08004d58 0x08004d3e n
 afb+ 0x08004d16 0x08004d3e 26 0x08004d58 0xffffffffffffffff n
 afb+ 0x08004d16 0x08004d58 2 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8004d1c 0x8005854
-afxC 0x8004d2a 0x8007188
-afxC 0x8004d30 0x8007280
-afxC 0x8004d46 0x8007188
-afxC 0x8004d4c 0x8007280
 afS 0 @ 0x8004d16
 "f fcn.08004d68 134 0x08004d68"
 "af+ 0x08004d68 fcn.08004d68 f n"
@@ -1848,33 +2230,23 @@ afb+ 0x08004d68 0x08004dac 20 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08004d68 0x08004dc0 4 0x08004de4 0x08004dc4 n
 afb+ 0x08004d68 0x08004dc4 32 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08004d68 0x08004de4 10 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8004d6a 0x8005464
-afxC 0x8004dd6 0x80057a0
-afxC 0x8004dba 0x80057a0
-afxc 0x8004da8 0x8005dcc
 afS 0 @ 0x8004d68
-"f fcn.08004dfc 34 0x08004dfc"
-"af+ 0x08004dfc fcn.08004dfc f n"
+"f _BT_P1_0Set 34 0x08004dfc"
+"af+ 0x08004dfc _BT_P1_0Set f n"
 afc arm32 @ 0x08004dfc
 afb+ 0x08004dfc 0x08004dfc 18 0x08004e1c 0x08004e0e n
 afb+ 0x08004dfc 0x08004e0e 14 0x08007022 0xffffffffffffffff n
 afb+ 0x08004dfc 0x08004e1c 2 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8004dfe 0x8005858
-afxC 0x8004e06 0x800700c
-afxc 0x8004e18 0x8007022
 afS 0 @ 0x8004dfc
-"f fcn.08004e1e 34 0x08004e1e"
-"af+ 0x08004e1e fcn.08004e1e f n"
+"f _BT_P1_0Reset 34 0x08004e1e"
+"af+ 0x08004e1e _BT_P1_0Reset f n"
 afc arm32 @ 0x08004e1e
 afb+ 0x08004e1e 0x08004e1e 18 0x08004e3e 0x08004e30 n
 afb+ 0x08004e1e 0x08004e30 14 0x08007022 0xffffffffffffffff n
 afb+ 0x08004e1e 0x08004e3e 2 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8004e20 0x8005858
-afxC 0x8004e28 0x800700c
-afxc 0x8004e3a 0x8007022
 afS 0 @ 0x8004e1e
-"f _GPIO_C15_Write 54 0x08004e40"
-"af+ 0x08004e40 _GPIO_C15_Write f n"
+"f _LED_WakeUpCmd 54 0x08004e40"
+"af+ 0x08004e40 _LED_WakeUpCmd f n"
 afc arm32 @ 0x08004e40
 afb+ 0x08004e40 0x08004e40 14 0x08004e58 0x08004e4e n
 afb+ 0x08004e40 0x08004e4e 10 0x08004e60 0xffffffffffffffff n
@@ -1882,49 +2254,26 @@ afb+ 0x08004e40 0x08004e58 8 0x08004e60 0xffffffffffffffff b
 afb+ 0x08004e40 0x08004e60 12 0x08004e74 0x08004e6c n
 afb+ 0x08004e40 0x08004e6c 8 0x08004e74 0xffffffffffffffff n
 afb+ 0x08004e40 0x08004e74 2 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8004e42 0x800585c
-afxC 0x8004e5c 0x8007022
-afxC 0x8004e64 0x800700c
-afxd 0x8004e6e 0x8005464
-afxC 0x8004e52 0x8007022
-afxc 0x8004e56 0x8004e60
 afS 0 @ 0x8004e40
 "f _USART2_IOConfig 64 0x08004e76"
 "af+ 0x08004e76 _USART2_IOConfig f n"
 afc arm32 @ 0x08004e76
 afb+ 0x08004e76 0x08004e76 64 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8004e94 0x80059b8
-afxC 0x8004e9c 0x8006f9c
-afxC 0x8004ea6 0x800702e
-afxC 0x8004eb0 0x800702e
 afS 0 @ 0x8004e76
 "f _USART2_Clock_Enable 10 0x08004eb6"
 "af+ 0x08004eb6 _USART2_Clock_Enable f n"
 afc arm32 @ 0x08004eb6
 afb+ 0x08004eb6 0x08004eb6 10 0x08006c5e 0xffffffffffffffff n
-afxc 0x8004ebc 0x8006c5e
 afS 0 @ 0x8004eb6
 "f fcn.08004ec0 146 0x08004ec0"
 "af+ 0x08004ec0 fcn.08004ec0 f n"
 afc arm32 @ 0x08004ec0
 afb+ 0x08004ec0 0x08004ec0 146 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8004ec4 0x80059bc
-afxC 0x8004eca 0x800740c
-afxC 0x8004eea 0x80074a6
-afxC 0x8004ef6 0x8007594
-afxC 0x8004f02 0x8007594
-afxC 0x8004f0a 0x8006f04
-afxC 0x8004f26 0x8006f0e
-afxC 0x8004f30 0x8007580
-afxC 0x8004f3a 0x8007580
-afxC 0x8004f42 0x8007560
-afxC 0x8004f4a 0x80075ce
 afS 24 @ 0x8004ec0
 "f _DMA1_Clock_Enable_2 10 0x08004f52"
 "af+ 0x08004f52 _DMA1_Clock_Enable_2 f n"
 afc arm32 @ 0x08004f52
 afb+ 0x08004f52 0x08004f52 10 0x08006c32 0xffffffffffffffff n
-afxc 0x8004f58 0x8006c32
 afS 0 @ 0x8004f52
 "f fcn.08004f5c 194 0x08004f5c"
 "af+ 0x08004f5c fcn.08004f5c f n"
@@ -1936,53 +2285,21 @@ afS 0 @ 0x8004f5c
 afc arm32 @ 0x08005020
 afb+ 0x08005020 0x08004f5c 194 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08005020 0x08005020 24 0x08004f5c 0xffffffffffffffff n
-afxC 0x8005022 0x8004e76
-afxC 0x8005026 0x8004eb6
-afxC 0x800502a 0x8004ec0
-afxC 0x800502e 0x8004f52
-afxC 0x8004f7c 0x8006f0e
-afxd 0x8004f80 0x8005798
-afxC 0x8004f86 0x800762c
-afxd 0x8004f8a 0x80059c0
-afxd 0x8004faa 0x8005464
-afxC 0x8004fc2 0x8007718
-afxC 0x8004fcc 0x800776a
-afxd 0x8004fd0 0x80059c4
-afxC 0x8004fd6 0x800762c
-afxC 0x8005002 0x8007718
-afxC 0x800500c 0x800776a
-afxC 0x8005014 0x800774e
 afS 48 @ 0x8005020
 "f _USART3_Clock_Enable 10 0x08005038"
 "af+ 0x08005038 _USART3_Clock_Enable f n"
 afc arm32 @ 0x08005038
 afb+ 0x08005038 0x08005038 10 0x08006c5e 0xffffffffffffffff n
-afxc 0x800503e 0x8006c5e
 afS 0 @ 0x8005038
 "f _DMA1_Clock_Enable 10 0x08005042"
 "af+ 0x08005042 _DMA1_Clock_Enable f n"
 afc arm32 @ 0x08005042
 afb+ 0x08005042 0x08005042 10 0x08006c32 0xffffffffffffffff n
-afxc 0x8005048 0x8006c32
 afS 0 @ 0x8005042
 "f _USART3_Config_Maybe 200 0x0800504c"
 "af+ 0x0800504c _USART3_Config_Maybe f n"
 afc arm32 @ 0x0800504c
 afb+ 0x0800504c 0x0800504c 200 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x800506e 0x80059c8
-afxC 0x8005076 0x8006f9c
-afxC 0x8005080 0x800702e
-afxC 0x800508a 0x800702e
-afxd 0x80050a6 0x8005be0
-afxC 0x80050ae 0x80074a6
-afxC 0x80050ba 0x8007594
-afxC 0x80050c6 0x8007594
-afxC 0x80050ce 0x8006f04
-afxC 0x80050e8 0x8006f0e
-afxC 0x80050f2 0x8007580
-afxC 0x80050fc 0x8007580
-afxC 0x8005104 0x8007560
-afxC 0x800510c 0x80075ce
 afS 32 @ 0x800504c
 "f fcn.08005114 186 0x08005114"
 "af+ 0x08005114 fcn.08005114 f n"
@@ -1994,33 +2311,11 @@ afS 0 @ 0x8005114
 afc arm32 @ 0x080051ce
 afb+ 0x080051ce 0x08005114 186 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x080051ce 0x080051ce 20 0x08005114 0xffffffffffffffff n
-afxC 0x80051d0 0x8005038
-afxC 0x80051d4 0x800504c
-afxC 0x80051d8 0x8005042
-afxC 0x8005132 0x8006f0e
-afxd 0x8005136 0x8005be4
-afxC 0x800513c 0x800762c
-afxd 0x8005140 0x8005be8
-afxd 0x800515e 0x8005bec
-afxC 0x8005172 0x8007718
-afxC 0x800517c 0x800776a
-afxd 0x8005180 0x8005bf0
-afxC 0x8005188 0x800774e
-afxC 0x800518e 0x800762c
-afxd 0x80051a8 0x8005bf4
-afxC 0x80051b8 0x8007718
-afxC 0x80051be 0x800777e
-afxC 0x80051c6 0x800774e
 afS 52 @ 0x80051ce
 "f fcn.080051e8 60 0x080051e8"
 "af+ 0x080051e8 fcn.080051e8 f n"
 afc arm32 @ 0x080051e8
 afb+ 0x080051e8 0x080051e8 60 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x80051fe 0x8005bec
-afxC 0x8005208 0x80077fc
-afxd 0x800520e 0x8005be4
-afxC 0x8005216 0x8007766
-afxC 0x800521e 0x800774e
 afS 0 @ 0x80051e8
 "f fcn.08005228 572 0x08005228"
 "af+ 0x08005228 fcn.08005228 f n"
@@ -2057,45 +2352,11 @@ afb+ 0x08005228 0x08005430 8 0x08005448 0x08005438 n
 afb+ 0x08005228 0x08005438 16 0x08005448 0xffffffffffffffff n
 afb+ 0x08005228 0x08005448 24 0x08005460 0xffffffffffffffff n
 afb+ 0x08005228 0x08005460 4 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8005232 0x8005464
-afxd 0x80053e6 0x8005bec
-afxC 0x80053f0 0x80077fc
-afxd 0x8005448 0x8005be4
-afxC 0x8005450 0x8007766
-afxC 0x8005458 0x800774e
-afxC 0x800543a 0x8004e40
-afxC 0x8005444 0x8007104
-afxc 0x800542a 0x8005430
-afxc 0x8005416 0x800541c
-afxc 0x8005402 0x8005408
-afxd 0x8005240 0x8005bec
-afxC 0x80053c4 0x80057a0
-afxc 0x80053ce 0x8005460
-afxC 0x800525e 0x80077fc
-afxd 0x8005320 0x8005dc8
-afxc 0x800534a 0x800536c
-afxd 0x8005382 0x8005be4
-afxC 0x800538a 0x8007766
-afxC 0x8005392 0x800774e
-afxC 0x80053aa 0x80057a0
-afxc 0x80053ae 0x8005460
-afxC 0x8005378 0x8004e40
-afxC 0x800537e 0x8007104
-afxc 0x800533c 0x8005340
-afxc 0x800532e 0x8005334
-afxc 0x800530e 0x8005318
 afS 64 @ 0x8005228
 "f fcn.08005468 118 0x08005468"
 "af+ 0x08005468 fcn.08005468 f n"
 afc arm32 @ 0x08005468
 afb+ 0x08005468 0x08005468 118 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8005486 0x8005bec
-afxd 0x800548a 0x80060a8
-afxC 0x80054ba 0x80077fc
-afxd 0x80054be 0x8005be4
-afxC 0x80054c6 0x8007766
-afxC 0x80054ce 0x800774e
-afxC 0x80054d8 0x8006970
 afS 0 @ 0x8005468
 "f _USART2_SetupMem_For_DMA1Channel6 74 0x080054de"
 "af+ 0x080054de _USART2_SetupMem_For_DMA1Channel6 f n"
@@ -2116,19 +2377,14 @@ afS 0 @ 0x8005576
 "af+ 0x08005756 fcn.08005756 f n"
 afc arm32 @ 0x08005756
 afb+ 0x08005756 0x08005756 36 0x0800774e 0xffffffffffffffff n
-afxd 0x800575c 0x8006288
-afxC 0x8005760 0x800787c
-afxd 0x8005764 0x80059cc
-afxC 0x800576a 0x8007766
-afxc 0x8005776 0x800774e
 afS 0 @ 0x8005756
 "f func_0x0800577a 26 0x0800577a"
 "af+ 0x0800577a func_0x0800577a f n"
 afc arm32 @ 0x0800577a
 afb+ 0x0800577a 0x0800577a 26 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800577a
-"f fcn.080057a0 174 0x080057a0"
-"af+ 0x080057a0 fcn.080057a0 f n"
+"f _LED_SendData_Maybe 174 0x080057a0"
+"af+ 0x080057a0 _LED_SendData_Maybe f n"
 afc arm32 @ 0x080057a0
 afb+ 0x080057a0 0x080057a0 56 0x080057ee 0x080057d8 n
 afb+ 0x080057a0 0x080057d8 12 0x0800584c 0x080057e4 n
@@ -2141,17 +2397,6 @@ afb+ 0x080057a0 0x08005814 10 0x0800581e 0xffffffffffffffff n
 afb+ 0x080057a0 0x0800581e 4 0x08005814 0x08005822 n
 afb+ 0x080057a0 0x08005822 42 0x0800584c 0xffffffffffffffff n
 afb+ 0x080057a0 0x0800584c 2 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x80057f2 0x8006164
-afxd 0x800580e 0x8005bec
-afxC 0x8005828 0x8006970
-afxC 0x8005832 0x80077fc
-afxd 0x8005836 0x8005be4
-afxC 0x8005840 0x8007766
-afxC 0x8005848 0x800774e
-afxC 0x8005802 0x8004e40
-afxC 0x8005808 0x8007104
-afxC 0x80057dc 0x8007808
-afxC 0x80057e8 0x8007808
 afS 8 @ 0x80057a0
 "f fcn.08005860 344 0x08005860"
 "af+ 0x08005860 fcn.08005860 f n"
@@ -2281,85 +2526,6 @@ afb+ 0x08006060 0x08006066 22 0x08006094 0xffffffffffffffff n
 afb+ 0x08006060 0x0800607c 4 0x08006094 0x08006080 n
 afb+ 0x08006060 0x08006080 20 0x08006094 0xffffffffffffffff n
 afb+ 0x08006060 0x08006094 18 0x08005fce 0xffffffffffffffff n
-afxd 0x8006094 0x800692c
-afxc 0x80060a4 0x8005fce
-afxc 0x8006000 0x8005576
-afxC 0x800559e 0x8004cc0
-afxd 0x80055aa 0x8006164
-afxC 0x8005602 0x80057a0
-afxC 0x8005682 0x80057a0
-afxd 0x8005638 0x80061d0
-afxC 0x8005664 0x80057a0
-afxC 0x8005644 0x8004e40
-afxC 0x800564a 0x8007104
-afxC 0x800562c 0x80057a0
-afxd 0x800568c 0x8006164
-afxC 0x80056ec 0x80057a0
-afxC 0x80056d6 0x80057a0
-afxd 0x800570a 0x8006164
-afxC 0x800572a 0x80067ee
-afxC 0x8005740 0x80057a0
-afxd 0x800574c 0x8006164
-afxc 0x800605a 0x8005dcc
-afxc 0x8006018 0x80059d0
-afxd 0x8005a06 0x8006164
-afxC 0x8005a14 0x8007104
-afxc 0x8005a36 0x8005a52
-afxC 0x8005af6 0x800486c
-afxC 0x8005b08 0x80057a0
-afxc 0x8005b0c 0x8005bdc
-afxd 0x8005b10 0x8006164
-afxc 0x8005b16 0x8005bdc
-afxC 0x8005b20 0x8007104
-afxC 0x8005b32 0x80057a0
-afxc 0x8005b36 0x8005bdc
-afxc 0x8005b40 0x8005b62
-afxc 0x8005b88 0x8005baa
-afxC 0x8005bc6 0x80057a0
-afxd 0x8005bcc 0x8006164
-afxc 0x8005bd2 0x8005bdc
-afxd 0x8005bd6 0x8006724
-afxd 0x80059fc 0x8006164
-afxc 0x8005a04 0x8005bdc
-afxc 0x800602e 0x8005860
-afxc 0x800587a 0x80058a2
-afxd 0x80058aa 0x8006164
-afxd 0x80058b6 0x8005dc8
-afxC 0x80058ba 0x8006984
-afxC 0x80058d4 0x80066e8
-afxd 0x80058d8 0x8006294
-afxd 0x80058de 0x800628c
-afxC 0x80058e2 0x8006876
-afxd 0x80058e6 0x8006298
-afxd 0x80058ec 0x8006290
-afxC 0x80058f0 0x8006876
-afxC 0x8005906 0x80057a0
-afxc 0x80058a8 0x800589c
-afxd 0x8005886 0x800628c
-afxd 0x8005892 0x8006290
-afxd 0x8005938 0x800629c
-afxC 0x800594c 0x80057a0
-afxd 0x800590e 0x8006164
-afxd 0x8005918 0x8005dc8
-afxC 0x800591c 0x8006984
-afxC 0x8005920 0x80066e8
-afxC 0x8005932 0x80057a0
-afxd 0x8005952 0x8006164
-afxc 0x800596e 0x800599a
-afxC 0x80059b2 0x80057a0
-afxc 0x80059a0 0x8005994
-afxd 0x800597c 0x800628c
-afxd 0x8005986 0x8006290
-afxc 0x8006044 0x8005bf8
-afxd 0x8005c04 0x8006284
-afxC 0x8005c10 0x8004e40
-afxC 0x8005c1a 0x8007104
-afxc 0x8005fea 0x800605c
-afxd 0x8006080 0x800692c
-afxC 0x8006090 0x80077fc
-afxd 0x8006066 0x800692c
-afxC 0x8006076 0x80077fc
-afxc 0x800607a 0x8006094
 afS 136 @ 0x8006060
 "f init_vars2 82 0x080060ac"
 "af+ 0x080060ac init_vars2 f n"
@@ -2401,42 +2567,11 @@ afb+ 0x080062a0 0x080062ec 8 0x080062ec 0x080062f4 n
 afb+ 0x080062a0 0x080062f4 22 0x08006310 0x0800630a n
 afb+ 0x080062a0 0x0800630a 6 0x08006310 0xffffffffffffffff n
 afb+ 0x080062a0 0x08006310 10 0x08006b34 0xffffffffffffffff n
-afxC 0x80062a8 0x8006aa4
-afxC 0x80062ae 0x8006d08
-afxC 0x80062b4 0x8006d18
-afxC 0x80062ba 0x8006d32
-afxC 0x80062c0 0x8006d4c
-afxC 0x80062ca 0x8006c5e
-afxC 0x80062d2 0x8006ea8
-afxC 0x80062d8 0x8006ee2
-afxC 0x80062e2 0x8006b10
-afxC 0x80062e8 0x8006b4a
-afxC 0x80062ec 0x8006b58
-afxC 0x80062f6 0x8006b62
-afxC 0x80062fc 0x8006b24
-afxC 0x8006302 0x8006ad4
-afxc 0x8006316 0x8006b34
-afxC 0x800630c 0x8006b2a
 afS 0 @ 0x80062a0
 "f _EXTl_LowPowerConfig_Maybe 310 0x0800631a"
 "af+ 0x0800631a _EXTl_LowPowerConfig_Maybe f n"
 afc arm32 @ 0x0800631a
 afb+ 0x0800631a 0x0800631a 310 0xffffffffffffffff 0xffffffffffffffff n
-afxC 0x8006320 0x80070f6
-afxC 0x800633e 0x800707c
-afxC 0x8006346 0x80070f6
-afxC 0x8006364 0x800707c
-afxC 0x800636c 0x80070f6
-afxC 0x800638a 0x800707c
-afxC 0x8006390 0x80070f6
-afxC 0x80063ac 0x800707c
-afxC 0x80063b2 0x80070f6
-afxC 0x80063ce 0x800707c
-afxC 0x80063d4 0x80070f6
-afxC 0x80063f0 0x800707c
-afxC 0x800640e 0x8006f0e
-afxC 0x800642c 0x8006f0e
-afxC 0x800644a 0x8006f0e
 afS 0 @ 0x800631a
 "f _GPIO_LowPowerMode_Maybe 494 0x08006450"
 "af+ 0x08006450 _GPIO_LowPowerMode_Maybe f n"
@@ -2452,30 +2587,16 @@ afS 0 @ 0x800663e
 "af+ 0x08006698 fcn.08006698 f n"
 afc arm32 @ 0x08006698
 afb+ 0x08006698 0x08006698 44 0x08006d7e 0xffffffffffffffff n
-afxC 0x80066a0 0x8006d66
-afxC 0x80066a8 0x8006e20
-afxd 0x80066ac 0x8006950
-afxd 0x80066b2 0x8006954
-afxC 0x80066b4 0x8006da2
-afxc 0x80066c0 0x8006d7e
 afS 0 @ 0x8006698
 "f update_vars_fromeeprom_init_others 36 0x080066c4"
 "af+ 0x080066c4 update_vars_fromeeprom_init_others f n"
 afc arm32 @ 0x080066c4
 afb+ 0x080066c4 0x080066c4 36 0x08006d7e 0xffffffffffffffff n
 afS 0 @ 0x80066c4
-"f fcn.080066e8 58 0x080066e8"
-"af+ 0x080066e8 fcn.080066e8 f n"
+"f _EEPROM_Write_Struct_1 58 0x080066e8"
+"af+ 0x080066e8 _EEPROM_Write_Struct_1 f n"
 afc arm32 @ 0x080066e8
 afb+ 0x080066e8 0x080066e8 58 0x08006d7e 0xffffffffffffffff n
-afxC 0x80066f2 0x8006d66
-afxC 0x80066fa 0x8006e20
-afxd 0x80066fe 0x800692c
-afxd 0x8006704 0x8006958
-afxC 0x8006706 0x8006da2
-afxd 0x8006710 0x800695c
-afxC 0x8006712 0x8006df4
-afxc 0x800671e 0x8006d7e
 afS 8 @ 0x80066e8
 "f init_some_10_struct2 166 0x08006728"
 "af+ 0x08006728 init_some_10_struct2 f n"
@@ -2491,12 +2612,6 @@ afS 0 @ 0x80067ce
 "af+ 0x080067ee fcn.080067ee f n"
 afc arm32 @ 0x080067ee
 afb+ 0x080067ee 0x080067ee 48 0x08006d7e 0xffffffffffffffff n
-afxC 0x80067fa 0x8006d66
-afxd 0x8006800 0x8006964
-afxC 0x8006802 0x8006df4
-afxd 0x800680c 0x8006968
-afxC 0x800680e 0x8006df4
-afxc 0x800681a 0x8006d7e
 afS 0 @ 0x80067ee
 "f fcn.0800681e 88 0x0800681e"
 "af+ 0x0800681e fcn.0800681e f n"
@@ -2507,12 +2622,6 @@ afb+ 0x0800681e 0x08006850 4 0x0800686a 0xffffffffffffffff n
 afb+ 0x0800681e 0x08006854 22 0x0800686a 0xffffffffffffffff n
 afb+ 0x0800681e 0x0800686a 4 0x08006854 0x0800686e n
 afb+ 0x0800681e 0x0800686e 8 0xffffffffffffffff 0xffffffffffffffff n
-afxC 0x8006836 0x8006d66
-afxd 0x800685a 0x8006960
-afxC 0x800685e 0x8006da2
-afxc 0x8006872 0x8006d7e
-afxd 0x8006840 0x800696c
-afxC 0x8006846 0x8006da2
 afS 0 @ 0x800681e
 "f fcn.08006876 50 0x08006876"
 "af+ 0x08006876 fcn.08006876 f n"
@@ -2521,10 +2630,6 @@ afb+ 0x08006876 0x08006876 22 0x0800689c 0xffffffffffffffff n
 afb+ 0x08006876 0x0800688c 16 0x0800689c 0xffffffffffffffff n
 afb+ 0x08006876 0x0800689c 4 0x0800688c 0x080068a0 n
 afb+ 0x08006876 0x080068a0 8 0x08006d7e 0xffffffffffffffff n
-afxC 0x8006884 0x8006d66
-afxc 0x800688a 0x800689c
-afxC 0x8006890 0x8006da2
-afxc 0x80068a4 0x8006d7e
 afS 0 @ 0x8006876
 "f copy_from_eeprom_to_mem 44 0x080068a8"
 "af+ 0x080068a8 copy_from_eeprom_to_mem f n"
@@ -2540,19 +2645,16 @@ afS 0 @ 0x80068d4
 "af+ 0x08006908 _TIM4_Disable_Wrapper f n"
 afc arm32 @ 0x08006908
 afb+ 0x08006908 0x08006908 4 0x08006234 0xffffffffffffffff n
-afxc 0x8006908 0x8006234
 afS 0 @ 0x8006908
 "f _TIM4_GetIntCounter 6 0x0800690c"
 "af+ 0x0800690c _TIM4_GetIntCounter f n"
 afc arm32 @ 0x0800690c
 afb+ 0x0800690c 0x0800690c 6 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800690c
-"f fcn.08006912 20 0x08006912"
-"af+ 0x08006912 fcn.08006912 f n"
+"f update_some_flags 20 0x08006912"
+"af+ 0x08006912 update_some_flags f n"
 afc arm32 @ 0x08006912
 afb+ 0x08006912 0x08006912 20 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8006912 0x800692c
-afxd 0x800691e 0x8006950
 afS 0 @ 0x8006912
 "f fill_array 20 0x08006970"
 "af+ 0x08006970 fill_array f n"
@@ -2838,9 +2940,6 @@ afb+ 0x08007104 0x08007118 6 0x0800711e 0xffffffffffffffff b
 afb+ 0x08007104 0x0800711e 8 0x08007126 0xffffffffffffffff b
 afb+ 0x08007104 0x08007126 10 0x08007126 0x08007130 n
 afb+ 0x08007104 0x08007130 8 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8007104 0x8007164
-afxd 0x8007106 0x8007168
-afxc 0x8007116 0x800711e
 afS 0 @ 0x8007104
 "f _Wait_x4_at_AHB/8 42 0x08007138"
 "af+ 0x08007138 _Wait_x4_at_AHB/8 f n"
@@ -2856,17 +2955,11 @@ afS 0 @ 0x800716c
 "af+ 0x08007188 fcn.08007188 f n"
 afc arm32 @ 0x08007188
 afb+ 0x08007188 0x08007188 42 0xffffffffffffffff 0xffffffffffffffff n
-afxC 0x8007194 0x8007358
-afxC 0x80071a0 0x8007b42
-afxC 0x80071aa 0x8007384
 afS 0 @ 0x8007188
 "f fcn.080071b2 36 0x080071b2"
 "af+ 0x080071b2 fcn.080071b2 f n"
 afc arm32 @ 0x080071b2
 afb+ 0x080071b2 0x080071b2 36 0xffffffffffffffff 0xffffffffffffffff n
-afxC 0x80071bc 0x80073d0
-afxC 0x80071c4 0x8007370
-afxC 0x80071ce 0x8007b6e
 afS 0 @ 0x80071b2
 "f zero_fill_bss 34 0x080071d6"
 "af+ 0x080071d6 zero_fill_bss f n"
@@ -3059,11 +3152,6 @@ afb+ 0x08007808 0x0800784e 26 0x08007872 0xffffffffffffffff n
 afb+ 0x08007808 0x08007868 10 0x08007872 0xffffffffffffffff b
 afb+ 0x08007808 0x08007872 6 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08007808 0x08007878 4 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x800780c 0x8007920
-afxC 0x800786e 0x80077fc
-afxC 0x8007858 0x80077fc
-afxC 0x8007862 0x80077fc
-afxc 0x8007866 0x8007872
 afS 0 @ 0x8007808
 "f fcn.0800787c 136 0x0800787c"
 "af+ 0x0800787c fcn.0800787c f n"
@@ -3079,12 +3167,6 @@ afb+ 0x0800787c 0x080078f2 10 0x080078fc 0xffffffffffffffff b
 afb+ 0x0800787c 0x080078fc 2 0x080078fe 0xffffffffffffffff n
 afb+ 0x0800787c 0x080078fe 2 0x08007900 0xffffffffffffffff b
 afb+ 0x0800787c 0x08007900 4 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8007884 0x8007920
-afxC 0x80078f8 0x80077fc
-afxC 0x80078e0 0x80077fc
-afxC 0x80078ec 0x80077fc
-afxc 0x80078f0 0x80078fc
-afxc 0x80078ac 0x8007900
 afS 0 @ 0x800787c
 "f some_math 28 0x08007904"
 "af+ 0x08007904 some_math f n"
@@ -3148,7 +3230,6 @@ afb+ 0x08007b42 0x08007b42 18 0x08007b68 0xffffffffffffffff n
 afb+ 0x08007b42 0x08007b54 20 0x08007b68 0xffffffffffffffff n
 afb+ 0x08007b42 0x08007b68 2 0x08007b54 0x08007b6a n
 afb+ 0x08007b42 0x08007b6a 4 0xffffffffffffffff 0xffffffffffffffff n
-afxc 0x8007b52 0x8007b68
 afS 0 @ 0x8007b42
 "f fcn.08007b6e 30 0x08007b6e"
 "af+ 0x08007b6e fcn.08007b6e f n"
@@ -3157,7 +3238,6 @@ afb+ 0x08007b6e 0x08007b6e 16 0x08007b88 0xffffffffffffffff n
 afb+ 0x08007b6e 0x08007b7e 10 0x08007b88 0xffffffffffffffff n
 afb+ 0x08007b6e 0x08007b88 2 0x08007b7e 0x08007b8a n
 afb+ 0x08007b6e 0x08007b8a 2 0xffffffffffffffff 0xffffffffffffffff n
-afxc 0x8007b7c 0x8007b88
 afS 0 @ 0x8007b6e
 "f _copy_memory_range 118 0x08007b8c"
 "af+ 0x08007b8c _copy_memory_range f n"
@@ -3300,78 +3380,11 @@ afb+ 0x08007ce6 0x080083c4 8 0x08007f92 0x080083cc n
 afb+ 0x08007ce6 0x080083cc 16 0x080083e0 0x080083dc n
 afb+ 0x08007ce6 0x080083dc 4 0x080083e0 0xffffffffffffffff n
 afb+ 0x08007ce6 0x080083e0 20 0x08007f92 0xffffffffffffffff n
-afxd 0x8007da0 0x8008588
-afxc 0x8007f38 0x8007f54
-afxC 0x8007f18 0x8006970
-afxc 0x8007f2a 0x8006970
-afxd 0x8007f70 0x8008594
-afxc 0x8007f7e 0x8007fba
-afxC 0x8007fb2 0x80083f4
-afxC 0x8007f8e 0x80084ec
-afxC 0x80083e0 0x8004180
-afxC 0x80083e4 0x8006698
-afxc 0x80083f2 0x8007f92
-afxc 0x80083ba 0x8007f92
-afxc 0x8008398 0x8007f92
-afxd 0x800836a 0x8008598
-afxc 0x8008376 0x8007f92
-afxd 0x8008340 0x8008598
-afxc 0x800834e 0x8007f92
-afxd 0x8008316 0x8008598
-afxc 0x8008324 0x8007f92
-afxd 0x80082ec 0x8008598
-afxc 0x80082fa 0x8007f92
-afxc 0x80082d2 0x8007f92
-afxC 0x8008290 0x8008450
-afxC 0x80082aa 0x80084ec
-afxc 0x80082ae 0x8007f92
-afxC 0x8008268 0x8008450
-afxC 0x8008282 0x80084ec
-afxc 0x8008286 0x8007f92
-afxC 0x8008054 0x8008450
-afxC 0x800806e 0x80084ec
-afxc 0x80080fa 0x8007f92
-afxc 0x800810e 0x8007f92
-afxc 0x8008122 0x8007f92
-afxc 0x8008136 0x8007f92
-afxd 0x8008222 0x8008598
-afxc 0x8008234 0x8007f92
-afxd 0x80081f0 0x8008598
-afxc 0x8008202 0x8007f92
-afxd 0x80081cc 0x8008598
-afxc 0x80081dc 0x8007f92
-afxd 0x80081a6 0x8008598
-afxc 0x80081b8 0x8007f92
-afxd 0x8008180 0x8008598
-afxc 0x8008192 0x8007f92
-afxc 0x8008154 0x8008166
-afxC 0x80080c8 0x80084ec
-afxC 0x8008086 0x8008450
-afxC 0x8008094 0x80084ec
-afxC 0x8008006 0x8008450
-afxC 0x8008020 0x80084ec
-afxC 0x8008038 0x8008450
-afxC 0x8008046 0x80084ec
-afxc 0x800804a 0x8008098
-afxd 0x8007ddc 0x8008590
-afxc 0x8007de0 0x8007de6
-afxC 0x8007ed2 0x80083f4
-afxc 0x8007dec 0x8007df2
-afxc 0x8007e14 0x8007e1e
-afxC 0x8007e88 0x800690c
-afxc 0x8007eae 0x8007f2e
-afxc 0x8007e60 0x8007e6a
-afxc 0x8007dce 0x8007f2e
-afxc 0x8007d9e 0x8007f2e
-afxd 0x8007d5e 0x8008588
-afxc 0x8007d48 0x8007f2e
 afS 20 @ 0x8007ce6
 "f fcn.080083f4 56 0x080083f4"
 "af+ 0x080083f4 fcn.080083f4 f n"
 afc arm32 @ 0x080083f4
 afb+ 0x080083f4 0x080083f4 56 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x800840c 0x800859c
-afxd 0x8008422 0x8008588
 afS 0 @ 0x80083f4
 "f fcn.0800842c 36 0x0800842c"
 "af+ 0x0800842c fcn.0800842c f n"
@@ -3380,7 +3393,6 @@ afb+ 0x0800842c 0x0800842c 20 0x08008446 0x08008440 n
 afb+ 0x0800842c 0x08008440 6 0x0800844c 0xffffffffffffffff n
 afb+ 0x0800842c 0x08008446 6 0x0800844c 0xffffffffffffffff b
 afb+ 0x0800842c 0x0800844c 4 0xffffffffffffffff 0xffffffffffffffff n
-afxc 0x8008444 0x800844c
 afS 0 @ 0x800842c
 "f fcn.08008450 156 0x08008450"
 "af+ 0x08008450 fcn.08008450 f n"
@@ -3405,11 +3417,6 @@ afb+ 0x08008450 0x080084d8 4 0x080084e2 0x080084dc n
 afb+ 0x08008450 0x080084dc 6 0x080084e2 0xffffffffffffffff n
 afb+ 0x08008450 0x080084e2 6 0x080084e8 0xffffffffffffffff n
 afb+ 0x08008450 0x080084e8 4 0xffffffffffffffff 0xffffffffffffffff n
-afxc 0x80084d6 0x80084e2
-afxc 0x80084ca 0x80084e2
-afxc 0x80084a0 0x80084aa
-afxc 0x800847e 0x80084aa
-afxc 0x8008474 0x80084aa
 afS 0 @ 0x8008450
 "f fcn.080084ec 112 0x080084ec"
 "af+ 0x080084ec fcn.080084ec f n"
@@ -3435,17 +3442,10 @@ afb+ 0x080084ec 0x08008550 4 0x0800855a 0x08008554 n
 afb+ 0x080084ec 0x08008554 6 0x0800855a 0xffffffffffffffff n
 afb+ 0x080084ec 0x0800855a 2 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80084ec
-"f fcn.0800855c 40 0x0800855c"
-"af+ 0x0800855c fcn.0800855c f n"
+"f clear_some_arrays 40 0x0800855c"
+"af+ 0x0800855c clear_some_arrays f n"
 afc arm32 @ 0x0800855c
 afb+ 0x0800855c 0x0800855c 40 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8008562 0x80085a0
-afxC 0x8008564 0x8006970
-afxd 0x800856c 0x80085a4
-afxC 0x800856e 0x8006970
-afxd 0x8008576 0x80085a8
-afxC 0x8008578 0x8006970
-afxd 0x800857e 0x80085ac
 afS 0 @ 0x800855c
 "f main_loop 100 0x080085b0"
 "af+ 0x080085b0 main_loop s n"
@@ -3479,11 +3479,6 @@ afb+ 0x080087a2 0x080087e8 8 0x080087f0 0xffffffffffffffff n
 afb+ 0x080087a2 0x080087f0 10 0x080087b4 0x080087fa n
 afb+ 0x080087a2 0x080087fa 24 0x080087b4 0xffffffffffffffff n
 afb+ 0x080087a2 0x08008812 8 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x80087ba 0x8008ed0
-afxd 0x80087f0 0x8008ecc
-afxC 0x80087fa 0x80044b6
-afxC 0x8008806 0x8006970
-afxd 0x80087ea 0x8008ecc
 afS 0 @ 0x80087a2
 "f fcn.0800881a 562 0x0800881a"
 "af+ 0x0800881a fcn.0800881a f n"
@@ -3532,35 +3527,6 @@ afb+ 0x0800881a 0x08008a12 14 0x0800884a 0xffffffffffffffff n
 afb+ 0x0800881a 0x08008a20 10 0x0800884a 0x08008a2a n
 afb+ 0x0800881a 0x08008a2a 26 0x0800884a 0xffffffffffffffff n
 afb+ 0x0800881a 0x08008a44 8 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8008850 0x8008ed0
-afxd 0x8008864 0x8008ecc
-afxC 0x8008a3e 0x80057a0
-afxd 0x8008a12 0x8008ecc
-afxC 0x8008a1a 0x80051e8
-afxC 0x80089ee 0x8004e40
-afxC 0x80089f8 0x8008f1e
-afxd 0x8008a02 0x8008ed8
-afxC 0x8008a06 0x8008eec
-afxC 0x80089ca 0x8005468
-afxC 0x8008972 0x8004e40
-afxC 0x800897c 0x8008f1e
-afxd 0x8008986 0x8008ed0
-afxC 0x800898e 0x8008eec
-afxC 0x80089a4 0x80057a0
-afxd 0x80089aa 0x8008ecc
-afxC 0x8008940 0x80057a0
-afxC 0x8008928 0x80057a0
-afxC 0x80088ba 0x8004e40
-afxC 0x80088c8 0x8008f1e
-afxd 0x80088d2 0x8008ed0
-afxC 0x80088da 0x8008eec
-afxC 0x80088f2 0x80057a0
-afxd 0x80088f8 0x8008ecc
-afxC 0x80088a2 0x8005228
-afxC 0x8008880 0x8004e40
-afxC 0x800888a 0x8008f1e
-afxd 0x8008894 0x8008ed8
-afxC 0x8008898 0x8008eec
 afS 0 @ 0x800881a
 "f fcn.08008a4c 146 0x08008a4c"
 "af+ 0x08008a4c fcn.08008a4c f n"
@@ -3583,13 +3549,6 @@ afb+ 0x08008a4c 0x08008abc 6 0x08008a64 0x08008ac2 n
 afb+ 0x08008a4c 0x08008ac2 4 0x08008a64 0x08008ac6 n
 afb+ 0x08008a4c 0x08008ac6 16 0x08008a64 0xffffffffffffffff n
 afb+ 0x08008a4c 0x08008ad6 8 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8008a6a 0x8008ecc
-afxd 0x8008a8c 0x8008edc
-afxC 0x8008a90 0x8008f1e
-afxd 0x8008a9a 0x8008edc
-afxC 0x8008a9e 0x8008eec
-afxd 0x8008aaa 0x8008ecc
-afxC 0x8008ac8 0x8004e40
 afS 0 @ 0x8008a4c
 "f fcn.08008ade 322 0x08008ade"
 "af+ 0x08008ade fcn.08008ade f n"
@@ -3623,14 +3582,6 @@ afb+ 0x08008ade 0x08008bfe 12 0x08008af2 0x08008c0a n
 afb+ 0x08008ade 0x08008c0a 12 0x08008af2 0xffffffffffffffff n
 afb+ 0x08008ade 0x08008c16 6 0x08008c1c 0xffffffffffffffff n
 afb+ 0x08008ade 0x08008c1c 4 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8008af8 0x8008ed0
-afxd 0x8008bfe 0x8008ecc
-afxd 0x8008b18 0x8008ecc
-afxC 0x8008b60 0x8006984
-afxC 0x8008b64 0x80066e8
-afxd 0x8008b90 0x8008ee0
-afxC 0x8008bd4 0x80047be
-afxC 0x8008be6 0x80057a0
 afS 60 @ 0x8008ade
 "f fcn.08008c20 152 0x08008c20"
 "af+ 0x08008c20 fcn.08008c20 f n"
@@ -3649,20 +3600,6 @@ afb+ 0x08008c20 0x08008c86 20 0x08008c38 0x08008c9a n
 afb+ 0x08008c20 0x08008c9a 14 0x08008c38 0x08008ca8 n
 afb+ 0x08008c20 0x08008ca8 8 0x08008c38 0xffffffffffffffff n
 afb+ 0x08008c20 0x08008cb0 8 0xffffffffffffffff 0xffffffffffffffff n
-afxC 0x8008c3e 0x800577a
-afxd 0x8008c48 0x8008ecc
-afxC 0x8008c50 0x8004e1e
-afxC 0x8008c54 0x8004dfc
-afxd 0x8008c5a 0x8008ee4
-afxC 0x8008c5e 0x8008f1e
-afxd 0x8008c68 0x8008ee4
-afxd 0x8008c6c 0x8008ecc
-afxC 0x8008c86 0x8004e1e
-afxC 0x8008c92 0x8008eec
-afxC 0x8008c9c 0x8008f2c
-afxC 0x8008ca0 0x800577a
-afxC 0x8008caa 0x8005756
-afxC 0x8008c7a 0x8008eec
 afS 0 @ 0x8008c20
 "f fcn.08008cb8 84 0x08008cb8"
 "af+ 0x08008cb8 fcn.08008cb8 f n"
@@ -3678,9 +3615,6 @@ afb+ 0x08008cb8 0x08008ce8 12 0x08008ccc 0xffffffffffffffff n
 afb+ 0x08008cb8 0x08008cf4 4 0x08008ccc 0x08008cf8 n
 afb+ 0x08008cb8 0x08008cf8 12 0x08008ccc 0xffffffffffffffff n
 afb+ 0x08008cb8 0x08008d04 8 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8008cd2 0x8008ecc
-afxC 0x8008cfe 0x8006060
-afxC 0x8008cee 0x8006060
 afS 0 @ 0x8008cb8
 "f fcn.08008d0c 104 0x08008d0c"
 "af+ 0x08008d0c fcn.08008d0c f n"
@@ -3699,10 +3633,6 @@ afb+ 0x08008d0c 0x08008d5c 8 0x08008d64 0xffffffffffffffff b
 afb+ 0x08008d0c 0x08008d64 4 0x08008d26 0x08008d68 n
 afb+ 0x08008d0c 0x08008d68 4 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08008d0c 0x08008d6c 8 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8008d2c 0x8008ed0
-afxC 0x8008d3a 0x8008f32
-afxC 0x8008d46 0x800690c
-afxC 0x8008d4e 0x8008f68
 afS 0 @ 0x8008d0c
 "f fcn.08008d74 340 0x08008d74"
 "af+ 0x08008d74 fcn.08008d74 f n"
@@ -3735,44 +3665,9 @@ afb+ 0x08008d74 0x08008e82 4 0x08008e86 0xffffffffffffffff n
 afb+ 0x08008d74 0x08008e86 52 0x08008eba 0xffffffffffffffff b
 afb+ 0x08008d74 0x08008eba 6 0x08008d86 0xffffffffffffffff n
 afb+ 0x08008d74 0x08008ec0 8 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8008d8c 0x8008ecc
-afxC 0x8008d9e 0x800460c
-afxC 0x8008e78 0x80090ac
-afxC 0x8008e8a 0x8005020
-afxC 0x8008e8e 0x80051ce
-afxC 0x8008ea4 0x8006908
-afxC 0x8008ea8 0x80068d4
-afxC 0x8008eae 0x8006912
-afxC 0x8008eb2 0x8004180
-afxC 0x8008eb6 0x800855c
-afxC 0x8008e82 0x800663e
-afxC 0x8008e36 0x80090ac
-afxC 0x8008e5a 0x8006908
-afxC 0x8008e5e 0x80068d4
-afxC 0x8008e62 0x8005020
-afxC 0x8008e66 0x80051ce
-afxC 0x8008e6a 0x8004180
-afxC 0x8008e6e 0x800855c
-afxC 0x8008e40 0x800663e
-afxC 0x8008dd2 0x8006eba
-afxC 0x8008dd8 0x8006ee2
-afxC 0x8008de0 0x80041ae
-afxC 0x8008de8 0x80043d8
-afxC 0x8008dec 0x80044d6
-afxC 0x8008df0 0x80044b6
-afxC 0x8008df4 0x8005020
-afxC 0x8008df8 0x80051ce
-afxC 0x8008e0e 0x8006908
-afxC 0x8008e12 0x80068d4
-afxC 0x8008e16 0x8004180
-afxC 0x8008e1a 0x80046f0
-afxC 0x8008e1e 0x8004724
-afxC 0x8008e22 0x8004784
-afxC 0x8008e26 0x8009030
-afxC 0x8008da8 0x8004636
 afS 0 @ 0x8008d74
-"f _TIM4_ReadIntCounter 4 0x08008ee8"
-"af+ 0x08008ee8 _TIM4_ReadIntCounter f n"
+"f _TIM4_GetIntCounter_Wrapper 4 0x08008ee8"
+"af+ 0x08008ee8 _TIM4_GetIntCounter_Wrapper f n"
 afc arm32 @ 0x08008ee8
 afb+ 0x08008ee8 0x08008ee8 4 0x0800690c 0xffffffffffffffff n
 afS 0 @ 0x8008ee8
@@ -3782,13 +3677,11 @@ afc arm32 @ 0x08008eec
 afb+ 0x08008eec 0x08008eec 10 0x08008f1a 0x08008ef6 n
 afb+ 0x08008eec 0x08008ef6 36 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08008eec 0x08008f1a 4 0xffffffffffffffff 0xffffffffffffffff n
-afxC 0x8008efa 0x8008ee8
 afS 0 @ 0x8008eec
 "f fcn.08008f1e 14 0x08008f1e"
 "af+ 0x08008f1e fcn.08008f1e f n"
 afc arm32 @ 0x08008f1e
 afb+ 0x08008f1e 0x08008f1e 14 0xffffffffffffffff 0xffffffffffffffff n
-afxC 0x8008f24 0x8008ee8
 afS 0 @ 0x8008f1e
 "f fcn.08008f2c 6 0x08008f2c"
 "af+ 0x08008f2c fcn.08008f2c f n"
@@ -3818,67 +3711,45 @@ afb+ 0x08008f68 0x08008fd0 20 0x08008f82 0x08008fe4 n
 afb+ 0x08008f68 0x08008fe4 14 0x08008f82 0x08008ff2 n
 afb+ 0x08008f68 0x08008ff2 48 0x08008fc2 0xffffffffffffffff n
 afb+ 0x08008f68 0x08009022 12 0xffffffffffffffff 0xffffffffffffffff n
-afxC 0x8008f9c 0x80084ec
-afxC 0x8008fae 0x800842c
-afxC 0x8008ffa 0x80084ec
-afxC 0x800900c 0x800842c
 afS 0 @ 0x8008f68
 "f fcn.08009030 20 0x08009030"
 "af+ 0x08009030 fcn.08009030 f n"
 afc arm32 @ 0x08009030
 afb+ 0x08009030 0x08009030 20 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8009030 0x8009044
-afxd 0x8009038 0x8009048
-afxd 0x800903c 0x800904c
 afS 0 @ 0x8009030
-"f fcn.08009050 92 0x08009050"
-"af+ 0x08009050 fcn.08009050 f n"
+"f _USB_WakeUpIntDisable_Maybe 92 0x08009050"
+"af+ 0x08009050 _USB_WakeUpIntDisable_Maybe f n"
 afc arm32 @ 0x08009050
 afb+ 0x08009050 0x08009050 92 0xffffffffffffffff 0xffffffffffffffff n
-afxC 0x8009056 0x80070f6
-afxC 0x800906e 0x800707c
-afxC 0x8009076 0x8006f04
-afxC 0x800908e 0x8006f0e
-afxC 0x80090a6 0x8006f0e
 afS 0 @ 0x8009050
-"f fcn.080090ac 24 0x080090ac"
-"af+ 0x080090ac fcn.080090ac f n"
+"f _USB_PeriphDisable_Maybe 24 0x080090ac"
+"af+ 0x080090ac _USB_PeriphDisable_Maybe f n"
 afc arm32 @ 0x080090ac
 afb+ 0x080090ac 0x080090ac 24 0x08006c5e 0xffffffffffffffff n
-afxC 0x80090ae 0x80090e6
-afxC 0x80090b2 0x8009050
-afxc 0x80090c0 0x8006c5e
 afS 0 @ 0x80090ac
 "f fcn.080090c4 34 0x080090c4"
 "af+ 0x080090c4 fcn.080090c4 f n"
 afc arm32 @ 0x080090c4
 afb+ 0x080090c4 0x080090c4 34 0xffffffffffffffff 0xffffffffffffffff n
-afxC 0x80090c8 0x8004d02
-afxd 0x80090cc 0x80091b8
-afxd 0x80090dc 0x80091bc
 afS 0 @ 0x80090c4
-"f fcn.080090e6 34 0x080090e6"
-"af+ 0x080090e6 fcn.080090e6 f n"
+"f _USB_PowerDown_Maybe 34 0x080090e6"
+"af+ 0x080090e6 _USB_PowerDown_Maybe f n"
 afc arm32 @ 0x080090e6
 afb+ 0x080090e6 0x080090e6 34 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x80090e8 0x80091b8
-afxC 0x80090fc 0x8004d02
 afS 0 @ 0x80090e6
 "f fcn.08009108 20 0x08009108"
 "af+ 0x08009108 fcn.08009108 f n"
 afc arm32 @ 0x08009108
 afb+ 0x08009108 0x08009108 20 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8009108 0x80091b8
 afS 0 @ 0x8009108
 "f fcn.08009120 152 0x08009120"
 "af+ 0x08009120 fcn.08009120 f n"
 afc arm32 @ 0x08009120
-afb+ 0x08009120 0x08009120 152 0xffffffffffffffff 0xffffffffffffffff n
+afb+ 0x08009120 0x08009120 8 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08009120 0x08009128 2 0x0800912a 0xffffffffffffffff n
 afb+ 0x08009120 0x0800912a 6 0x080091b2 0x08009130 n
 afb+ 0x08009120 0x08009130 4 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08009120 0x080091b2 6 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8009122 0x80091c0
 afS 0 @ 0x8009120
 "f fcn.080091c4 36 0x080091c4"
 "af+ 0x080091c4 fcn.080091c4 f n"
@@ -3893,9 +3764,6 @@ afb+ 0x080091e8 0x080091fc 6 0x08009218 0x08009202 n
 afb+ 0x080091e8 0x08009202 6 0x08009218 0x08009208 n
 afb+ 0x080091e8 0x08009208 16 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x080091e8 0x08009218 4 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x80091ea 0x8009a0c
-afxd 0x80091f2 0x8009a14
-afxd 0x800920a 0x8009a10
 afS 0 @ 0x80091e8
 "f fcn.0800921c 36 0x0800921c"
 "af+ 0x0800921c fcn.0800921c f n"
@@ -3911,9 +3779,6 @@ afb+ 0x08009240 0x08009262 6 0x08009288 0x08009268 n
 afb+ 0x08009240 0x08009268 6 0x08009288 0x0800926e n
 afb+ 0x08009240 0x0800926e 26 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08009240 0x08009288 4 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8009242 0x8009a0c
-afxd 0x800924c 0x8009a18
-afxd 0x800926e 0x8009a10
 afS 0 @ 0x8009240
 "f fcn.0800928c 170 0x0800928c"
 "af+ 0x0800928c fcn.0800928c f n"
@@ -3943,15 +3808,6 @@ afb+ 0x08009336 0x080093c8 28 0x080093fa 0xffffffffffffffff n
 afb+ 0x08009336 0x080093e4 22 0x080093fa 0xffffffffffffffff n
 afb+ 0x08009336 0x080093fa 14 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08009336 0x08009408 4 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8009338 0x8009a0c
-afxd 0x8009368 0x8009a20
-afxd 0x800937e 0x8009a14
-afxd 0x80093fa 0x8009a10
-afxC 0x80093e6 0x80072dc
-afxd 0x80093c8 0x8009a24
-afxC 0x80093d2 0x8007396
-afxC 0x80093a4 0x8007300
-afxC 0x80093ac 0x8007220
 afS 0 @ 0x8009336
 "f fcn.0800940c 126 0x0800940c"
 "af+ 0x0800940c fcn.0800940c f n"
@@ -3968,19 +3824,11 @@ afb+ 0x0800940c 0x0800944e 12 0x0800946c 0x0800945a n
 afb+ 0x0800940c 0x0800945a 18 0x0800947c 0xffffffffffffffff n
 afb+ 0x0800940c 0x0800946c 16 0x0800947c 0xffffffffffffffff b
 afb+ 0x0800940c 0x0800947c 14 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x800940e 0x8009a0c
-afxd 0x800941a 0x8009a20
-afxd 0x8009430 0x8009a14
-afxd 0x800947c 0x8009a10
-afxc 0x800946a 0x800947c
-afxc 0x800942a 0x8009430
 afS 0 @ 0x800940c
 "f fcn.0800948a 30 0x0800948a"
 "af+ 0x0800948a fcn.0800948a f n"
 afc arm32 @ 0x0800948a
 afb+ 0x0800948a 0x0800948a 30 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x800948c 0x8009a0c
-afxd 0x800949a 0x8009a10
 afS 0 @ 0x800948a
 "f fcn.080094a8 28 0x080094a8"
 "af+ 0x080094a8 fcn.080094a8 f n"
@@ -4004,15 +3852,6 @@ afb+ 0x080094c4 0x0800953a 8 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x080094c4 0x08009542 2 0x08009564 0x08009544 n
 afb+ 0x080094c4 0x08009544 32 0x08009564 0xffffffffffffffff n
 afb+ 0x080094c4 0x08009564 2 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x80094c6 0x8009a0c
-afxd 0x800954c 0x8009a30
-afxd 0x8009554 0x8009a34
-afxd 0x800955e 0x8009a2c
-afxd 0x8009510 0x8009a28
-afxC 0x800951a 0x8007384
-afxd 0x8009520 0x8009a2c
-afxC 0x80094f8 0x8007370
-afxC 0x8009502 0x8007b6e
 afS 0 @ 0x80094c4
 "f fcn.08009566 166 0x08009566"
 "af+ 0x08009566 fcn.08009566 f n"
@@ -4029,19 +3868,6 @@ afb+ 0x08009566 0x080095c0 4 0x080095c6 0x080095c4 n
 afb+ 0x08009566 0x080095c4 2 0x080095c6 0xffffffffffffffff n
 afb+ 0x08009566 0x080095c6 62 0x08009604 0xffffffffffffffff b
 afb+ 0x08009566 0x08009604 8 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x800956a 0x8009a0c
-afxC 0x80095d0 0x8007358
-afxC 0x80095da 0x8007b42
-afxC 0x80095e2 0x8007384
-afxd 0x80095f4 0x8009a2c
-afxd 0x80095fe 0x8009a28
-afxc 0x80095bc 0x80095c0
-afxd 0x8009580 0x8009a2c
-afxd 0x8009584 0x8009a38
-afxc 0x80095b2 0x8009604
-afxd 0x8009590 0x8009a30
-afxd 0x8009598 0x8009a34
-afxc 0x80095aa 0x8009604
 afS 0 @ 0x8009566
 "f fcn.0800960c 218 0x0800960c"
 "af+ 0x0800960c fcn.0800960c f n"
@@ -4080,25 +3906,6 @@ afb+ 0x0800960c 0x080096bc 4 0x080096c4 0x080096c0 n
 afb+ 0x0800960c 0x080096c0 4 0x080096e0 0xffffffffffffffff n
 afb+ 0x0800960c 0x080096c4 28 0x080096e0 0xffffffffffffffff b
 afb+ 0x0800960c 0x080096e0 6 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8009610 0x8009a0c
-afxd 0x80096c8 0x8009a30
-afxd 0x80096d0 0x8009a34
-afxd 0x80096da 0x8009a2c
-afxc 0x80096c2 0x80096e0
-afxd 0x80096aa 0x8009a18
-afxc 0x80096ba 0x80096e0
-afxC 0x80096a0 0x800940c
-afxC 0x8009696 0x8009336
-afxc 0x800969a 0x80096a4
-afxC 0x8009688 0x8009240
-afxc 0x800968c 0x80096a4
-afxc 0x800967a 0x80096a4
-afxC 0x800965e 0x800948a
-afxc 0x8009662 0x80096a4
-afxc 0x8009648 0x80096e0
-afxc 0x800964c 0x80096a4
-afxC 0x8009624 0x80091e8
-afxc 0x8009628 0x80096a4
 afS 0 @ 0x800960c
 "f fcn.080096e6 438 0x080096e6"
 "af+ 0x080096e6 fcn.080096e6 f n"
@@ -4171,50 +3978,6 @@ afb+ 0x080096e6 0x0800986a 12 0x0800987c 0x08009876 n
 afb+ 0x080096e6 0x08009876 6 0x0800987c 0xffffffffffffffff n
 afb+ 0x080096e6 0x0800987c 18 0x08009566 0xffffffffffffffff n
 afb+ 0x080096e6 0x0800988e 14 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x80096e8 0x8009a0c
-afxd 0x800980a 0x8009a18
-afxd 0x8009896 0x8009a28
-afxd 0x800987c 0x8009a18
-afxc 0x800988c 0x8009566
-afxd 0x800956a 0x8009a0c
-afxC 0x80095d0 0x8007358
-afxC 0x80095da 0x8007b42
-afxC 0x80095e2 0x8007384
-afxd 0x80095f4 0x8009a2c
-afxd 0x80095fe 0x8009a28
-afxc 0x80095bc 0x80095c0
-afxd 0x8009580 0x8009a2c
-afxd 0x8009584 0x8009a38
-afxc 0x80095b2 0x8009604
-afxd 0x8009590 0x8009a30
-afxd 0x8009598 0x8009a34
-afxc 0x80095aa 0x8009604
-afxd 0x8009854 0x8009a18
-afxd 0x8009878 0x8009a38
-afxd 0x8009864 0x8009a38
-afxc 0x8009868 0x800987c
-afxc 0x800984e 0x800987c
-afxc 0x8009806 0x8009816
-afxd 0x80097e4 0x8009a18
-afxd 0x80097f0 0x8009a44
-afxd 0x80097b6 0x8009a40
-afxc 0x80097b8 0x80097f2
-afxd 0x8009782 0x8009a20
-afxd 0x8009796 0x8009a14
-afxd 0x80097a6 0x8009a3c
-afxc 0x80097a8 0x80097f2
-afxc 0x8009790 0x8009796
-afxd 0x8009758 0x8009a18
-afxd 0x800976c 0x8009a3c
-afxc 0x800976e 0x80097f2
-afxd 0x8009748 0x8009a3c
-afxc 0x800974a 0x80097f2
-afxd 0x800971c 0x8009a18
-afxc 0x8009722 0x80097f2
-afxd 0x8009710 0x8009a18
-afxc 0x8009716 0x80097f2
-afxd 0x8009704 0x8009a18
-afxc 0x800970a 0x80097f2
 afS 0 @ 0x80096e6
 "f fcn.0800989c 310 0x0800989c"
 "af+ 0x0800989c fcn.0800989c f n"
@@ -4230,20 +3993,6 @@ afb+ 0x0800989c 0x080099b6 14 0x080099c4 0xffffffffffffffff n
 afb+ 0x0800989c 0x080099c4 6 0x080099ce 0x080099ca n
 afb+ 0x0800989c 0x080099ca 4 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x0800989c 0x080099ce 4 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x800989e 0x8009a30
-afxd 0x80098a4 0x8009a48
-afxd 0x80098b4 0x8009a0c
-afxC 0x8009902 0x80096e6
-afxc 0x800990a 0x800999e
-afxd 0x80099a0 0x8009a24
-afxC 0x80099a8 0x8007396
-afxd 0x80099ac 0x8009a0c
-afxd 0x80099ba 0x8009a28
-afxd 0x80099c0 0x8009a2c
-afxC 0x80098fc 0x800960c
-afxc 0x8009900 0x8009906
-afxC 0x80098d2 0x8007400
-afxC 0x80098e0 0x8007400
 afS 0 @ 0x800989c
 "f fcn.0800990c 198 0x0800990c"
 "af+ 0x0800990c fcn.0800990c f n"
@@ -4263,19 +4012,6 @@ afb+ 0x0800990c 0x080099b6 14 0x080099c4 0xffffffffffffffff n
 afb+ 0x0800990c 0x080099c4 6 0x080099ce 0x080099ca n
 afb+ 0x0800990c 0x080099ca 4 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x0800990c 0x080099ce 4 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x800990e 0x8009a0c
-afxC 0x800991c 0x8009566
-afxc 0x8009924 0x8009954
-afxc 0x800995c 0x800999e
-afxd 0x80099a0 0x8009a24
-afxC 0x80099a8 0x8007396
-afxd 0x80099ac 0x8009a0c
-afxd 0x80099ba 0x8009a28
-afxd 0x80099c0 0x8009a2c
-afxd 0x8009946 0x8009a18
-afxc 0x8009950 0x8009954
-afxC 0x800993a 0x80099d2
-afxd 0x800993e 0x8009a10
 afS 0 @ 0x800990c
 "f fcn.0800995e 116 0x0800995e"
 "af+ 0x0800995e fcn.0800995e f n"
@@ -4294,17 +4030,6 @@ afb+ 0x0800995e 0x080099b6 14 0x080099c4 0xffffffffffffffff n
 afb+ 0x0800995e 0x080099c4 6 0x080099ce 0x080099ca n
 afb+ 0x0800995e 0x080099ca 4 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x0800995e 0x080099ce 4 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x8009960 0x8009a0c
-afxc 0x8009970 0x8009996
-afxd 0x80099a0 0x8009a24
-afxC 0x80099a8 0x8007396
-afxd 0x80099ac 0x8009a0c
-afxd 0x80099ba 0x8009a28
-afxd 0x80099c0 0x8009a2c
-afxC 0x800997a 0x80094c4
-afxc 0x8009982 0x8009996
-afxd 0x8009988 0x8009a18
-afxc 0x8009992 0x8009996
 afS 0 @ 0x800995e
 "f fcn.080099d2 58 0x080099d2"
 "af+ 0x080099d2 fcn.080099d2 f n"
@@ -4313,10 +4038,6 @@ afb+ 0x080099d2 0x080099d2 16 0x080099fc 0xffffffffffffffff n
 afb+ 0x080099d2 0x080099e2 26 0x080099fc 0xffffffffffffffff n
 afb+ 0x080099d2 0x080099fc 4 0x080099e2 0x08009a00 n
 afb+ 0x080099d2 0x08009a00 12 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x80099d4 0x8009a14
-afxd 0x80099da 0x8009a20
-afxc 0x80099e0 0x80099fc
-afxd 0x8009a04 0x8009a4c
 afS 0 @ 0x80099d2
 "f nmi_handler 2 0x08009d34"
 "af+ 0x08009d34 nmi_handler f n"
@@ -4459,16 +4180,6 @@ afb+ 0x0800a0b0 0x0800a22a 6 0x0800a234 0x0800a230 n
 afb+ 0x0800a0b0 0x0800a230 4 0x0800a234 0xffffffffffffffff n
 afb+ 0x0800a0b0 0x0800a234 4 0x0800a238 0xffffffffffffffff n
 afb+ 0x0800a0b0 0x0800a238 2 0xffffffffffffffff 0xffffffffffffffff n
-afxd 0x800a0b8 0x800a23c
-afxc 0x800a0c2 0x800a118
-afxd 0x800a11a 0x800a248
-afxd 0x800a12a 0x800a24c
-afxd 0x800a10c 0x800a244
-afxd 0x800a0e4 0x800a240
-afxd 0x800a130 0x800a250
-afxC 0x800a202 0x800995e
-afxC 0x800a1b8 0x800989c
-afxC 0x800a16a 0x800990c
 afS 0 @ 0x800a0b0
 "f load_byte_from_flash_region 34 0x0800a254"
 "af+ 0x0800a254 load_byte_from_flash_region f n"
@@ -6952,4 +6663,4 @@ tk func.llround.args=1
 tk strndup=func
 # macros
 # seek
-s 0x0800a8a0
+s 0x080085b0

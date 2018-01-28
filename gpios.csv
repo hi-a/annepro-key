@@ -1,34 +1,34 @@
-"Port","Pin","Function","Description","Mode","Speed","Otype","PuPd","EXTl"
-"A",5,"GPIO","Column 1","OUT",3,0,"NAN (1)",
-"A",6,"GPIO","Column 2","OUT",3,0,"NAN (1)",
-"A",7,"GPIO","Column 3","OUT",3,0,"NAN (1)",
-"B",0,"GPIO","Column 4","OUT",3,0,"NAN (1)",
-"B",1,"GPIO","Column 5","OUT",3,0,"NAN (1)",
-"B",12,"GPIO","Column 6","OUT",3,0,"NAN (1)",
-"B",13,"GPIO","Column 7","OUT",3,0,"NAN (1)",
-"B",14,"GPIO","Column 8","OUT",3,0,"NAN (1)",
-"A",8,"GPIO","Column 9","OUT",3,0,"NAN (1)",
-"A",9,"GPIO","Column 10","OUT",3,0,"NAN (1)",
-"A",15,"GPIO","Column 11","OUT",3,0,"NAN (1)",
-"B",3,"GPIO","Column 12","OUT",3,0,"NAN (1)",
-"B",4,"GPIO","Column 13","OUT",3,0,"NAN (1)",
-"B",5,"GPIO","Column 14","OUT",3,0,"NAN (1)",
-,,,,,,,,
-"B",9,"GPIO","Row 1","IN",3,"NaN",2,9
-"B",8,"GPIO","Row 2","IN",3,"NaN",2,8
-"B",7,"GPIO","Row 3","IN",3,"NaN",2,7
-"B",6,"GPIO","Row 4","IN",3,"NaN",2,6
-"A",0,"GPIO","Row 5","IN",3,"NaN",2,0
-,,,,,,,,
-"A",2,"USART2 TX","BT P0_3","AF",0,1,0,
-"A",3,"USART2 RX","BT P0_2","AF",0,1,0,
-"B",10,"USART3 TX","LED PB11","AF",0,1,3,
-"B",11,"USART3 RX","LED PB10","AF",0,1,3,
-,,,,,,,,
-"A",10,"GPIO","USB D+","OUT",3,0,"NaN (8)",
-"A",11,"GPIO","USB D+",,,,,
-"A",12,"GPIO","USB D-",,,,,
-,,,,,,,,
-"B",15,"GPIO","Li-Ion charger PGOOD","IN","NaN","NaN",1,15
-"C",15,"GPIO","LED WKUP2","OUT",3,0,"NAN (1)",
-"A",1,"GPIO","BT P1_0","OUT",3,0,"NAN (1)",
+"Port","Pin","Function","Description","Mode","Speed","Otype","PuPd","EXTl","ADDR"
+"A",5,"GPIO","Column 1","OUT",3,0,"NAN (1)",,"0x20000588"
+"A",6,"GPIO","Column 2","OUT",3,0,"NAN (1)",,
+"A",7,"GPIO","Column 3","OUT",3,0,"NAN (1)",,
+"B",0,"GPIO","Column 4","OUT",3,0,"NAN (1)",,
+"B",1,"GPIO","Column 5","OUT",3,0,"NAN (1)",,
+"B",12,"GPIO","Column 6","OUT",3,0,"NAN (1)",,
+"B",13,"GPIO","Column 7","OUT",3,0,"NAN (1)",,
+"B",14,"GPIO","Column 8","OUT",3,0,"NAN (1)",,
+"A",8,"GPIO","Column 9","OUT",3,0,"NAN (1)",,
+"A",9,"GPIO","Column 10","OUT",3,0,"NAN (1)",,
+"A",15,"GPIO","Column 11","OUT",3,0,"NAN (1)",,
+"B",3,"GPIO","Column 12","OUT",3,0,"NAN (1)",,
+"B",4,"GPIO","Column 13","OUT",3,0,"NAN (1)",,
+"B",5,"GPIO","Column 14","OUT",3,0,"NAN (1)",,
+,,,,,,,,,
+"B",9,"GPIO","Row 1","IN",3,"NaN",2,9,"0x20000628"
+"B",8,"GPIO","Row 2","IN",3,"NaN",2,8,
+"B",7,"GPIO","Row 3","IN",3,"NaN",2,7,
+"B",6,"GPIO","Row 4","IN",3,"NaN",2,6,
+"A",0,"GPIO","Row 5","IN",3,"NaN",2,0,
+,,,,,,,,,
+"A",2,"USART2 TX","BT P0_3","AF",0,1,0,,
+"A",3,"USART2 RX","BT P0_2","AF",0,1,0,,
+"B",10,"USART3 TX","LED PB11","AF",0,1,3,,
+"B",11,"USART3 RX","LED PB10","AF",0,1,3,,
+,,,,,,,,,
+"A",10,"GPIO","USB D+","OUT",3,0,"NaN (8)",,"0x20000718"
+"A",11,"GPIO","USB D+","OUT/IN",2,0,"NaN",,"0x200006e8"
+"A",12,"GPIO","USB D-","IN",2,"NaN",0,,"0x200006f4"
+,,,,,,,,,
+"B",15,"GPIO","Li-Ion charger PGOOD","IN","NaN","NaN",1,15,"0x20000710"
+"C",15,"GPIO","LED WKUP2 PC13","OUT",3,0,"NAN (1)",,"0x20000708"
+"A",1,"GPIO","BT P1_0","OUT",3,0,"NAN (1)",,"0x20000700"

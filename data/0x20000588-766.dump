@@ -90,13 +90,15 @@ Pins END
 0x200006dc      .dword 0x08009a51
 0x200006e0      .dword 0x08009a51
 0x200006e4      .dword 0x08009a51
+Pins START - USB
 0x200006e8      .dword 0x40020000
 0x200006ec      .dword 0x000b0800
 0x200006f0      .dword 0x0000000a
 0x200006f4      .dword 0x40020000
 0x200006f8      .dword 0x000c1000
 0x200006fc      .dword 0x0000000a
-Pins START - ??
+Pins END
+Pins START - Other peripherals
 0x20000700      .dword 0x40020000
 0x20000704      .dword 0x00000002
 0x20000708      .dword 0x40020800
