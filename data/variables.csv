@@ -88,7 +88,7 @@
 ,,,,,,,,,,,,,,
 ,,,"B","0x200018fc",,,,,,,,,2,
 ,,,,,,,,,,,,,,
-,,"Must be a pointer","W","0x20001910",,,,,,,,,"0x200018f4",
+"&pInformation",,"pointer to USB struct pInformation","W","0x20001910",,,,,,,,,"0x200018f4",
 ,,"Must be a pointer","W","0x20001914",,,,,,,,,"0x200005f8",
 ,,"Must be a pointer","W","0x20001918",,,,,,,,,"0x20000650",
 ,,,,,,,,,,,,,,
@@ -99,5 +99,8 @@
 ,,,,,,,,,,,,,,
 ,,"TIM4_IntCounter stored here @0x08008f1e","W","0x20001968",,,,,,,,,,
 ,,"0x1388 (5000) stored here @0x08008f1e","W","0x2000196c",,,,,,,,,,
+,,,,,,,,,,,,,,
+"bDeviceState",,"in USB_Port_Init()","W","0x2000198c",,,,,,,,,,
+"wInterrupt_Mask",,"in USB_SIL_Init (0xbf00)","H","0x20001990",,,,,,,,,,
 ,,,,,,,,,,,,,,
 ,,"flag set when arrays cleard @0x0800855c","B","0x20001994",,,,,,,,,,1

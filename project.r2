@@ -1,15 +1,15 @@
 # r2 rdb project file
 # flags
 fs *
-f adc1_handler 4 0x0800a860 
+f ADC1_IRQHandler 4 0x0800a860 
 fs *
 f bkpt_loop 16 0x0800a420 
 fs *
 f blank 1 0x00000000 
 fs *
-f busfault_handler 2 0x08009d3a 
+f BusFault_Handler 2 0x08009d3a 
 fs *
-f comp_handler 4 0x0800a86c 
+f COMP_IRQHandler 4 0x0800a86c 
 fs *
 f copy_array 12 0x080077fc 
 fs *
@@ -21,7 +21,7 @@ f copy_memory_range 118 0x08007b8c
 fs *
 f cpsr 1 0x00000000 
 fs *
-f dac_handler 4 0x0800a868 
+f DAC_IRQHandler 4 0x0800a868 
 fs *
 f data1 1 0x0800a8b0 
 fs *
@@ -35,21 +35,21 @@ f DATA_EEPROM_FastProgramByte 82 0x08006da2
 fs *
 f DATA_EEPROM_FastProgramWord 44 0x08006df4 
 fs *
-f debugmon_handler 2 0x08009d40 
+f DebugMon_Handler 2 0x08009d40 
 fs *
-f dma1channel1_handler 4 0x0800a84c 
+f DMA1_Channel1_IRQHandler 4 0x0800a84c 
 fs *
-f dma1channel2_handler 30 0x08009e76 
+f DMA1_Channel2_IRQHandler 30 0x08009e76 
 fs *
-f dma1channel3_handler 4 0x0800a850 
+f DMA1_Channel3_IRQHandler 4 0x0800a850 
 fs *
-f dma1channel4_handler 4 0x0800a854 
+f DMA1_Channel4_IRQHandler 4 0x0800a854 
 fs *
-f dma1channel5_handler 4 0x0800a858 
+f DMA1_Channel5_IRQHandler 4 0x0800a858 
 fs *
-f dma1channel6_handler 4 0x0800a85c 
+f DMA1_Channel6_IRQHandler 4 0x0800a85c 
 fs *
-f dma1channel7_handler 40 0x08009e0c 
+f DMA1_Channel7_IRQHandler 40 0x08009e0c 
 fs *
 f DMA1_Clock_Enable 10 0x08005042 
 fs *
@@ -83,19 +83,19 @@ f EXTI_GetITStatus 16 0x080070e6
 fs *
 f EXTI_Init 106 0x0800707c 
 fs *
-f extl0_handler 28 0x08009df0 
+f EXTI0_IRQHandler 28 0x08009df0 
 fs *
-f extl15_10_handler 50 0x08009d52 
+f EXTI15_10_IRQHandler 50 0x08009d52 
 fs *
-f extl1_handler 4 0x0800a83c 
+f EXTI1_IRQHandler 4 0x0800a83c 
 fs *
-f extl2_handler 4 0x0800a840 
+f EXTI2_IRQHandler 4 0x0800a840 
 fs *
-f extl3_handler 4 0x0800a844 
+f EXTI3_IRQHandler 4 0x0800a844 
 fs *
-f extl4_handler 4 0x0800a848 
+f EXTI4_IRQHandler 4 0x0800a848 
 fs *
-f extl9_5_handler 108 0x08009d84 
+f EXTI9_5_IRQHandler 108 0x08009d84 
 fs *
 f EXTl_LowPowerConfig_Maybe 310 0x0800631a 
 fs *
@@ -103,9 +103,7 @@ f EXTl_something 310 0x080044d6
 fs *
 f USB_PA11_12_Config 186 0x08004636 
 fs *
-f USB_WakeUpSetup 96 0x08004724 
-fs *
-f num_to_str 48 0x0800478e 
+f IntToUnicode 48 0x0800478e 
 fs *
 f fcn.080047be 174 0x080047be 
 fs *
@@ -213,11 +211,9 @@ f fcn.08009030 20 0x08009030
 fs *
 f USB_WakeUpIntDisable_Maybe 92 0x08009050 
 fs *
-f USB_PeriphDisable_Maybe 24 0x080090ac 
+f USB_PowerOn 34 0x080090c4 
 fs *
-f fcn.080090c4 34 0x080090c4 
-fs *
-f fcn.08009108 20 0x08009108 
+f USB_Resume_Init 20 0x08009108 
 fs *
 f fcn.08009120 152 0x08009120 
 fs *
@@ -233,7 +229,7 @@ f fcn.0800948a 30 0x0800948a
 fs *
 f fcn.080094c4 162 0x080094c4 
 fs *
-f fcn.08009566 166 0x08009566 
+f USB_SendPacket_Maybe 166 0x08009566 
 fs *
 f fcn.0800960c 218 0x0800960c 
 fs *
@@ -241,11 +237,11 @@ f fcn.080096e6 438 0x080096e6
 fs *
 f fcn.0800989c 310 0x0800989c 
 fs *
-f fcn.0800990c 198 0x0800990c 
+f USB_In0_Process_Maybe 82 0x0800990c 
 fs *
 f fcn.0800995e 116 0x0800995e 
 fs *
-f fcn.080099d2 58 0x080099d2 
+f USB_SetDeviceAddress 58 0x080099d2 
 fs *
 f fcn.0800a0b0 394 0x0800a0b0 
 fs *
@@ -257,7 +253,7 @@ f FLASH_ClearFlag 6 0x08006e20
 fs *
 f FLASH_GetStatus 36 0x08006e26 
 fs *
-f flash_handler 4 0x0800a834 
+f FLASH_IRQHandler 4 0x0800a834 
 fs *
 f FLASH_Lock 14 0x08006d7e 
 fs *
@@ -301,17 +297,17 @@ f GPIO_Something 222 0x080043d8
 fs *
 f GPIO_WriteBit 12 0x08007022 
 fs *
-f handle_usblp 288 0x08009f78 
+f USB_LP_IRQRoutine 288 0x08009f78 
 fs *
-f hardfault_handler 2 0x08009d36 
+f HardFault_Handler 2 0x08009d36 
 fs *
-f i2c1_er_handler 4 0x0800a88c 
+f I2C1_ER_IRQHandler 4 0x0800a88c 
 fs *
-f i2c1_ev_handler 4 0x0800a888 
+f I2C1_EV_IRQHandler 4 0x0800a888 
 fs *
-f i2c2_er_handler 4 0x0800a894 
+f I2C2_ER_IRQHandler 4 0x0800a894 
 fs *
-f i2c2_ev_handler 4 0x0800a890 
+f I2C2_EV_IRQHandler 4 0x0800a890 
 fs *
 f initialize_memory_regions 32 0x0800a778 
 fs *
@@ -333,7 +329,7 @@ f Keyboard_LowPowerMode 90 0x0800663e
 fs *
 f Keyboard_UseHSIClock 88 0x08004270 
 fs *
-f lcd_handler 4 0x0800a870 
+f LCD_IRQHandler 4 0x0800a870 
 fs *
 f load_byte_from_flash_region 34 0x0800a254 
 fs *
@@ -349,9 +345,9 @@ f main_loop 100 0x080085b0
 fs *
 f MatrixColumns_Set 32 0x080044b6 
 fs *
-f memmanage_handler 2 0x08009d38 
+f MemManage_Handler 2 0x08009d38 
 fs *
-f nmi_handler 2 0x08009d34 
+f NMI_Handler 2 0x08009d34 
 fs *
 f NVIC_Init 92 0x08006f0e 
 fs *
@@ -363,7 +359,7 @@ f Parse_Matrix 1806 0x08007ce6
 fs *
 f pc 1 0x00000004 
 fs *
-f pendsv_handler 2 0x08009d42 
+f PendSV_Handler 2 0x08009d42 
 fs *
 f Peripherals_Config 190 0x080041ae 
 fs *
@@ -371,7 +367,7 @@ f Periph_LowPowerMode_Maybe 122 0x080062a0
 fs *
 f Periphs_Reset 238 0x08007924 
 fs *
-f pvd_handler 4 0x0800a828 
+f PVD_IRQHandler 4 0x0800a828 
 fs *
 f PWR_EnterLowPowerRunMode 40 0x08006eba 
 fs *
@@ -433,7 +429,7 @@ f RCC_GetFlagStatus 28 0x08006ca0
 fs *
 f RCC_GetSYSCLKSource 10 0x08006b58 
 fs *
-f rcc_handler 4 0x0800a838 
+f RCC_IRQHandler 4 0x0800a838 
 fs *
 f RCC_HCLKConfig 14 0x08006b62 
 fs *
@@ -465,9 +461,9 @@ f reset 8 0x0800a808
 fs *
 f return_one 4 0x0800a7e6 
 fs *
-f rtc_alarm_handler 4 0x0800a8a4 
+f RTC_Alarm_IRQHandler 4 0x0800a8a4 
 fs *
-f rtcwkup_handler 4 0x0800a830 
+f RTC_WKUP_IRQHandler 4 0x0800a830 
 fs *
 f sb 1 0x00000000 
 fs *
@@ -481,13 +477,13 @@ f some_math 28 0x08007904
 fs *
 f sp 1 0x00000000 
 fs *
-f spi1_handler 4 0x0800a898 
+f SPI1_IRQHandler 4 0x0800a898 
 fs *
-f spi2_handler 4 0x0800a89c 
+f SPI2_IRQHandler 4 0x0800a89c 
 fs *
 f store_byte_in_sram_region 64 0x0800a276 
 fs *
-f svc_handler 2 0x08009d3e 
+f SVC_Handler 2 0x08009d3e 
 fs *
 f SYSCFG_EXTILineConfig 36 0x08007054 
 fs *
@@ -495,17 +491,17 @@ f SystemInit 60 0x0800a5a0
 fs *
 f SysTick_CLKSourceConfig 24 0x08006f6a 
 fs *
-f systick_handler 2 0x08009d44 
+f SysTick_Handler 2 0x08009d44 
 fs *
-f tamperstamp_handler 4 0x0800a82c 
+f TAMPER_STAMP_IRQHandler 4 0x0800a82c 
 fs *
-f tim10_handler 4 0x0800a878 
+f TIM10_IRQHandler 4 0x0800a878 
 fs *
-f tim11_handler 4 0x0800a87c 
+f TIM11_IRQHandler 4 0x0800a87c 
 fs *
-f tim2_handler 4 0x0800a880 
+f TIM2_IRQHandler 4 0x0800a880 
 fs *
-f tim3_handler 4 0x0800a884 
+f TIM3_IRQHandler 4 0x0800a884 
 fs *
 f TIM4_Config 52 0x080068d4 
 fs *
@@ -517,7 +513,7 @@ f TIM4_Enable 44 0x08006258
 fs *
 f TIM4_GetIntCounter 6 0x0800690c 
 fs *
-f tim4_handler 130 0x08009ed8 
+f TIM4_IRQHandler 130 0x08009ed8 
 fs *
 f TIM4_HFreqConfig 96 0x080061d4 
 fs *
@@ -525,11 +521,11 @@ f TIM4_LFreqConfig 104 0x08006168
 fs *
 f TIM4_Update_Flag_1 46 0x08004180 
 fs *
-f tim6_handler 4 0x0800a8a8 
+f TIM6_IRQHandler 4 0x0800a8a8 
 fs *
-f tim7_handler 4 0x0800a8ac 
+f TIM7_IRQHandler 4 0x0800a8ac 
 fs *
-f tim9_handler 4 0x0800a874 
+f TIM9_IRQHandler 4 0x0800a874 
 fs *
 f TIM_ClearFlag 6 0x08007aac 
 fs *
@@ -549,13 +545,13 @@ f TIM_TimeBaseInit 74 0x08007a12
 fs *
 f update_vars_fromeeprom_init_others 36 0x080066c4 
 fs *
-f usagefault_handler 2 0x08009d3c 
+f UsageFault_Handler 2 0x08009d3c 
 fs *
-f usart1_handler 4 0x0800a8a0 
+f USART1_IRQHandler 4 0x0800a8a0 
 fs *
 f USART2_Clock_Enable 10 0x08004eb6 
 fs *
-f usart2_handler 66 0x08009e34 
+f USART2_IRQHandler 66 0x08009e34 
 fs *
 f USART2_IOConfig 64 0x08004e76 
 fs *
@@ -567,7 +563,7 @@ f USART3_Clock_Enable 10 0x08005038
 fs *
 f USART3_Config_Maybe 200 0x0800504c 
 fs *
-f usart3_handler 66 0x08009e96 
+f USART3_IRQHandler 66 0x08009e96 
 fs *
 f USART3_Setup 20 0x080051ce 
 fs *
@@ -593,13 +589,13 @@ f USART_ReceiveData 8 0x08007578
 fs *
 f USB_Clock_Enable 10 0x08004784 
 fs *
-f usbfswkup_handler 8 0x08009d4a 
+f USB_FS_WKUP_IRQHandler 8 0x08009d4a 
 fs *
-f usbhp_handler 4 0x0800a864 
+f USB_HP_IRQHandler 4 0x0800a864 
 fs *
-f usb_interrupts_config 20 0x0800716c 
+f USB_SIL_Init 20 0x0800716c 
 fs *
-f usblp_handler 4 0x08009d46 
+f USB_LP_IRQHandler 4 0x08009d46 
 fs *
 f vector_table 244 0x08004000 
 fs *
@@ -607,7 +603,7 @@ f Wait_x4000_x125 52 0x08007104
 fs *
 f Wait_x4_at_AHB_8 42 0x08007138 
 fs *
-f wwdg_handler 4 0x0800a824 
+f WWDG_IRQHandler 4 0x0800a824 
 fs *
 f zero_fill_bss 34 0x080071d6 
 fs *
@@ -655,8 +651,6 @@ f eflags 1 0x00000000
 fs *
 f PWR_SaveMode_FlagUpdate 42 0x0800460c 
 fs *
-f USB_DataPlusCmd 20 0x08004d02 
-fs *
 f BT_P1_0Set 34 0x08004dfc 
 fs *
 f LED_WakeUpCmd 54 0x08004e40 
@@ -665,14 +659,12 @@ f TIM4_GetIntCounter_Wrapper 4 0x08008ee8
 fs functions
 f USB_WakeUpIntEnable 96 0x08004724 
 f USB_DataPlus_LowSpeedSet_Maybe 52 0x080046f0 
-f MCU_UID_GenerateStr 44 0x08004cd6 
-f USB_PowerDown_Maybe 34 0x080090e6 
 f USB_SetBTABLE 14 0x080071f8 
 f USB_SetEPType 26 0x08007206 
 f USB_SetEPTxStatus 48 0x08007220 
 f USB_SetEPRxStatus 48 0x08007250 
 f USB_5 32 0x08007280 
-f USB_6 32 0x080072a0 
+f USB_SetEPRxValid 32 0x080072a0 
 f USB_ClearEP_KIND 28 0x080072c0 
 f USB_ClearDTOG_RX 36 0x080072dc 
 f USB_ClearDTOG_TX 36 0x08007300 
@@ -683,6 +675,19 @@ f USB_GetEPRxAddr 20 0x08007370
 f USB_SetEPTxCount 18 0x08007384 
 f USB_SetEPRxCount 58 0x08007396 
 f USB_GetEPRxCount 22 0x080073d0 
+f USB_Get_SerialNum 44 0x08004cd6 
+f USB_Cable_Config 20 0x08004d02 
+f USB_PeriphDisable 24 0x080090ac 
+f USB_PowerOff 34 0x080090e6 
+f USB_DataStageIn_Maybe 166 0x08009566 
+f USB_Post0_Process 0 0x0800999e 
+f USB_Port_Init 30 0x08009a54 
+f USB_Port_Reset 262 0x08009a72 
+f USB_Port_SetConfiguration 18 0x08009b78 
+f USB_Port_SetDeviceAddress 8 0x08009b8a 
+f USB_Port_Status_In 2 0x08009b92 
+f USB_Port_Status_Out 2 0x08009b94 
+f USB_Port_Data_Setup 152 0x08009b96 
 f Keyboard_Init 140 0x080040f4 
 f TIM4_Update_Flag_1 46 0x08004180 
 f Peripherals_Config 190 0x080041ae 
@@ -698,8 +703,6 @@ f USB_DataPlus_LowSpeedSet_Maybe 52 0x080046f0
 f USB_WakeUpIntEnable 96 0x08004724 
 f USB_Clock_Enable 10 0x08004784 
 f MCU_UIDLoad 22 0x08004cc0 
-f MCU_UID_GenerateStr 44 0x08004cd6 
-f USB_DataPlusCmd 20 0x08004d02 
 f BT_P1_0Set 34 0x08004dfc 
 f BT_P1_0Reset 34 0x08004e1e 
 f LED_WakeUpCmd 54 0x08004e40 
@@ -735,8 +738,7 @@ f Scan_Matrix 226 0x08007c04
 f Parse_Matrix 1806 0x08007ce6 
 f TIM4_GetIntCounter_Wrapper 4 0x08008ee8 
 f USB_WakeUpIntDisable_Maybe 92 0x08009050 
-f USB_PeriphDisable_Maybe 24 0x080090ac 
-f USB_PowerDown_Maybe 34 0x080090e6 
+f USB_PeriphDisable 24 0x080090ac 
 f main2 26 0x0800a7cc 
 f main 12 0x0800a818 
 # eval
@@ -1206,8 +1208,8 @@ f main 12 0x0800a818
 "e zoom.in = io.map"
 "e zoom.maxsz = 512"
 "e zoom.to = 0"
-om 3 0x8004000 0x6a82 0x0 -r-x
 ofs ../1.4/key.dfu.target0.image0.bin -r-x
+om 3 0x8004000 0x6a82 0x0 -r-x
 # sections
 # meta
 CCu base64:aW5pdGlhbCBzdGFjayBwb2ludGVyIDsgcmVzZXJ2ZWQh @ 0x08004000
@@ -1362,8 +1364,8 @@ CCu base64:cHJlbWVtcHRpb24gcHJpb3JpdHkxLCBzdWJwcmlvcml0eSAw @ 0x08004774
 CCu base64:ZW5hYmxl @ 0x08004778
 CCu base64:cjI6IHNpemUsIHIxOiB3aGVyZSB0byBzdG9yZSBpdCwgcjA6IG51bWJlciB0byBjb252ZXJ0 @ 0x0800478e
 CCu base64:c3RvcmUgZGV2aWNlJ3MgVUlEIGluIG1lbW9yeQ== @ 0x08004cc0
-CCu base64:R2VuZXJhdGUgYSAxMiBjaGFyIHN0cmluZyB1c2luZyB0aGUgTUNVIFVJRA== @ 0x08004cd6
-CCu base64:U2V0cyBvciByZXNldHMgVVNCIEQrIChQQTEwKQ== @ 0x08004d02
+CCu base64:R2VuZXJhdGUgYSAxMiBjaGFyIHN0cmluZyB1c2luZyB0aGUgTUNVIFVJRCA= @ 0x08004cd6
+CCu base64:U2V0cyBvciByZXNldHMgVVNCIEQrIChQQTEwKSA= @ 0x08004d02
 CCu base64:UG9ydEEgcGluIDEw @ 0x08004d04
 CCu base64:cGluIDE1 @ 0x08004e46
 CCu base64:UG9ydCBD @ 0x08004e48
@@ -1544,11 +1546,13 @@ CCu base64:d2hpY2ggd2lsbCBoYXBwZW4gd2hlbiBDT1VOVEZMQUcgaXMgc2V0IGluIFNUS19DVFJM 
 CCu base64:ZGlzYWJsZSBjb3VudGVy @ 0x0800715c
 CCu base64:Y2xlYXIgY291bnRlcg== @ 0x0800715e
 CCu base64:VVNCIHJlZ2lzdGVycyBVU0JfQ05UUg== @ 0x0800716c
+CCu base64:d0ludGVycnVwdF9NYXNr @ 0x08007176
 CCu base64:W3IwXTogc2l6ZSwgW3IwKzRdOiBzdGFydCBhZGRyZXNz @ 0x080071d6
 CCu base64:ZG9lcyBMU0IgPSAxPw== @ 0x080071e0
 CCu base64:dGhpcyBsc2wgMiBkb2Vzbid0IHNlZW0gdG8gYmUgaW4gdGhpcyBmdW5jdGlvbiBpbiB0aGUgbGli @ 0x0800720c
 CCu base64:Y2hlY2sgdGhpcyBpcyB0aGUgY29ycmVjdCBmdW5jIG9yIGxpYg== @ 0x08007220
 CCu base64:Y2hlY2sgdGhpcyBpcyB0aGUgY29ycmVjdCBmdW5jIG9yIGxpYg== @ 0x08007250
+CCu base64:Y2hlY2sgZnVuY3Rpb24= @ 0x080072a0
 CCu base64:VVNBUlQx @ 0x0800740e
 CCu base64:VVNBUlQy @ 0x0800742c
 CCu base64:VVNBUlQz @ 0x0800744a
@@ -1606,10 +1610,15 @@ CCu base64:ZGlzYWJsZQ== @ 0x080090b6
 CCu base64:VVNCIGNsb2Nr @ 0x080090b8
 CCu base64:VVNCX0NOVFI= @ 0x080090e8
 CCu base64:c2V0IGFsbCBiaXRzIGV4Y2VwdCBGU1VTUCAoRm9yY2UgU3VzcGVuZCk= @ 0x080090ec
-CCu base64:ZGlzYWJsZSBhbGwgaW50ZXJydXB0cyBhbmQgZXhpdCBsb3dwb3dlciBtb2RlIGFuZCByZXNldCBVU0IgcGVyaXBoZXJhbA== @ 0x080090f4
+CCu base64:Zm9yY2UgdXNiIHJlc2V0 @ 0x080090f4
 CCu base64:Y2xlYXIgYWxsIGJpdHMgaW4gVVNCX0lTVFI= @ 0x080090fa
-CCu base64:UmVzZXQgVVNCIEQrIHBpbg== @ 0x080090fc
+CCu base64:c29mdHdhcmUgZGlzY29ubmVjdCBwaW4= @ 0x080090fc
 CCu base64:cG93ZXJkb3duIGFuZCByZXNldCBVU0IgcGVyaXBoZXJhbA== @ 0x08009102
+CCu base64:Y2hlY2sgZnVuYw== @ 0x08009566
+CCu base64:Y2hlY2sgZnVuYw== @ 0x0800990c
+CCu base64:c2VlIHVzYl9wcm9wLmM= @ 0x08009a54
+CCu base64:c2VlIHVzYl9wcm9wLmM= @ 0x08009b78
+CCu base64:Y2FsbCBDb3B5Um91dGluZSAoc2VlIHVzYl9wcm9jLmMp @ 0x08009c28
 CCu base64:Y2xlYXIgaW50ZXJydXB0IHBlbmRpbmcgYml0IFBSMTggKEVYVElfUFIp @ 0x08009d4a
 CCu base64:aGFuZGxlciBzZXRzIGEgdmFyaWFibGUgVVNCX1BsdWdnZWRfRVhUbA== @ 0x08009d52
 CCu base64:Z2V0IFBSMTAgc3RhdHVz @ 0x08009d54
@@ -1619,6 +1628,7 @@ CCu base64:Z2V0IFBSMTUgc3RhdHVz @ 0x08009d6c
 CCu base64:Y2xlYXIgaXQgaWYgc2V0 @ 0x08009d78
 CCu base64:aGFuZGxlciBpbmNyZW1lbnRzIGEgY291bnRlcg== @ 0x08009d84
 CCu base64:UFI5 @ 0x08009d86
+CCu base64: @ 0x08009d96
 CCu base64:UFI4 @ 0x08009da2
 CCu base64:UFI3 @ 0x08009dbe
 CCu base64:UFI2 @ 0x08009dd6
@@ -2019,6 +2029,11 @@ Cd 466 @ 0x0800a8b0
 Cd 4 @ 0x0800a9ae
 Cd 4 @ 0x0800a9ec
 Cd 4 @ 0x0800aa52
+"f vector_table 244 0x08004000"
+"af+ 0x08004000 vector_table f n"
+afc arm32 @ 0x08004000
+afb+ 0x08004000 0x08004000 244 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x8004000
 "f _Keyboard_Init 140 0x080040f4"
 "af+ 0x080040f4 _Keyboard_Init f n"
 afc arm32 @ 0x080040f4
@@ -2104,8 +2119,8 @@ afS 0 @ 0x8004724
 afc arm32 @ 0x08004784
 afb+ 0x08004784 0x08004784 10 0x08006c5e 0xffffffffffffffff n
 afS 0 @ 0x8004784
-"f num_to_str 48 0x0800478e"
-"af+ 0x0800478e num_to_str f n"
+"f IntToUnicode 48 0x0800478e"
+"af+ 0x0800478e IntToUnicode f n"
 afc arm32 @ 0x0800478e
 afb+ 0x0800478e 0x0800478e 6 0x080047a8 0xffffffffffffffff n
 afb+ 0x0800478e 0x08004794 6 0x0800479a 0xffffffffffffffff b
@@ -2169,15 +2184,15 @@ afS 100 @ 0x80049b0
 afc arm32 @ 0x08004cc0
 afb+ 0x08004cc0 0x08004cc0 22 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8004cc0
-"f _MCU_UID_GenerateStr 44 0x08004cd6"
-"af+ 0x08004cd6 _MCU_UID_GenerateStr f n"
+"f USB_Get_SerialNum 44 0x08004cd6"
+"af+ 0x08004cd6 USB_Get_SerialNum f n"
 afc arm32 @ 0x08004cd6
 afb+ 0x08004cd6 0x08004cd6 16 0x08004d00 0x08004ce6 n
 afb+ 0x08004cd6 0x08004ce6 26 0x0800478e 0xffffffffffffffff n
 afb+ 0x08004cd6 0x08004d00 2 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8004cd6
-"f _USB_DataPlusCmd 20 0x08004d02"
-"af+ 0x08004d02 _USB_DataPlusCmd f n"
+"f USB_Cable_Config 20 0x08004d02"
+"af+ 0x08004d02 USB_Cable_Config f n"
 afc arm32 @ 0x08004d02
 afb+ 0x08004d02 0x08004d02 12 0x08004d12 0x08004d0e n
 afb+ 0x08004d02 0x08004d0e 4 0x0800701a 0xffffffffffffffff n
@@ -2916,8 +2931,8 @@ afS 0 @ 0x8007104
 afc arm32 @ 0x08007138
 afb+ 0x08007138 0x08007138 42 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007138
-"f usb_interrupts_config 20 0x0800716c"
-"af+ 0x0800716c usb_interrupts_config f n"
+"f USB_SIL_Init 20 0x0800716c"
+"af+ 0x0800716c USB_SIL_Init f n"
 afc arm32 @ 0x0800716c
 afb+ 0x0800716c 0x0800716c 20 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800716c
@@ -2961,8 +2976,8 @@ afS 0 @ 0x8007250
 afc arm32 @ 0x08007280
 afb+ 0x08007280 0x08007280 32 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007280
-"f USB_6 32 0x080072a0"
-"af+ 0x080072a0 USB_6 f n"
+"f USB_SetEPRxValid 32 0x080072a0"
+"af+ 0x080072a0 USB_SetEPRxValid f n"
 afc arm32 @ 0x080072a0
 afb+ 0x080072a0 0x080072a0 32 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80072a0
@@ -3692,23 +3707,23 @@ afS 0 @ 0x8009030
 afc arm32 @ 0x08009050
 afb+ 0x08009050 0x08009050 92 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009050
-"f _USB_PeriphDisable_Maybe 24 0x080090ac"
-"af+ 0x080090ac _USB_PeriphDisable_Maybe f n"
+"f _USB_PeriphDisable 24 0x080090ac"
+"af+ 0x080090ac _USB_PeriphDisable f n"
 afc arm32 @ 0x080090ac
 afb+ 0x080090ac 0x080090ac 24 0x08006c5e 0xffffffffffffffff n
 afS 0 @ 0x80090ac
-"f fcn.080090c4 34 0x080090c4"
-"af+ 0x080090c4 fcn.080090c4 f n"
+"f USB_PowerOn 34 0x080090c4"
+"af+ 0x080090c4 USB_PowerOn f n"
 afc arm32 @ 0x080090c4
 afb+ 0x080090c4 0x080090c4 34 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80090c4
-"f _USB_PowerDown_Maybe 34 0x080090e6"
-"af+ 0x080090e6 _USB_PowerDown_Maybe f n"
+"f USB_PowerOff 34 0x080090e6"
+"af+ 0x080090e6 USB_PowerOff f n"
 afc arm32 @ 0x080090e6
 afb+ 0x080090e6 0x080090e6 34 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80090e6
-"f fcn.08009108 20 0x08009108"
-"af+ 0x08009108 fcn.08009108 f n"
+"f USB_Resume_Init 20 0x08009108"
+"af+ 0x08009108 USB_Resume_Init f n"
 afc arm32 @ 0x08009108
 afb+ 0x08009108 0x08009108 20 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009108
@@ -3823,8 +3838,8 @@ afb+ 0x080094c4 0x08009542 2 0x08009564 0x08009544 n
 afb+ 0x080094c4 0x08009544 32 0x08009564 0xffffffffffffffff n
 afb+ 0x080094c4 0x08009564 2 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80094c4
-"f fcn.08009566 166 0x08009566"
-"af+ 0x08009566 fcn.08009566 f n"
+"f USB_DataStageIn_Maybe 166 0x08009566"
+"af+ 0x08009566 USB_DataStageIn_Maybe f n"
 afc arm32 @ 0x08009566
 afb+ 0x08009566 0x08009566 20 0x080095b4 0x0800957a n
 afb+ 0x08009566 0x0800957a 6 0x080095b4 0x08009580 n
@@ -3949,39 +3964,15 @@ afb+ 0x080096e6 0x08009876 6 0x0800987c 0xffffffffffffffff n
 afb+ 0x080096e6 0x0800987c 18 0x08009566 0xffffffffffffffff n
 afb+ 0x080096e6 0x0800988e 14 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80096e6
-"f fcn.0800989c 310 0x0800989c"
+"f fcn.0800989c 112 0x0800989c"
 "af+ 0x0800989c fcn.0800989c f n"
 afc arm32 @ 0x0800989c
-afb+ 0x0800989c 0x0800989c 34 0x080098ee 0x080098be n
-afb+ 0x0800989c 0x080098be 48 0x080098ee 0xffffffffffffffff n
-afb+ 0x0800989c 0x080098ee 14 0x08009902 0x080098fc n
-afb+ 0x0800989c 0x080098fc 6 0x08009906 0xffffffffffffffff n
-afb+ 0x0800989c 0x08009902 4 0x08009906 0xffffffffffffffff b
-afb+ 0x0800989c 0x08009906 6 0x0800999e 0xffffffffffffffff n
-afb+ 0x0800989c 0x0800999e 24 0x080099c4 0x080099b6 n
-afb+ 0x0800989c 0x080099b6 14 0x080099c4 0xffffffffffffffff n
-afb+ 0x0800989c 0x080099c4 6 0x080099ce 0x080099ca n
-afb+ 0x0800989c 0x080099ca 4 0xffffffffffffffff 0xffffffffffffffff n
-afb+ 0x0800989c 0x080099ce 4 0xffffffffffffffff 0xffffffffffffffff n
+afb+ 0x0800989c 0x0800989c 112 0x0800999e 0xffffffffffffffff n
 afS 0 @ 0x800989c
-"f fcn.0800990c 198 0x0800990c"
-"af+ 0x0800990c fcn.0800990c f n"
+"f USB_In0_Process_Maybe 82 0x0800990c"
+"af+ 0x0800990c USB_In0_Process_Maybe f n"
 afc arm32 @ 0x0800990c
-afb+ 0x0800990c 0x0800990c 12 0x0800991c 0x08009918 n
-afb+ 0x0800990c 0x08009918 4 0x08009926 0x0800991c n
-afb+ 0x0800990c 0x0800991c 10 0x08009954 0xffffffffffffffff n
-afb+ 0x0800990c 0x08009926 4 0x08009952 0x0800992a n
-afb+ 0x0800990c 0x0800992a 6 0x08009946 0x08009930 n
-afb+ 0x0800990c 0x08009930 8 0x08009946 0x08009938 n
-afb+ 0x0800990c 0x08009938 14 0x08009946 0xffffffffffffffff n
-afb+ 0x0800990c 0x08009946 12 0x08009954 0xffffffffffffffff n
-afb+ 0x0800990c 0x08009952 2 0x08009954 0xffffffffffffffff n
-afb+ 0x0800990c 0x08009954 10 0x0800999e 0xffffffffffffffff n
-afb+ 0x0800990c 0x0800999e 24 0x080099c4 0x080099b6 n
-afb+ 0x0800990c 0x080099b6 14 0x080099c4 0xffffffffffffffff n
-afb+ 0x0800990c 0x080099c4 6 0x080099ce 0x080099ca n
-afb+ 0x0800990c 0x080099ca 4 0xffffffffffffffff 0xffffffffffffffff n
-afb+ 0x0800990c 0x080099ce 4 0xffffffffffffffff 0xffffffffffffffff n
+afb+ 0x0800990c 0x0800990c 82 0x0800999e 0xffffffffffffffff n
 afS 0 @ 0x800990c
 "f fcn.0800995e 116 0x0800995e"
 "af+ 0x0800995e fcn.0800995e f n"
@@ -4001,111 +3992,150 @@ afb+ 0x0800995e 0x080099c4 6 0x080099ce 0x080099ca n
 afb+ 0x0800995e 0x080099ca 4 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x0800995e 0x080099ce 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800995e
-"f fcn.080099d2 58 0x080099d2"
-"af+ 0x080099d2 fcn.080099d2 f n"
+"f USB_Post0_Process 0 0x0800999e"
+"af+ 0x0800999e USB_Post0_Process f n"
+afc arm32 @ 0x0800999e
+afS 0 @ 0x800999e
+"f USB_SetDeviceAddress 58 0x080099d2"
+"af+ 0x080099d2 USB_SetDeviceAddress f n"
 afc arm32 @ 0x080099d2
 afb+ 0x080099d2 0x080099d2 16 0x080099fc 0xffffffffffffffff n
 afb+ 0x080099d2 0x080099e2 26 0x080099fc 0xffffffffffffffff n
 afb+ 0x080099d2 0x080099fc 4 0x080099e2 0x08009a00 n
 afb+ 0x080099d2 0x08009a00 12 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80099d2
-"f nmi_handler 2 0x08009d34"
-"af+ 0x08009d34 nmi_handler f n"
+"f USB_Port_Init 30 0x08009a54"
+"af+ 0x08009a54 USB_Port_Init f n"
+afc arm32 @ 0x08009a54
+afb+ 0x08009a54 0x08009a54 30 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x8009a54
+"f USB_Port_Reset 262 0x08009a72"
+"af+ 0x08009a72 USB_Port_Reset f n"
+afc arm32 @ 0x08009a72
+afb+ 0x08009a72 0x08009a72 262 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x8009a72
+"f USB_Port_SetConfiguration 18 0x08009b78"
+"af+ 0x08009b78 USB_Port_SetConfiguration f n"
+afc arm32 @ 0x08009b78
+afb+ 0x08009b78 0x08009b78 18 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x8009b78
+"f USB_Port_SetDeviceAddress 8 0x08009b8a"
+"af+ 0x08009b8a USB_Port_SetDeviceAddress f n"
+afc arm32 @ 0x08009b8a
+afb+ 0x08009b8a 0x08009b8a 8 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x8009b8a
+"f USB_Port_Status_In 2 0x08009b92"
+"af+ 0x08009b92 USB_Port_Status_In f n"
+afc arm32 @ 0x08009b92
+afb+ 0x08009b92 0x08009b92 2 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x8009b92
+"f USB_Port_Status_Out 2 0x08009b94"
+"af+ 0x08009b94 USB_Port_Status_Out f n"
+afc arm32 @ 0x08009b94
+afb+ 0x08009b94 0x08009b94 2 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x8009b94
+"f USB_Port_Data_Setup 152 0x08009b96"
+"af+ 0x08009b96 USB_Port_Data_Setup f n"
+afc arm32 @ 0x08009b96
+afb+ 0x08009b96 0x08009b96 152 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x8009b96
+"f NMI_Handler 2 0x08009d34"
+"af+ 0x08009d34 NMI_Handler f n"
 afc arm32 @ 0x08009d34
 afb+ 0x08009d34 0x08009d34 2 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009d34
-"f hardfault_handler 2 0x08009d36"
-"af+ 0x08009d36 hardfault_handler f n"
+"f HardFault_Handler 2 0x08009d36"
+"af+ 0x08009d36 HardFault_Handler f n"
 afc arm32 @ 0x08009d36
 afb+ 0x08009d36 0x08009d36 2 0x08009d36 0xffffffffffffffff n
 afS 0 @ 0x8009d36
-"f memmanage_handler 2 0x08009d38"
-"af+ 0x08009d38 memmanage_handler f n"
+"f MemManage_Handler 2 0x08009d38"
+"af+ 0x08009d38 MemManage_Handler f n"
 afc arm32 @ 0x08009d38
 afb+ 0x08009d38 0x08009d38 2 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009d38
-"f busfault_handler 2 0x08009d3a"
-"af+ 0x08009d3a busfault_handler f n"
+"f BusFault_Handler 2 0x08009d3a"
+"af+ 0x08009d3a BusFault_Handler f n"
 afc arm32 @ 0x08009d3a
 afb+ 0x08009d3a 0x08009d3a 2 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009d3a
-"f usagefault_handler 2 0x08009d3c"
-"af+ 0x08009d3c usagefault_handler f n"
+"f UsageFault_Handler 2 0x08009d3c"
+"af+ 0x08009d3c UsageFault_Handler f n"
 afc arm32 @ 0x08009d3c
 afb+ 0x08009d3c 0x08009d3c 2 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009d3c
-"f svc_handler 2 0x08009d3e"
-"af+ 0x08009d3e svc_handler f n"
+"f SVC_Handler 2 0x08009d3e"
+"af+ 0x08009d3e SVC_Handler f n"
 afc arm32 @ 0x08009d3e
 afb+ 0x08009d3e 0x08009d3e 2 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009d3e
-"f debugmon_handler 2 0x08009d40"
-"af+ 0x08009d40 debugmon_handler f n"
+"f DebugMon_Handler 2 0x08009d40"
+"af+ 0x08009d40 DebugMon_Handler f n"
 afc arm32 @ 0x08009d40
 afb+ 0x08009d40 0x08009d40 2 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009d40
-"f pendsv_handler 2 0x08009d42"
-"af+ 0x08009d42 pendsv_handler f n"
+"f PendSV_Handler 2 0x08009d42"
+"af+ 0x08009d42 PendSV_Handler f n"
 afc arm32 @ 0x08009d42
 afb+ 0x08009d42 0x08009d42 2 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009d42
-"f systick_handler 2 0x08009d44"
-"af+ 0x08009d44 systick_handler f n"
+"f SysTick_Handler 2 0x08009d44"
+"af+ 0x08009d44 SysTick_Handler f n"
 afc arm32 @ 0x08009d44
 afb+ 0x08009d44 0x08009d44 2 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009d44
-"f usblp_handler 4 0x08009d46"
-"af+ 0x08009d46 usblp_handler f n"
+"f USB_LP_IRQHandler 4 0x08009d46"
+"af+ 0x08009d46 USB_LP_IRQHandler f n"
 afc arm32 @ 0x08009d46
 afb+ 0x08009d46 0x08009d46 4 0x08009f78 0xffffffffffffffff n
 afS 0 @ 0x8009d46
-"f usbfswkup_handler 8 0x08009d4a"
-"af+ 0x08009d4a usbfswkup_handler f n"
+"f USB_FS_WKUP_IRQHandler 8 0x08009d4a"
+"af+ 0x08009d4a USB_FS_WKUP_IRQHandler f n"
 afc arm32 @ 0x08009d4a
 afb+ 0x08009d4a 0x08009d4a 8 0x080070f6 0xffffffffffffffff n
 afS 0 @ 0x8009d4a
-"f extl15_10_handler 50 0x08009d52"
-"af+ 0x08009d52 extl15_10_handler f n"
+"f EXTI15_10_IRQHandler 50 0x08009d52"
+"af+ 0x08009d52 EXTI15_10_IRQHandler f n"
 afc arm32 @ 0x08009d52
 afb+ 0x08009d52 0x08009d52 50 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009d52
-"f extl9_5_handler 108 0x08009d84"
-"af+ 0x08009d84 extl9_5_handler f n"
+"f EXTI9_5_IRQHandler 108 0x08009d84"
+"af+ 0x08009d84 EXTI9_5_IRQHandler f n"
 afc arm32 @ 0x08009d84
 afb+ 0x08009d84 0x08009d84 108 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009d84
-"f extl0_handler 28 0x08009df0"
-"af+ 0x08009df0 extl0_handler f n"
+"f EXTI0_IRQHandler 28 0x08009df0"
+"af+ 0x08009df0 EXTI0_IRQHandler f n"
 afc arm32 @ 0x08009df0
 afb+ 0x08009df0 0x08009df0 28 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009df0
-"f dma1channel7_handler 40 0x08009e0c"
-"af+ 0x08009e0c dma1channel7_handler f n"
+"f DMA1_Channel7_IRQHandler 40 0x08009e0c"
+"af+ 0x08009e0c DMA1_Channel7_IRQHandler f n"
 afc arm32 @ 0x08009e0c
 afb+ 0x08009e0c 0x08009e0c 40 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009e0c
-"f usart2_handler 66 0x08009e34"
-"af+ 0x08009e34 usart2_handler f n"
+"f USART2_IRQHandler 66 0x08009e34"
+"af+ 0x08009e34 USART2_IRQHandler f n"
 afc arm32 @ 0x08009e34
 afb+ 0x08009e34 0x08009e34 66 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009e34
-"f dma1channel2_handler 30 0x08009e76"
-"af+ 0x08009e76 dma1channel2_handler f n"
+"f DMA1_Channel2_IRQHandler 30 0x08009e76"
+"af+ 0x08009e76 DMA1_Channel2_IRQHandler f n"
 afc arm32 @ 0x08009e76
 afb+ 0x08009e76 0x08009e76 30 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009e76
-"f usart3_handler 66 0x08009e96"
-"af+ 0x08009e96 usart3_handler f n"
+"f USART3_IRQHandler 66 0x08009e96"
+"af+ 0x08009e96 USART3_IRQHandler f n"
 afc arm32 @ 0x08009e96
 afb+ 0x08009e96 0x08009e96 66 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009e96
-"f tim4_handler 130 0x08009ed8"
-"af+ 0x08009ed8 tim4_handler f n"
+"f TIM4_IRQHandler 130 0x08009ed8"
+"af+ 0x08009ed8 TIM4_IRQHandler f n"
 afc arm32 @ 0x08009ed8
 afb+ 0x08009ed8 0x08009ed8 130 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009ed8
-"f handle_usblp 288 0x08009f78"
-"af+ 0x08009f78 handle_usblp f n"
+"f USB_LP_IRQRoutine 288 0x08009f78"
+"af+ 0x08009f78 USB_LP_IRQRoutine f n"
 afc arm32 @ 0x08009f78
 afb+ 0x08009f78 0x08009f78 288 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009f78
@@ -4216,179 +4246,179 @@ afS 0 @ 0x800a7f8
 afc arm32 @ 0x0800a818
 afb+ 0x0800a818 0x0800a818 12 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a818
-"f wwdg_handler 4 0x0800a824"
-"af+ 0x0800a824 wwdg_handler f n"
+"f WWDG_IRQHandler 4 0x0800a824"
+"af+ 0x0800a824 WWDG_IRQHandler f n"
 afc arm32 @ 0x0800a824
 afb+ 0x0800a824 0x0800a824 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a824
-"f pvd_handler 4 0x0800a828"
-"af+ 0x0800a828 pvd_handler f n"
+"f PVD_IRQHandler 4 0x0800a828"
+"af+ 0x0800a828 PVD_IRQHandler f n"
 afc arm32 @ 0x0800a828
 afb+ 0x0800a828 0x0800a828 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a828
-"f tamperstamp_handler 4 0x0800a82c"
-"af+ 0x0800a82c tamperstamp_handler f n"
+"f TAMPER_STAMP_IRQHandler 4 0x0800a82c"
+"af+ 0x0800a82c TAMPER_STAMP_IRQHandler f n"
 afc arm32 @ 0x0800a82c
 afb+ 0x0800a82c 0x0800a82c 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a82c
-"f rtcwkup_handler 4 0x0800a830"
-"af+ 0x0800a830 rtcwkup_handler f n"
+"f RTC_WKUP_IRQHandler 4 0x0800a830"
+"af+ 0x0800a830 RTC_WKUP_IRQHandler f n"
 afc arm32 @ 0x0800a830
 afb+ 0x0800a830 0x0800a830 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a830
-"f flash_handler 4 0x0800a834"
-"af+ 0x0800a834 flash_handler f n"
+"f FLASH_IRQHandler 4 0x0800a834"
+"af+ 0x0800a834 FLASH_IRQHandler f n"
 afc arm32 @ 0x0800a834
 afb+ 0x0800a834 0x0800a834 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a834
-"f rcc_handler 4 0x0800a838"
-"af+ 0x0800a838 rcc_handler f n"
+"f RCC_IRQHandler 4 0x0800a838"
+"af+ 0x0800a838 RCC_IRQHandler f n"
 afc arm32 @ 0x0800a838
 afb+ 0x0800a838 0x0800a838 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a838
-"f extl1_handler 4 0x0800a83c"
-"af+ 0x0800a83c extl1_handler f n"
+"f EXTI1_IRQHandler 4 0x0800a83c"
+"af+ 0x0800a83c EXTI1_IRQHandler f n"
 afc arm32 @ 0x0800a83c
 afb+ 0x0800a83c 0x0800a83c 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a83c
-"f extl2_handler 4 0x0800a840"
-"af+ 0x0800a840 extl2_handler f n"
+"f EXTI2_IRQHandler 4 0x0800a840"
+"af+ 0x0800a840 EXTI2_IRQHandler f n"
 afc arm32 @ 0x0800a840
 afb+ 0x0800a840 0x0800a840 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a840
-"f extl3_handler 4 0x0800a844"
-"af+ 0x0800a844 extl3_handler f n"
+"f EXTI3_IRQHandler 4 0x0800a844"
+"af+ 0x0800a844 EXTI3_IRQHandler f n"
 afc arm32 @ 0x0800a844
 afb+ 0x0800a844 0x0800a844 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a844
-"f extl4_handler 4 0x0800a848"
-"af+ 0x0800a848 extl4_handler f n"
+"f EXTI4_IRQHandler 4 0x0800a848"
+"af+ 0x0800a848 EXTI4_IRQHandler f n"
 afc arm32 @ 0x0800a848
 afb+ 0x0800a848 0x0800a848 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a848
-"f dma1channel1_handler 4 0x0800a84c"
-"af+ 0x0800a84c dma1channel1_handler f n"
+"f DMA1_Channel1_IRQHandler 4 0x0800a84c"
+"af+ 0x0800a84c DMA1_Channel1_IRQHandler f n"
 afc arm32 @ 0x0800a84c
 afb+ 0x0800a84c 0x0800a84c 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a84c
-"f dma1channel3_handler 4 0x0800a850"
-"af+ 0x0800a850 dma1channel3_handler f n"
+"f DMA1_Channel3_IRQHandler 4 0x0800a850"
+"af+ 0x0800a850 DMA1_Channel3_IRQHandler f n"
 afc arm32 @ 0x0800a850
 afb+ 0x0800a850 0x0800a850 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a850
-"f dma1channel4_handler 4 0x0800a854"
-"af+ 0x0800a854 dma1channel4_handler f n"
+"f DMA1_Channel4_IRQHandler 4 0x0800a854"
+"af+ 0x0800a854 DMA1_Channel4_IRQHandler f n"
 afc arm32 @ 0x0800a854
 afb+ 0x0800a854 0x0800a854 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a854
-"f dma1channel5_handler 4 0x0800a858"
-"af+ 0x0800a858 dma1channel5_handler f n"
+"f DMA1_Channel5_IRQHandler 4 0x0800a858"
+"af+ 0x0800a858 DMA1_Channel5_IRQHandler f n"
 afc arm32 @ 0x0800a858
 afb+ 0x0800a858 0x0800a858 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a858
-"f dma1channel6_handler 4 0x0800a85c"
-"af+ 0x0800a85c dma1channel6_handler f n"
+"f DMA1_Channel6_IRQHandler 4 0x0800a85c"
+"af+ 0x0800a85c DMA1_Channel6_IRQHandler f n"
 afc arm32 @ 0x0800a85c
 afb+ 0x0800a85c 0x0800a85c 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a85c
-"f adc1_handler 4 0x0800a860"
-"af+ 0x0800a860 adc1_handler f n"
+"f ADC1_IRQHandler 4 0x0800a860"
+"af+ 0x0800a860 ADC1_IRQHandler f n"
 afc arm32 @ 0x0800a860
 afb+ 0x0800a860 0x0800a860 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a860
-"f usbhp_handler 4 0x0800a864"
-"af+ 0x0800a864 usbhp_handler f n"
+"f USB_HP_IRQHandler 4 0x0800a864"
+"af+ 0x0800a864 USB_HP_IRQHandler f n"
 afc arm32 @ 0x0800a864
 afb+ 0x0800a864 0x0800a864 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a864
-"f dac_handler 4 0x0800a868"
-"af+ 0x0800a868 dac_handler f n"
+"f DAC_IRQHandler 4 0x0800a868"
+"af+ 0x0800a868 DAC_IRQHandler f n"
 afc arm32 @ 0x0800a868
 afb+ 0x0800a868 0x0800a868 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a868
-"f comp_handler 4 0x0800a86c"
-"af+ 0x0800a86c comp_handler f n"
+"f COMP_IRQHandler 4 0x0800a86c"
+"af+ 0x0800a86c COMP_IRQHandler f n"
 afc arm32 @ 0x0800a86c
 afb+ 0x0800a86c 0x0800a86c 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a86c
-"f lcd_handler 4 0x0800a870"
-"af+ 0x0800a870 lcd_handler f n"
+"f LCD_IRQHandler 4 0x0800a870"
+"af+ 0x0800a870 LCD_IRQHandler f n"
 afc arm32 @ 0x0800a870
 afb+ 0x0800a870 0x0800a870 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a870
-"f tim9_handler 4 0x0800a874"
-"af+ 0x0800a874 tim9_handler f n"
+"f TIM9_IRQHandler 4 0x0800a874"
+"af+ 0x0800a874 TIM9_IRQHandler f n"
 afc arm32 @ 0x0800a874
 afb+ 0x0800a874 0x0800a874 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a874
-"f tim10_handler 4 0x0800a878"
-"af+ 0x0800a878 tim10_handler f n"
+"f TIM10_IRQHandler 4 0x0800a878"
+"af+ 0x0800a878 TIM10_IRQHandler f n"
 afc arm32 @ 0x0800a878
 afb+ 0x0800a878 0x0800a878 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a878
-"f tim11_handler 4 0x0800a87c"
-"af+ 0x0800a87c tim11_handler f n"
+"f TIM11_IRQHandler 4 0x0800a87c"
+"af+ 0x0800a87c TIM11_IRQHandler f n"
 afc arm32 @ 0x0800a87c
 afb+ 0x0800a87c 0x0800a87c 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a87c
-"f tim2_handler 4 0x0800a880"
-"af+ 0x0800a880 tim2_handler f n"
+"f TIM2_IRQHandler 4 0x0800a880"
+"af+ 0x0800a880 TIM2_IRQHandler f n"
 afc arm32 @ 0x0800a880
 afb+ 0x0800a880 0x0800a880 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a880
-"f tim3_handler 4 0x0800a884"
-"af+ 0x0800a884 tim3_handler f n"
+"f TIM3_IRQHandler 4 0x0800a884"
+"af+ 0x0800a884 TIM3_IRQHandler f n"
 afc arm32 @ 0x0800a884
 afb+ 0x0800a884 0x00000000 0 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x0800a884 0x0800a884 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a884
-"f i2c1_ev_handler 4 0x0800a888"
-"af+ 0x0800a888 i2c1_ev_handler f n"
+"f I2C1_EV_IRQHandler 4 0x0800a888"
+"af+ 0x0800a888 I2C1_EV_IRQHandler f n"
 afc arm32 @ 0x0800a888
 afb+ 0x0800a888 0x0800a888 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a888
-"f i2c1_er_handler 4 0x0800a88c"
-"af+ 0x0800a88c i2c1_er_handler f n"
+"f I2C1_ER_IRQHandler 4 0x0800a88c"
+"af+ 0x0800a88c I2C1_ER_IRQHandler f n"
 afc arm32 @ 0x0800a88c
 afb+ 0x0800a88c 0x0800a88c 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a88c
-"f i2c2_ev_handler 4 0x0800a890"
-"af+ 0x0800a890 i2c2_ev_handler f n"
+"f I2C2_EV_IRQHandler 4 0x0800a890"
+"af+ 0x0800a890 I2C2_EV_IRQHandler f n"
 afc arm32 @ 0x0800a890
 afb+ 0x0800a890 0x0800a890 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a890
-"f i2c2_er_handler 4 0x0800a894"
-"af+ 0x0800a894 i2c2_er_handler f n"
+"f I2C2_ER_IRQHandler 4 0x0800a894"
+"af+ 0x0800a894 I2C2_ER_IRQHandler f n"
 afc arm32 @ 0x0800a894
 afb+ 0x0800a894 0x0800a894 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a894
-"f spi1_handler 4 0x0800a898"
-"af+ 0x0800a898 spi1_handler f n"
+"f SPI1_IRQHandler 4 0x0800a898"
+"af+ 0x0800a898 SPI1_IRQHandler f n"
 afc arm32 @ 0x0800a898
 afb+ 0x0800a898 0x0800a898 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a898
-"f spi2_handler 4 0x0800a89c"
-"af+ 0x0800a89c spi2_handler f n"
+"f SPI2_IRQHandler 4 0x0800a89c"
+"af+ 0x0800a89c SPI2_IRQHandler f n"
 afc arm32 @ 0x0800a89c
 afb+ 0x0800a89c 0x0800a89c 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a89c
-"f usart1_handler 4 0x0800a8a0"
-"af+ 0x0800a8a0 usart1_handler f n"
+"f USART1_IRQHandler 4 0x0800a8a0"
+"af+ 0x0800a8a0 USART1_IRQHandler f n"
 afc arm32 @ 0x0800a8a0
 afb+ 0x0800a8a0 0x0800a8a0 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a8a0
-"f rtc_alarm_handler 4 0x0800a8a4"
-"af+ 0x0800a8a4 rtc_alarm_handler f n"
+"f RTC_Alarm_IRQHandler 4 0x0800a8a4"
+"af+ 0x0800a8a4 RTC_Alarm_IRQHandler f n"
 afc arm32 @ 0x0800a8a4
 afb+ 0x0800a8a4 0x0800a8a4 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a8a4
-"f tim6_handler 4 0x0800a8a8"
-"af+ 0x0800a8a8 tim6_handler f n"
+"f TIM6_IRQHandler 4 0x0800a8a8"
+"af+ 0x0800a8a8 TIM6_IRQHandler f n"
 afc arm32 @ 0x0800a8a8
 afb+ 0x0800a8a8 0x0800a8a8 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a8a8
-"f tim7_handler 4 0x0800a8ac"
-"af+ 0x0800a8ac tim7_handler f n"
+"f TIM7_IRQHandler 4 0x0800a8ac"
+"af+ 0x0800a8ac TIM7_IRQHandler f n"
 afc arm32 @ 0x0800a8ac
 afb+ 0x0800a8ac 0x0800a8ac 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a8ac
@@ -6633,4 +6663,4 @@ tk func.llround.args=1
 tk strndup=func
 # macros
 # seek
-s 0x080071a8
+s 0x080040f4
