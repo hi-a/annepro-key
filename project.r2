@@ -159,9 +159,9 @@ f fcn.08006876 50 0x08006876
 fs *
 f update_some_flags 20 0x08006912 
 fs *
-f fcn.08007188 42 0x08007188 
+f USB_SIL_Write 42 0x08007188 
 fs *
-f fcn.080071b2 36 0x080071b2 
+f USB_SIL_Read 36 0x080071b2 
 fs *
 f fcn.08007400 12 0x08007400 
 fs *
@@ -169,9 +169,9 @@ f fcn.08007808 116 0x08007808
 fs *
 f fcn.0800787c 136 0x0800787c 
 fs *
-f fcn.08007b42 44 0x08007b42 
+f USB_UserToPMABufferCopy 44 0x08007b42 
 fs *
-f fcn.08007b6e 30 0x08007b6e 
+f USB_PMAToUserBufferCopy 30 0x08007b6e 
 fs *
 f fcn.080083f4 56 0x080083f4 
 fs *
@@ -591,38 +591,6 @@ f USART_ITConfig 58 0x08007594
 fs *
 f USART_ReceiveData 8 0x08007578 
 fs *
-f USB_10 26 0x08007324 
-fs *
-f USB_11 26 0x0800733e 
-fs *
-f USB_1 14 0x080071f8 
-fs *
-f USB_12 24 0x08007358 
-fs *
-f USB_13 20 0x08007370 
-fs *
-f USB_14 18 0x08007384 
-fs *
-f USB_15 58 0x08007396 
-fs *
-f USB_16 22 0x080073d0 
-fs *
-f USB_2 26 0x08007206 
-fs *
-f USB_3 48 0x08007220 
-fs *
-f USB_4 48 0x08007250 
-fs *
-f USB_5 32 0x08007280 
-fs *
-f USB_6 32 0x080072a0 
-fs *
-f USB_7 28 0x080072c0 
-fs *
-f USB_8 36 0x080072dc 
-fs *
-f USB_9 36 0x08007300 
-fs *
 f USB_Clock_Enable 10 0x08004784 
 fs *
 f usbfswkup_handler 8 0x08009d4a 
@@ -634,8 +602,6 @@ fs *
 f usblp_handler 4 0x08009d46 
 fs *
 f vector_table 244 0x08004000 
-fs *
-f Wait 42 0x08007138 
 fs *
 f Wait_x4000_x125 52 0x08007104 
 fs *
@@ -701,6 +667,22 @@ f USB_WakeUpIntEnable 96 0x08004724
 f USB_DataPlus_LowSpeedSet_Maybe 52 0x080046f0 
 f MCU_UID_GenerateStr 44 0x08004cd6 
 f USB_PowerDown_Maybe 34 0x080090e6 
+f USB_SetBTABLE 14 0x080071f8 
+f USB_SetEPType 26 0x08007206 
+f USB_SetEPTxStatus 48 0x08007220 
+f USB_SetEPRxStatus 48 0x08007250 
+f USB_5 32 0x08007280 
+f USB_6 32 0x080072a0 
+f USB_ClearEP_KIND 28 0x080072c0 
+f USB_ClearDTOG_RX 36 0x080072dc 
+f USB_ClearDTOG_TX 36 0x08007300 
+f USB_SetEPTxAddr 26 0x08007324 
+f USB_SetEPRxAddr 26 0x0800733e 
+f USB_GetEPTxAddr 24 0x08007358 
+f USB_GetEPRxAddr 20 0x08007370 
+f USB_SetEPTxCount 18 0x08007384 
+f USB_SetEPRxCount 58 0x08007396 
+f USB_GetEPRxCount 22 0x080073d0 
 f Keyboard_Init 140 0x080040f4 
 f TIM4_Update_Flag_1 46 0x08004180 
 f Peripherals_Config 190 0x080041ae 
@@ -746,22 +728,6 @@ f TIM4_Disable_Wrapper 4 0x08006908
 f TIM4_GetIntCounter 6 0x0800690c 
 f Wait_x4000_x125 52 0x08007104 
 f Wait_x4_at_AHB_8 42 0x08007138 
-f USB_1 14 0x080071f8 
-f USB_2 26 0x08007206 
-f USB_3 48 0x08007220 
-f USB_4 48 0x08007250 
-f USB_5 32 0x08007280 
-f USB_6 32 0x080072a0 
-f USB_7 28 0x080072c0 
-f USB_8 36 0x080072dc 
-f USB_9 36 0x08007300 
-f USB_10 26 0x08007324 
-f USB_11 26 0x0800733e 
-f USB_12 24 0x08007358 
-f USB_13 20 0x08007370 
-f USB_14 18 0x08007384 
-f USB_15 58 0x08007396 
-f USB_16 22 0x080073d0 
 f Periphs_Reset 238 0x08007924 
 f fill_memory_range 102 0x08007adc 
 f copy_memory_range 118 0x08007b8c 
@@ -1240,8 +1206,8 @@ f main 12 0x0800a818
 "e zoom.in = io.map"
 "e zoom.maxsz = 512"
 "e zoom.to = 0"
-ofs ../1.4/key.dfu.target0.image0.bin -r-x
 om 3 0x8004000 0x6a82 0x0 -r-x
+ofs ../1.4/key.dfu.target0.image0.bin -r-x
 # sections
 # meta
 CCu base64:aW5pdGlhbCBzdGFjayBwb2ludGVyIDsgcmVzZXJ2ZWQh @ 0x08004000
@@ -1580,6 +1546,9 @@ CCu base64:Y2xlYXIgY291bnRlcg== @ 0x0800715e
 CCu base64:VVNCIHJlZ2lzdGVycyBVU0JfQ05UUg== @ 0x0800716c
 CCu base64:W3IwXTogc2l6ZSwgW3IwKzRdOiBzdGFydCBhZGRyZXNz @ 0x080071d6
 CCu base64:ZG9lcyBMU0IgPSAxPw== @ 0x080071e0
+CCu base64:dGhpcyBsc2wgMiBkb2Vzbid0IHNlZW0gdG8gYmUgaW4gdGhpcyBmdW5jdGlvbiBpbiB0aGUgbGli @ 0x0800720c
+CCu base64:Y2hlY2sgdGhpcyBpcyB0aGUgY29ycmVjdCBmdW5jIG9yIGxpYg== @ 0x08007220
+CCu base64:Y2hlY2sgdGhpcyBpcyB0aGUgY29ycmVjdCBmdW5jIG9yIGxpYg== @ 0x08007250
 CCu base64:VVNBUlQx @ 0x0800740e
 CCu base64:VVNBUlQy @ 0x0800742c
 CCu base64:VVNBUlQz @ 0x0800744a
@@ -1604,6 +1573,7 @@ CCu base64:cjE6IGJpdCB0byB1cGRhdGUsIHIyOiBzdGF0ZQ== @ 0x08007a94
 CCu base64:VElNeF9FR1IgY2xlYXIgY291bnRlciBhbmQgZ2VuZXJhdGUgdXBkYXRl @ 0x08007aa8
 CCu base64:RGlzYWJsZSBzbGF2ZSBtb2RlIHRvIGNsb2NrIHRoZSBwcmVzY2FsZXIgZGlyZWN0bHkgd2l0aCB0aGUgaW50ZXJuYWwgY2xvY2s= @ 0x08007ad0
 CCu base64:ZmlsbHMgcmFuZ2UgW3IwLCByMCtyMV0gd2l0aCByMg== @ 0x08007adc
+CCu base64:Y2hlY2sgZnVuYw== @ 0x08007b42
 CCu base64:Y29weSByMiBieXRlcyBmcm9tIG1lbSBzdGFydCBAcjEgaW50byBtZW0gc3RhcnQgQHIw @ 0x08007b8c
 CCu base64:bG9vcCB0byByZXNldCBtYXRpcml4IGNvbHVtbnM= @ 0x08007c1c
 CCu base64:c2V0IGNvbHVtbnMgb25lIGJ5IG9uZQ== @ 0x08007c44
@@ -2951,13 +2921,13 @@ afS 0 @ 0x8007138
 afc arm32 @ 0x0800716c
 afb+ 0x0800716c 0x0800716c 20 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800716c
-"f fcn.08007188 42 0x08007188"
-"af+ 0x08007188 fcn.08007188 f n"
+"f USB_SIL_Write 42 0x08007188"
+"af+ 0x08007188 USB_SIL_Write f n"
 afc arm32 @ 0x08007188
 afb+ 0x08007188 0x08007188 42 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007188
-"f fcn.080071b2 36 0x080071b2"
-"af+ 0x080071b2 fcn.080071b2 f n"
+"f USB_SIL_Read 36 0x080071b2"
+"af+ 0x080071b2 USB_SIL_Read f n"
 afc arm32 @ 0x080071b2
 afb+ 0x080071b2 0x080071b2 36 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80071b2
@@ -2966,83 +2936,83 @@ afS 0 @ 0x80071b2
 afc arm32 @ 0x080071d6
 afb+ 0x080071d6 0x080071d6 34 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80071d6
-"f _USB_1 14 0x080071f8"
-"af+ 0x080071f8 _USB_1 f n"
+"f USB_SetBTABLE 14 0x080071f8"
+"af+ 0x080071f8 USB_SetBTABLE f n"
 afc arm32 @ 0x080071f8
 afb+ 0x080071f8 0x080071f8 14 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80071f8
-"f _USB_2 26 0x08007206"
-"af+ 0x08007206 _USB_2 f n"
+"f USB_SetEPType 26 0x08007206"
+"af+ 0x08007206 USB_SetEPType f n"
 afc arm32 @ 0x08007206
 afb+ 0x08007206 0x08007206 26 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007206
-"f _USB_3 48 0x08007220"
-"af+ 0x08007220 _USB_3 f n"
+"f USB_SetEPTxStatus 48 0x08007220"
+"af+ 0x08007220 USB_SetEPTxStatus f n"
 afc arm32 @ 0x08007220
 afb+ 0x08007220 0x08007220 48 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007220
-"f _USB_4 48 0x08007250"
-"af+ 0x08007250 _USB_4 f n"
+"f USB_SetEPRxStatus 48 0x08007250"
+"af+ 0x08007250 USB_SetEPRxStatus f n"
 afc arm32 @ 0x08007250
 afb+ 0x08007250 0x08007250 48 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007250
-"f _USB_5 32 0x08007280"
-"af+ 0x08007280 _USB_5 f n"
+"f USB_5 32 0x08007280"
+"af+ 0x08007280 USB_5 f n"
 afc arm32 @ 0x08007280
 afb+ 0x08007280 0x08007280 32 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007280
-"f _USB_6 32 0x080072a0"
-"af+ 0x080072a0 _USB_6 f n"
+"f USB_6 32 0x080072a0"
+"af+ 0x080072a0 USB_6 f n"
 afc arm32 @ 0x080072a0
 afb+ 0x080072a0 0x080072a0 32 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80072a0
-"f _USB_7 28 0x080072c0"
-"af+ 0x080072c0 _USB_7 f n"
+"f USB_ClearEP_KIND 28 0x080072c0"
+"af+ 0x080072c0 USB_ClearEP_KIND f n"
 afc arm32 @ 0x080072c0
 afb+ 0x080072c0 0x080072c0 28 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80072c0
-"f _USB_8 36 0x080072dc"
-"af+ 0x080072dc _USB_8 f n"
+"f USB_ClearDTOG_RX 36 0x080072dc"
+"af+ 0x080072dc USB_ClearDTOG_RX f n"
 afc arm32 @ 0x080072dc
 afb+ 0x080072dc 0x080072dc 36 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80072dc
-"f _USB_9 36 0x08007300"
-"af+ 0x08007300 _USB_9 f n"
+"f USB_ClearDTOG_TX 36 0x08007300"
+"af+ 0x08007300 USB_ClearDTOG_TX f n"
 afc arm32 @ 0x08007300
 afb+ 0x08007300 0x08007300 36 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007300
-"f _USB_10 26 0x08007324"
-"af+ 0x08007324 _USB_10 f n"
+"f USB_SetEPTxAddr 26 0x08007324"
+"af+ 0x08007324 USB_SetEPTxAddr f n"
 afc arm32 @ 0x08007324
 afb+ 0x08007324 0x08007324 26 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007324
-"f _USB_11 26 0x0800733e"
-"af+ 0x0800733e _USB_11 f n"
+"f USB_SetEPRxAddr 26 0x0800733e"
+"af+ 0x0800733e USB_SetEPRxAddr f n"
 afc arm32 @ 0x0800733e
 afb+ 0x0800733e 0x0800733e 26 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800733e
-"f _USB_12 24 0x08007358"
-"af+ 0x08007358 _USB_12 f n"
+"f USB_GetEPTxAddr 24 0x08007358"
+"af+ 0x08007358 USB_GetEPTxAddr f n"
 afc arm32 @ 0x08007358
 afb+ 0x08007358 0x08007358 24 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007358
-"f _USB_13 20 0x08007370"
-"af+ 0x08007370 _USB_13 f n"
+"f USB_GetEPRxAddr 20 0x08007370"
+"af+ 0x08007370 USB_GetEPRxAddr f n"
 afc arm32 @ 0x08007370
 afb+ 0x08007370 0x08007370 20 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007370
-"f _USB_14 18 0x08007384"
-"af+ 0x08007384 _USB_14 f n"
+"f USB_SetEPTxCount 18 0x08007384"
+"af+ 0x08007384 USB_SetEPTxCount f n"
 afc arm32 @ 0x08007384
 afb+ 0x08007384 0x08007384 18 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007384
-"f _USB_15 58 0x08007396"
-"af+ 0x08007396 _USB_15 f n"
+"f USB_SetEPRxCount 58 0x08007396"
+"af+ 0x08007396 USB_SetEPRxCount f n"
 afc arm32 @ 0x08007396
 afb+ 0x08007396 0x08007396 58 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007396
-"f _USB_16 22 0x080073d0"
-"af+ 0x080073d0 _USB_16 f n"
+"f USB_GetEPRxCount 22 0x080073d0"
+"af+ 0x080073d0 USB_GetEPRxCount f n"
 afc arm32 @ 0x080073d0
 afb+ 0x080073d0 0x080073d0 22 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80073d0
@@ -3223,16 +3193,16 @@ afS 0 @ 0x8007ad0
 afc arm32 @ 0x08007adc
 afb+ 0x08007adc 0x08007adc 102 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007adc
-"f fcn.08007b42 44 0x08007b42"
-"af+ 0x08007b42 fcn.08007b42 f n"
+"f USB_UserToPMABufferCopy 44 0x08007b42"
+"af+ 0x08007b42 USB_UserToPMABufferCopy f n"
 afc arm32 @ 0x08007b42
 afb+ 0x08007b42 0x08007b42 18 0x08007b68 0xffffffffffffffff n
 afb+ 0x08007b42 0x08007b54 20 0x08007b68 0xffffffffffffffff n
 afb+ 0x08007b42 0x08007b68 2 0x08007b54 0x08007b6a n
 afb+ 0x08007b42 0x08007b6a 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007b42
-"f fcn.08007b6e 30 0x08007b6e"
-"af+ 0x08007b6e fcn.08007b6e f n"
+"f USB_PMAToUserBufferCopy 30 0x08007b6e"
+"af+ 0x08007b6e USB_PMAToUserBufferCopy f n"
 afc arm32 @ 0x08007b6e
 afb+ 0x08007b6e 0x08007b6e 16 0x08007b88 0xffffffffffffffff n
 afb+ 0x08007b6e 0x08007b7e 10 0x08007b88 0xffffffffffffffff n
@@ -6663,4 +6633,4 @@ tk func.llround.args=1
 tk strndup=func
 # macros
 # seek
-s 0x080085b0
+s 0x080071a8
