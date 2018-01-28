@@ -6,7 +6,7 @@
 #include "headers.h"
 
 int16_t EXTl_Counter;
-char FLAG_1, VAR1;
+char PWR_SaveMode, VAR_782;
 
 void _Keyboard_Init(){
 
@@ -20,133 +20,29 @@ void _Scan_Matrix(0x200017a8){
 
 }
 
-int func_xxxx(int16_t *arr){
+int func_xxxx(int16_t *Struct_2_VAR_18a4){
 
-    switch(arr[0]){
-        case 0:
+    if((Struct_2_VAR_18a4 == 0 && PWR_SaveMode == 0) || (Struct_2_VAR_18a4 == 0 && PWR_SaveMode != 0 && VAR_782 != 2) || Struct_2_VAR_18a4 == 0x92){
+        Struct_2_VAR_18a4 = 0x92
 
-            if(FLAG_1 == 0){
-                arr[0] = 0x92
+        if(EXTl_Counter == 0){
+            return 0;
 
-                if(EXTl_Counter == 0){
-                    return 0;
+        } else {
+            res = func_0x800577a();
 
-                } else {
-                    res = func_0x800577a();
-
-                    if(res == 0){
-                        _Scan_Matrix(args);
-                        func_0x8007ce6(args);
-                        EXTl_Counter = 0;
-
-                        for(int i=0; i<5; i++){
-                            if(X == 0){
-                               continue;
- 
-                            } else {
-                                EXTl_Counter = 1;
-                                arr[0] = 0xb3;
-                                return 1;
-                            }
-                        }
-
-                        if(EXTl_Counter == 0)
-                            _MatrixColumns_Set();
-
-                        arr[0] = 0xb3;
-                        return 1;
-                        
-                    } else {
-                        return 0;
-                    }
-                }
-
-            } else {
-                if(VAR1 == 2){
-                    arr[0] = 0x90;
-
-                    if(EXTl_Counter == 0){
-                        return 0;
-                    } else {
-                        _Scan_Matrix(args);
-                        func_0x8007ce6(args);
-                        EXTl_Counter = 0;
-
-                        for(int i=0; i<5; i++){
-                            if(X == 0){
-                               continue;
- 
-                            } else {
-                                EXTl_Counter = 1;
-                                arr[0] = 0xb3;
-                                return 1;
-                            }
-                        }
-
-                        if(EXTl_Counter == 0)
-                            _MatrixColumns_Set();
-
-                        arr[0] = 0xb3;
-                        return 1;
-                    } 
-                } else {
-
-                    arr[0] = 0x92
-
-                    if(EXTl_Counter == 0){
-                        return 0;
-
-                    } else {
-                        res = func_0x800577a();
-
-                        if(res == 0){
-                            _Scan_Matrix(args);
-                            func_0x8007ce6(args);
-                            EXTl_Counter = 0;
-
-                            for(int i=0; i<5; i++){
-                                if(X == 0){
-                                   continue;
-     
-                                } else {
-                                    EXTl_Counter = 1;
-                                    arr[0] = 0xb3;
-                                    return 1;
-                                }
-                            }
-
-                            if(EXTl_Counter == 0)
-                                _MatrixColumns_Set();
-
-                            arr[0] = 0xb3;
-                            return 1;
-                            
-                        } else {
-                            return 0;
-                        }
-                    }
-
-                }
-            }
-
-            break;
-
-        case 0x90:
-            if(EXTl_Counter == 0){
-                return 0;
-
-            } else {
+            if(res == 0){
                 _Scan_Matrix(args);
-                func_0x8007ce6(args);
+                _Parse_Matrix(args);
                 EXTl_Counter = 0;
 
                 for(int i=0; i<5; i++){
-                    if(X == 0){
+                    if(VAR_1834 == 0){
                        continue;
 
                     } else {
                         EXTl_Counter = 1;
-                        arr[0] = 0xb3;
+                        Struct_2_VAR_18a4 = 0xb3;
                         return 1;
                     }
                 }
@@ -154,56 +50,66 @@ int func_xxxx(int16_t *arr){
                 if(EXTl_Counter == 0)
                     _MatrixColumns_Set();
 
-                arr[0] = 0xb3;
+                Struct_2_VAR_18a4 = 0xb3;
                 return 1;
-            }
-            break;
-
-        case 0x92:
-            if(EXTl_Counter == 0){
-                return 0;
-
+                
             } else {
-                res = func_0x800577a();
+                return 0;
+            }
+        }
 
-                if(res == 0){
-                    _Scan_Matrix(args);
-                    func_0x8007ce6(args);
-                    EXTl_Counter = 0;
+    } else if((Struct_2_VAR_18a4 == 0 && PWR_SaveMode != 0 && VAR_782 == 2) || Struct_2_VAR_18a4 == 0x90) {
+        Struct_2_VAR_18a4 = 0x90;
 
-                    for(int i=0; i<5; i++){
-                        if(X == 0){
-                           continue;
+        if(EXTl_Counter == 0){
+            return 0;
+        } else {
+            _Scan_Matrix(args);
+            _Parse_Matrix(args);
+            EXTl_Counter = 0;
 
-                        } else {
-                            EXTl_Counter = 1;
-                            arr[0] = 0xb3;
-                            return 1;
-                        }
-                    }
+            for(int i=0; i<5; i++){
+                if(VAR_1834 == 0){
+                   continue;
 
-                    if(EXTl_Counter == 0)
-                        _MatrixColumns_Set();
-
-                    arr[0] = 0xb3;
-                    return 1;
-                    
                 } else {
-                    return 0;
+                    EXTl_Counter = 1;
+                    Struct_2_VAR_18a4 = 0xb3;
+                    return 1;
                 }
             }
 
-            break;
+            if(EXTl_Counter == 0)
+                _MatrixColumns_Set();
 
-        arr[0] = 0;
+            Struct_2_VAR_18a4 = 0xb3;
+            return 1;
+        } 
+    } else {
+        Struct_2_VAR_18a4 = 0;
         return 3;
     }
 }
 
-void main_loop(){
-    int16_t arr_0x200018a4[7] = {0};
+void fcn.08008d74(Struct_2){
+    if(Struct_2_VAR_18bc == 0){
+        Struct_2_VAR_18bc = 0x35c;
+        if(USB_Plugged_EXTl == 0){
+            return 0;
+        } else {
+            _PWR_SaveMode_FlagUpdate();
+            if(PWR_SaveMode == 0){
+                if(VAR_782 == 2){
+                    if(PWR_SaveMode == 0){
+                        
+}
 
-    func_xxxx(int16_t arr_0x200018a4);
+void main_loop(){
+    int16_t Struct_2 = {0};
+
+    func_xxxx(Struct_2_VAR_18a4);
+    // ....
+    fcn.08008d74(Struct_2_VAR_18bc);
     // ....
 }
 
