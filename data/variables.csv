@@ -2,6 +2,8 @@
 ,,"--0x20000768",,,,,,,,,,,,
 ,,,"B","0x20000769",0,,,,,,,,,
 ,,,"B","0x2000076a",0,,,,,,,,,
+,,"read @0x08005228","B","0x2000076b",,,,,,,,,,
+,,"read @0x08005228","B","0x2000076c",,,,,,,,,,
 ,,,,,,,,,,,,,,
 ,,"from eeprom","W","0x20000770",,,,0,,,,,,
 ,,"from eeprom","W","0x20000774",,,,0,,,,,,
@@ -40,11 +42,27 @@
 ,,,,,,,,,,,,,,
 ,,"Updated @0x08006912 ","B","0x200007c9",,,,,,,,,,
 ,,"set to 1 @0x08006912","B","0x200007ca",0,,,,,,,,,
-,"DMA1C7_??","set when dma1 ch7 int hit;","B","0x200007cb",1,,,,,,,,,
+,"DMA_BT_TxTC","set when DMA1_IT_TC7 int hit;","B","0x200007cb",1,,,,,,,,,
 ,,,,,,,,,,,,,,
 ,,,"B","0x200007ce",0,,,,,,,,,
 ,,,,,,,,,,,,,,
-,,"--0x200017a8",,,,,,,,,,,,
+,"BT_TxBuffer","BT Tx packet: 256 bytes (0x100)","AS","0x200007d4",,,,,,,,,,
+,,,"AE","0x200008d3",,,,,,,,,,0
+,,,,,,,,,,,,,,
+,"DMA_LED_RxBuffer","LED Rx new packet: 256 bytes (0x100)","AS","0x200009d4",,,,,,,,,,
+,,,"AE","0x20000ad3",,,,,,,,,,0
+,"LED_RxBuffer","LED Rx old packet: 256 bytes (0x100); copied here when new pkt arrives","AS","0x20000ad4",,,,,,,,,,
+,,,"AE","0x20000bd3",,,,,,,,,,0
+,"DMA_BT_RxBuffer","BT Rx new packet: 256 bytes (0x100)","AS","0x20000bd4",,,,,,,,,,
+,,,"AE","0x20000cd3",,,,,,,,,,0
+,"BT_RxBuffer","BT Rx old packet: 256 bytes (0x100); copied here when new pkt arrives","AS","0x20000cd4",,,,,,,,,,
+,,,"AE","0x20000dd3",,,,,,,,,,0
+,"MSG_Buffer","LED or BT Rx packets are copied here for parsing","AS","0x20000dd4",,,,,,,,,,
+,,,"AE","0x20000ed3",,,,,,,,,,0
+,,,,,,,,,,,,,,
+,"LED_TxBuffer","LED Tx packet: 256 bytes (0x100)","AS","0x200016a8",,,,,,,,,,
+,,,"AE","0x200017a7",,,,,,,,,,0
+,,,,,,,,,,,,,,
 ,"VAR_1834",,"H","0x20001834",,,,,,,,,,
 ,,,,,,,,,,,,,,
 ,,,"W","0x20001848",,,,,"0x20000000",,,,,
@@ -67,6 +85,8 @@
 ,"TIM4_Flag_1","read in int: =1 if (PWR_SaveMode=0 && FLAG_2!=1) else 0","B","0x20001895",,,0,,1,,,,,
 ,"FLAG_2","Set from eeprom 0x080066c4","B","0x20001896",,0,,,,,,,,
 ,,,,,,,,,,,,,,
+,,"current value of TIM4_IntCounter, updated @0x08008f1e","W","0x2000189c",,,,,,,,,,
+,,"updated @0x08008f1e","W","0x200018a0",,,,,,,,,,
 ,"Struct_2_VAR_18a4","can be 0, 0x90, 0x92, 0xb3","H","0x200018a4",,,,,,,0,"0x92",,
 ,,,,,,,,,,,,,,
 ,"Struct_2",,"H","0x200018a8",,,,,,,0,,,
@@ -96,6 +116,9 @@
 ,,,"AE","0x20001942",,,,,,,,,,0
 ,,"Array cleared @0x0800855c","AS","0x20001944",,,,,,,,,,0
 ,,,"AE","0x2000194e",,,,,,,,,,0
+,,,,,,,,,,,,,,
+,,"contains data that will be sent to LED MCU @0x08005468","AS","0x20001950",,,,,,,,,,0
+,,,"AE","0x20001959",,,,,,,,,,0
 ,,,,,,,,,,,,,,
 ,,"TIM4_IntCounter stored here @0x08008f1e","W","0x20001968",,,,,,,,,,
 ,,"0x1388 (5000) stored here @0x08008f1e","W","0x2000196c",,,,,,,,,,
