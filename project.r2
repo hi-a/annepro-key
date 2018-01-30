@@ -187,8 +187,6 @@ f fcn.08008f32 54 0x08008f32
 fs *
 f fcn.08008f68 198 0x08008f68 
 fs *
-f USB_Update_some_pointer_struct 20 0x08009030 
-fs *
 f USB_WakeUpIntDisable_Maybe 92 0x08009050 
 fs *
 f USB_PowerOn 34 0x080090c4 
@@ -668,6 +666,7 @@ f MSG_MacroTypeAction_Maybe 514 0x08005dcc
 f Msg_TypeParse 146 0x08005fce 
 f MSG_PacketGet 70 0x08006060 
 f Keyboard_PWRManage_Maybe 340 0x08008d74 
+f EEPROM_Write_Something 44 0x08006698 
 f Keyboard_Init 140 0x080040f4 
 f TIM4_Update_Flag_1 46 0x08004180 
 f Peripherals_Config 190 0x080041ae 
@@ -740,7 +739,6 @@ f Keyboard_PWRManage_Maybe 340 0x08008d74
 f TIM4_GetIntCounter_Wrapper 4 0x08008ee8 
 f TIM4_IntCounter_Something2 50 0x08008eec 
 f TIM4_IntCounter_Something 14 0x08008f1e 
-f USB_Update_some_pointer_struct 20 0x08009030 
 f USB_WakeUpIntDisable_Maybe 92 0x08009050 
 f USB_PeriphDisable 24 0x080090ac 
 f main2 26 0x0800a7cc 
@@ -775,6 +773,7 @@ f main 12 0x0800a818
 "e anal.maxreflines = 0"
 "e anal.noncode = false"
 "e anal.nopskip = true"
+"e anal.pltujmp = true"
 "e anal.prelude = "
 "e anal.ptrdepth = 3"
 "e anal.pushret = false"
@@ -840,7 +839,6 @@ f main 12 0x0800a818
 "e asm.indentspace = 2"
 "e asm.invhex = false"
 "e asm.jmphints = true"
-"e asm.jmpsub = false"
 "e asm.lbytes = true"
 "e asm.leahints = false"
 "e asm.lines = true"
@@ -996,7 +994,6 @@ f main 12 0x0800a818
 "e dir.dbgsnap = ."
 "e dir.magic = /usr/share/radare2/2.2.0-git/magic"
 "e dir.plugins = /usr/lib/radare2/2.2.0-git/"
-"e dir.prefix = /usr"
 "e dir.projects = ~/.config/radare2/projects"
 "e dir.source = "
 "e dir.types = /usr/include"
@@ -1138,7 +1135,6 @@ f main 12 0x0800a818
 "e scr.breakword = "
 "e scr.color = true"
 "e scr.color.bytes = true"
-"e scr.color.grep = false"
 "e scr.color.ops = true"
 "e scr.columns = 0"
 "e scr.echo = false"
@@ -1216,6 +1212,8 @@ ofs ../1.4/key.dfu.target0.image0.bin -r-x
 om 3 0x8004000 0x6a82 0x0 -r-x
 om 3 0x8004000 0x6a82 0x0 -r-x
 om 3 0x8004000 0x6a82 0x0 -r-x
+om 3 0x8004000 0x6a82 0x0 -r-x
+ofs ../1.4/key.dfu.target0.image0.bin -r-x
 ofs ../1.4/key.dfu.target0.image0.bin -r-x
 ofs ../1.4/key.dfu.target0.image0.bin -r-x
 # sections
@@ -1658,8 +1656,11 @@ CCu base64:YW4gRVhUbCBpbnRlcnJ1cHQgY291bnRlcg== @ 0x0800866e
 CCu base64:cmV0dXJuIGlmIDA= @ 0x08008672
 CCu base64:cjA9MHgyMDAwMThiYw== @ 0x08008d76
 CCu base64:c3RvcmVzIFRJTTRfSW50Q291bnRlciBhbmQgYW5vdGhlciB2YWx1ZQ== @ 0x08008f1e
-CCu base64:JnBJbmZvcm1hdGlvbiAoYSBVU0Igc3RydWN0KQ== @ 0x08009030
-CCu base64:JlVTQl9Qb3J0X0luaXQoKSAweDA4MDA5YTU1 @ 0x0800903c
+CCu base64:JkRldmljZV9JbmZv @ 0x08009030
+CCu base64:JkRldmljZV9Qcm9wZXJ0eQ== @ 0x08009038
+CCu base64: @ 0x0800903a
+CCu base64:JlVzZXJfU3RhbmRhcmRfUmVxdWVzdHM= @ 0x0800903c
+CCu base64:cFByb3BlcnR5LT5Jbml0KCk= @ 0x08009042
 CCu base64:RVhUbF9MaW5lMTggY29ubmVjdGVkIHRvIFVTQiBGUyB3YWtldXAgZXZlbnQ= @ 0x08009052
 CCu base64:RVhUSV9UcmlnZ2VyX1Jpc2luZw== @ 0x08009060
 CCu base64:ZGlzYWJsZQ== @ 0x08009066
@@ -1681,7 +1682,8 @@ CCu base64:c29mdHdhcmUgZGlzY29ubmVjdCBwaW4= @ 0x080090fc
 CCu base64:cG93ZXJkb3duIGFuZCByZXNldCBVU0IgcGVyaXBoZXJhbA== @ 0x08009102
 CCu base64:Y2hlY2sgZnVuYw== @ 0x08009566
 CCu base64:Y2hlY2sgZnVuYw== @ 0x0800990c
-CCu base64:c2VlIHVzYl9wcm9wLmM= @ 0x08009a54
+CCu base64:dGhpcyBpcyBwVXNlcl9TdGFuZGFyZF9SZXF1ZXN0cy5Vc2VyX0dldENvbmZpZ3VyYXRpb24oKQ== @ 0x08009a50
+CCu base64:c2VlIHVzYl9wcm9wLmMgdGhpcyBpcyBwUHJvcGVydHkuSW5pdCgp @ 0x08009a54
 CCu base64:c2VlIHVzYl9wcm9wLmM= @ 0x08009b78
 CCu base64:Y2FsbCBDb3B5Um91dGluZSAoc2VlIHVzYl9wcm9jLmMp @ 0x08009c28
 CCu base64:Y2xlYXIgaW50ZXJydXB0IHBlbmRpbmcgYml0IFBSMTggKEVYVElfUFIp @ 0x08009d4a
@@ -3662,8 +3664,8 @@ afb+ 0x08008f68 0x08008fe4 14 0x08008f82 0x08008ff2 n
 afb+ 0x08008f68 0x08008ff2 48 0x08008fc2 0xffffffffffffffff n
 afb+ 0x08008f68 0x08009022 12 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8008f68
-"f _USB_Update_some_pointer_struct 20 0x08009030"
-"af+ 0x08009030 _USB_Update_some_pointer_struct f n"
+"f USB_Init 20 0x08009030"
+"af+ 0x08009030 USB_Init f n"
 afc arm32 @ 0x08009030
 afb+ 0x08009030 0x08009030 20 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009030
@@ -3969,6 +3971,11 @@ afb+ 0x080099d2 0x080099e2 26 0x080099fc 0xffffffffffffffff n
 afb+ 0x080099d2 0x080099fc 4 0x080099e2 0x08009a00 n
 afb+ 0x080099d2 0x08009a00 12 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80099d2
+"f USB_User_GetConfiguration 2 0x08009a50"
+"af+ 0x08009a50 USB_User_GetConfiguration f n"
+afc arm32 @ 0x08009a50
+afb+ 0x08009a50 0x08009a50 2 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x8009a50
 "f USB_Port_Init 30 0x08009a54"
 "af+ 0x08009a54 USB_Port_Init f n"
 afc arm32 @ 0x08009a54
@@ -6628,4 +6635,4 @@ tk func.llround.args=1
 tk strndup=func
 # macros
 # seek
-s 0x0800a8b0
+s 0x08007c04
