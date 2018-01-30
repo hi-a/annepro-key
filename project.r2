@@ -111,8 +111,6 @@ f USB_Send_Something 68 0x08004d16
 fs *
 f fcn.08004d68 134 0x08004d68 
 fs *
-f BT_P1_0 34 0x08004dfc 
-fs *
 f BT_P1_0Reset 34 0x08004e1e 
 fs *
 f USART2_Init 146 0x08004ec0 
@@ -131,15 +129,13 @@ f MSG_KeyboardTypeAction 344 0x08005860
 fs *
 f MSG_BLETypeAction 528 0x080059d0 
 fs *
-f fcn.08006698 44 0x08006698 
-fs *
 f EEPROM_Write_Struct_1 58 0x080066e8 
 fs *
-f fcn.080067ee 48 0x080067ee 
+f EEPROM_Write_Something2 48 0x080067ee 
 fs *
-f fcn.0800681e 88 0x0800681e 
+f EEPROM_Write_Something3 88 0x0800681e 
 fs *
-f fcn.08006876 50 0x08006876 
+f EEPROM_Write_Something4 50 0x08006876 
 fs *
 f update_some_flags 20 0x08006912 
 fs *
@@ -181,9 +177,9 @@ f Msg_Receive 84 0x08008cb8
 fs *
 f fcn.08008d0c 104 0x08008d0c 
 fs *
-f fcn.08008eec 50 0x08008eec 
+f TIM4_IntCounter_Something2 50 0x08008eec 
 fs *
-f fcn.08008f1e 14 0x08008f1e 
+f TIM4_IntCounter_Something 14 0x08008f1e 
 fs *
 f fcn.08008f2c 6 0x08008f2c 
 fs *
@@ -191,7 +187,7 @@ f fcn.08008f32 54 0x08008f32
 fs *
 f fcn.08008f68 198 0x08008f68 
 fs *
-f fcn.08009030 20 0x08009030 
+f USB_Update_some_pointer_struct 20 0x08009030 
 fs *
 f USB_WakeUpIntDisable_Maybe 92 0x08009050 
 fs *
@@ -199,31 +195,31 @@ f USB_PowerOn 34 0x080090c4
 fs *
 f USB_Resume_Init 20 0x08009108 
 fs *
-f fcn.08009120 152 0x08009120 
+f USB_Something7 152 0x08009120 
 fs *
-f fcn.080091e8 52 0x080091e8 
+f USB_Something5 52 0x080091e8 
 fs *
-f fcn.08009240 76 0x08009240 
+f USB_Something3 76 0x08009240 
 fs *
-f fcn.08009336 214 0x08009336 
+f USB_Something 214 0x08009336 
 fs *
-f fcn.0800940c 126 0x0800940c 
+f USB_Something8 126 0x0800940c 
 fs *
-f fcn.0800948a 30 0x0800948a 
+f USB_Something9 30 0x0800948a 
 fs *
-f fcn.080094c4 162 0x080094c4 
+f USB_Something11 162 0x080094c4 
 fs *
 f USB_SendPacket_Maybe 166 0x08009566 
 fs *
-f fcn.0800960c 218 0x0800960c 
+f USB_Something12 218 0x0800960c 
 fs *
-f fcn.080096e6 438 0x080096e6 
+f USB_Something13 438 0x080096e6 
 fs *
-f fcn.0800989c 112 0x0800989c 
+f USB_Something14 112 0x0800989c 
 fs *
 f USB_In0_Process_Maybe 82 0x0800990c 
 fs *
-f fcn.0800995e 116 0x0800995e 
+f USB_Something15 116 0x0800995e 
 fs *
 f USB_SetDeviceAddress 58 0x080099d2 
 fs *
@@ -575,13 +571,13 @@ f WWDG_IRQHandler 4 0x0800a824
 fs *
 f zero_fill_bss 34 0x080071d6 
 fs *
-f fcn.080091c4 36 0x080091c4 
+f USB_Something6 36 0x080091c4 
 fs *
-f fcn.0800921c 36 0x0800921c 
+f USB_Something4 36 0x0800921c 
 fs *
-f fcn.0800928c 170 0x0800928c 
+f USB_Something2 170 0x0800928c 
 fs *
-f fcn.080094a8 28 0x080094a8 
+f USB_Something10 28 0x080094a8 
 fs *
 f eax 1 0x00000000 
 fs *
@@ -723,7 +719,11 @@ f Periph_LowPowerMode_Maybe 122 0x080062a0
 f EXTl_LowPowerConfig_Maybe 310 0x0800631a 
 f GPIO_LowPowerMode_Maybe 494 0x08006450 
 f Keyboard_LowPowerMode 90 0x0800663e 
+f EEPROM_Write_Something 44 0x08006698 
 f EEPROM_Write_Struct_1 58 0x080066e8 
+f EEPROM_Write_Something2 48 0x080067ee 
+f EEPROM_Write_Something3 88 0x0800681e 
+f EEPROM_Write_Something4 50 0x08006876 
 f TIM4_Config 52 0x080068d4 
 f TIM4_Disable_Wrapper 4 0x08006908 
 f TIM4_GetIntCounter 6 0x0800690c 
@@ -738,6 +738,9 @@ f BLE_Init_Maybe 152 0x08008c20
 f Msg_Receive 84 0x08008cb8 
 f Keyboard_PWRManage_Maybe 340 0x08008d74 
 f TIM4_GetIntCounter_Wrapper 4 0x08008ee8 
+f TIM4_IntCounter_Something2 50 0x08008eec 
+f TIM4_IntCounter_Something 14 0x08008f1e 
+f USB_Update_some_pointer_struct 20 0x08009030 
 f USB_WakeUpIntDisable_Maybe 92 0x08009050 
 f USB_PeriphDisable 24 0x080090ac 
 f main2 26 0x0800a7cc 
@@ -1211,6 +1214,10 @@ f main 12 0x0800a818
 "e zoom.to = 0"
 ofs ../1.4/key.dfu.target0.image0.bin -r-x
 om 3 0x8004000 0x6a82 0x0 -r-x
+om 3 0x8004000 0x6a82 0x0 -r-x
+om 3 0x8004000 0x6a82 0x0 -r-x
+ofs ../1.4/key.dfu.target0.image0.bin -r-x
+ofs ../1.4/key.dfu.target0.image0.bin -r-x
 # sections
 # meta
 CCu base64:aW5pdGlhbCBzdGFjayBwb2ludGVyIDsgcmVzZXJ2ZWQh @ 0x08004000
@@ -1651,6 +1658,8 @@ CCu base64:YW4gRVhUbCBpbnRlcnJ1cHQgY291bnRlcg== @ 0x0800866e
 CCu base64:cmV0dXJuIGlmIDA= @ 0x08008672
 CCu base64:cjA9MHgyMDAwMThiYw== @ 0x08008d76
 CCu base64:c3RvcmVzIFRJTTRfSW50Q291bnRlciBhbmQgYW5vdGhlciB2YWx1ZQ== @ 0x08008f1e
+CCu base64:JnBJbmZvcm1hdGlvbiAoYSBVU0Igc3RydWN0KQ== @ 0x08009030
+CCu base64:JlVTQl9Qb3J0X0luaXQoKSAweDA4MDA5YTU1 @ 0x0800903c
 CCu base64:RVhUbF9MaW5lMTggY29ubmVjdGVkIHRvIFVTQiBGUyB3YWtldXAgZXZlbnQ= @ 0x08009052
 CCu base64:RVhUSV9UcmlnZ2VyX1Jpc2luZw== @ 0x08009060
 CCu base64:ZGlzYWJsZQ== @ 0x08009066
@@ -2524,8 +2533,8 @@ afS 0 @ 0x8006450
 afc arm32 @ 0x0800663e
 afb+ 0x0800663e 0x0800663e 90 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800663e
-"f fcn.08006698 44 0x08006698"
-"af+ 0x08006698 fcn.08006698 f n"
+"f _EEPROM_Write_Something 44 0x08006698"
+"af+ 0x08006698 _EEPROM_Write_Something f n"
 afc arm32 @ 0x08006698
 afb+ 0x08006698 0x08006698 44 0x08006d7e 0xffffffffffffffff n
 afS 0 @ 0x8006698
@@ -2549,13 +2558,13 @@ afS 0 @ 0x8006728
 afc arm32 @ 0x080067ce
 afb+ 0x080067ce 0x080067ce 32 0x08006d7e 0xffffffffffffffff n
 afS 0 @ 0x80067ce
-"f fcn.080067ee 48 0x080067ee"
-"af+ 0x080067ee fcn.080067ee f n"
+"f _EEPROM_Write_Something2 48 0x080067ee"
+"af+ 0x080067ee _EEPROM_Write_Something2 f n"
 afc arm32 @ 0x080067ee
 afb+ 0x080067ee 0x080067ee 48 0x08006d7e 0xffffffffffffffff n
 afS 0 @ 0x80067ee
-"f fcn.0800681e 88 0x0800681e"
-"af+ 0x0800681e fcn.0800681e f n"
+"f _EEPROM_Write_Something3 88 0x0800681e"
+"af+ 0x0800681e _EEPROM_Write_Something3 f n"
 afc arm32 @ 0x0800681e
 afb+ 0x0800681e 0x0800681e 32 0x08006850 0x0800683e n
 afb+ 0x0800681e 0x0800683e 18 0xffffffffffffffff 0xffffffffffffffff n
@@ -2564,8 +2573,8 @@ afb+ 0x0800681e 0x08006854 22 0x0800686a 0xffffffffffffffff n
 afb+ 0x0800681e 0x0800686a 4 0x08006854 0x0800686e n
 afb+ 0x0800681e 0x0800686e 8 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800681e
-"f fcn.08006876 50 0x08006876"
-"af+ 0x08006876 fcn.08006876 f n"
+"f _EEPROM_Write_Something4 50 0x08006876"
+"af+ 0x08006876 _EEPROM_Write_Something4 f n"
 afc arm32 @ 0x08006876
 afb+ 0x08006876 0x08006876 22 0x0800689c 0xffffffffffffffff n
 afb+ 0x08006876 0x0800688c 16 0x0800689c 0xffffffffffffffff n
@@ -3612,15 +3621,15 @@ afS 0 @ 0x8008d74
 afc arm32 @ 0x08008ee8
 afb+ 0x08008ee8 0x08008ee8 4 0x0800690c 0xffffffffffffffff n
 afS 0 @ 0x8008ee8
-"f fcn.08008eec 50 0x08008eec"
-"af+ 0x08008eec fcn.08008eec f n"
+"f _TIM4_IntCounter_Something2 50 0x08008eec"
+"af+ 0x08008eec _TIM4_IntCounter_Something2 f n"
 afc arm32 @ 0x08008eec
 afb+ 0x08008eec 0x08008eec 10 0x08008f1a 0x08008ef6 n
 afb+ 0x08008eec 0x08008ef6 36 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08008eec 0x08008f1a 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8008eec
-"f fcn.08008f1e 14 0x08008f1e"
-"af+ 0x08008f1e fcn.08008f1e f n"
+"f _TIM4_IntCounter_Something 14 0x08008f1e"
+"af+ 0x08008f1e _TIM4_IntCounter_Something f n"
 afc arm32 @ 0x08008f1e
 afb+ 0x08008f1e 0x08008f1e 14 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8008f1e
@@ -3653,8 +3662,8 @@ afb+ 0x08008f68 0x08008fe4 14 0x08008f82 0x08008ff2 n
 afb+ 0x08008f68 0x08008ff2 48 0x08008fc2 0xffffffffffffffff n
 afb+ 0x08008f68 0x08009022 12 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8008f68
-"f fcn.08009030 20 0x08009030"
-"af+ 0x08009030 fcn.08009030 f n"
+"f _USB_Update_some_pointer_struct 20 0x08009030"
+"af+ 0x08009030 _USB_Update_some_pointer_struct f n"
 afc arm32 @ 0x08009030
 afb+ 0x08009030 0x08009030 20 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009030
@@ -3683,8 +3692,8 @@ afS 0 @ 0x80090e6
 afc arm32 @ 0x08009108
 afb+ 0x08009108 0x08009108 20 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009108
-"f fcn.08009120 152 0x08009120"
-"af+ 0x08009120 fcn.08009120 f n"
+"f USB_Something7 152 0x08009120"
+"af+ 0x08009120 USB_Something7 f n"
 afc arm32 @ 0x08009120
 afb+ 0x08009120 0x08009120 8 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08009120 0x08009128 2 0x0800912a 0xffffffffffffffff n
@@ -3692,13 +3701,13 @@ afb+ 0x08009120 0x0800912a 6 0x080091b2 0x08009130 n
 afb+ 0x08009120 0x08009130 4 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08009120 0x080091b2 6 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009120
-"f fcn.080091c4 36 0x080091c4"
-"af+ 0x080091c4 fcn.080091c4 f n"
+"f USB_Something6 36 0x080091c4"
+"af+ 0x080091c4 USB_Something6 f n"
 afc arm32 @ 0x080091c4
 afb+ 0x080091c4 0x080091c4 36 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80091c4
-"f fcn.080091e8 52 0x080091e8"
-"af+ 0x080091e8 fcn.080091e8 f n"
+"f USB_Something5 52 0x080091e8"
+"af+ 0x080091e8 USB_Something5 f n"
 afc arm32 @ 0x080091e8
 afb+ 0x080091e8 0x080091e8 20 0x08009218 0x080091fc n
 afb+ 0x080091e8 0x080091fc 6 0x08009218 0x08009202 n
@@ -3706,13 +3715,13 @@ afb+ 0x080091e8 0x08009202 6 0x08009218 0x08009208 n
 afb+ 0x080091e8 0x08009208 16 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x080091e8 0x08009218 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80091e8
-"f fcn.0800921c 36 0x0800921c"
-"af+ 0x0800921c fcn.0800921c f n"
+"f USB_Something4 36 0x0800921c"
+"af+ 0x0800921c USB_Something4 f n"
 afc arm32 @ 0x0800921c
 afb+ 0x0800921c 0x0800921c 36 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800921c
-"f fcn.08009240 76 0x08009240"
-"af+ 0x08009240 fcn.08009240 f n"
+"f USB_Something3 76 0x08009240"
+"af+ 0x08009240 USB_Something3 f n"
 afc arm32 @ 0x08009240
 afb+ 0x08009240 0x08009240 30 0x08009288 0x0800925e n
 afb+ 0x08009240 0x0800925e 4 0x08009288 0x08009262 n
@@ -3721,13 +3730,13 @@ afb+ 0x08009240 0x08009268 6 0x08009288 0x0800926e n
 afb+ 0x08009240 0x0800926e 26 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08009240 0x08009288 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009240
-"f fcn.0800928c 170 0x0800928c"
-"af+ 0x0800928c fcn.0800928c f n"
+"f USB_Something2 170 0x0800928c"
+"af+ 0x0800928c USB_Something2 f n"
 afc arm32 @ 0x0800928c
 afb+ 0x0800928c 0x0800928c 170 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800928c
-"f fcn.08009336 214 0x08009336"
-"af+ 0x08009336 fcn.08009336 f n"
+"f USB_Something 214 0x08009336"
+"af+ 0x08009336 USB_Something f n"
 afc arm32 @ 0x08009336
 afb+ 0x08009336 0x08009336 16 0x08009352 0x08009346 n
 afb+ 0x08009336 0x08009346 12 0xffffffffffffffff 0xffffffffffffffff n
@@ -3750,8 +3759,8 @@ afb+ 0x08009336 0x080093e4 22 0x080093fa 0xffffffffffffffff n
 afb+ 0x08009336 0x080093fa 14 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08009336 0x08009408 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009336
-"f fcn.0800940c 126 0x0800940c"
-"af+ 0x0800940c fcn.0800940c f n"
+"f USB_Something8 126 0x0800940c"
+"af+ 0x0800940c USB_Something8 f n"
 afc arm32 @ 0x0800940c
 afb+ 0x0800940c 0x0800940c 26 0x0800942c 0x08009426 n
 afb+ 0x0800940c 0x08009426 6 0x08009430 0xffffffffffffffff n
@@ -3766,18 +3775,18 @@ afb+ 0x0800940c 0x0800945a 18 0x0800947c 0xffffffffffffffff n
 afb+ 0x0800940c 0x0800946c 16 0x0800947c 0xffffffffffffffff b
 afb+ 0x0800940c 0x0800947c 14 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800940c
-"f fcn.0800948a 30 0x0800948a"
-"af+ 0x0800948a fcn.0800948a f n"
+"f USB_Something9 30 0x0800948a"
+"af+ 0x0800948a USB_Something9 f n"
 afc arm32 @ 0x0800948a
 afb+ 0x0800948a 0x0800948a 30 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800948a
-"f fcn.080094a8 28 0x080094a8"
-"af+ 0x080094a8 fcn.080094a8 f n"
+"f USB_Something10 28 0x080094a8"
+"af+ 0x080094a8 USB_Something10 f n"
 afc arm32 @ 0x080094a8
 afb+ 0x080094a8 0x080094a8 28 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80094a8
-"f fcn.080094c4 162 0x080094c4"
-"af+ 0x080094c4 fcn.080094c4 f n"
+"f USB_Something11 162 0x080094c4"
+"af+ 0x080094c4 USB_Something11 f n"
 afc arm32 @ 0x080094c4
 afb+ 0x080094c4 0x080094c4 20 0x08009506 0x080094d8 n
 afb+ 0x080094c4 0x080094d8 4 0x08009506 0x080094dc n
@@ -3810,8 +3819,8 @@ afb+ 0x08009566 0x080095c4 2 0x080095c6 0xffffffffffffffff n
 afb+ 0x08009566 0x080095c6 62 0x08009604 0xffffffffffffffff b
 afb+ 0x08009566 0x08009604 8 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009566
-"f fcn.0800960c 218 0x0800960c"
-"af+ 0x0800960c fcn.0800960c f n"
+"f USB_Something12 218 0x0800960c"
+"af+ 0x0800960c USB_Something12 f n"
 afc arm32 @ 0x0800960c
 afb+ 0x0800960c 0x0800960c 20 0x0800967c 0x08009620 n
 afb+ 0x0800960c 0x08009620 4 0x0800962a 0x08009624 n
@@ -3848,8 +3857,8 @@ afb+ 0x0800960c 0x080096c0 4 0x080096e0 0xffffffffffffffff n
 afb+ 0x0800960c 0x080096c4 28 0x080096e0 0xffffffffffffffff b
 afb+ 0x0800960c 0x080096e0 6 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800960c
-"f fcn.080096e6 438 0x080096e6"
-"af+ 0x080096e6 fcn.080096e6 f n"
+"f USB_Something13 438 0x080096e6"
+"af+ 0x080096e6 USB_Something13 f n"
 afc arm32 @ 0x080096e6
 afb+ 0x080096e6 0x08009566 20 0x080095b4 0x0800957a n
 afb+ 0x080096e6 0x0800957a 6 0x080095b4 0x08009580 n
@@ -3920,8 +3929,8 @@ afb+ 0x080096e6 0x08009876 6 0x0800987c 0xffffffffffffffff n
 afb+ 0x080096e6 0x0800987c 18 0x08009566 0xffffffffffffffff n
 afb+ 0x080096e6 0x0800988e 14 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80096e6
-"f fcn.0800989c 112 0x0800989c"
-"af+ 0x0800989c fcn.0800989c f n"
+"f USB_Something14 112 0x0800989c"
+"af+ 0x0800989c USB_Something14 f n"
 afc arm32 @ 0x0800989c
 afb+ 0x0800989c 0x0800989c 112 0x0800999e 0xffffffffffffffff n
 afS 0 @ 0x800989c
@@ -3930,8 +3939,8 @@ afS 0 @ 0x800989c
 afc arm32 @ 0x0800990c
 afb+ 0x0800990c 0x0800990c 82 0x0800999e 0xffffffffffffffff n
 afS 0 @ 0x800990c
-"f fcn.0800995e 116 0x0800995e"
-"af+ 0x0800995e fcn.0800995e f n"
+"f USB_Something15 116 0x0800995e"
+"af+ 0x0800995e USB_Something15 f n"
 afc arm32 @ 0x0800995e
 afb+ 0x0800995e 0x0800995e 12 0x0800996e 0x0800996a n
 afb+ 0x0800995e 0x0800996a 4 0x08009972 0x0800996e n
@@ -6619,4 +6628,4 @@ tk func.llround.args=1
 tk strndup=func
 # macros
 # seek
-s 0x080085b6
+s 0x0800a8b0
