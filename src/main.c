@@ -37,7 +37,7 @@ int func_xxxx(int16_t *Struct_2_VAR_18a4){
                 EXTl_Counter = 0;
 
                 for(int i=0; i<5; i++){
-                    if(VAR_1834 == 0){
+                    if(Row_1_BitSet == 0){
                        continue;
 
                     } else {
@@ -69,7 +69,7 @@ int func_xxxx(int16_t *Struct_2_VAR_18a4){
             EXTl_Counter = 0;
 
             for(int i=0; i<5; i++){
-                if(VAR_1834 == 0){
+                if(Row_1_BitSet == 0){
                    continue;
 
                 } else {

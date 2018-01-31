@@ -667,6 +667,8 @@ f Msg_TypeParse 146 0x08005fce
 f MSG_PacketGet 70 0x08006060 
 f Keyboard_PWRManage_Maybe 340 0x08008d74 
 f EEPROM_Write_Something 44 0x08006698 
+f USB_Init 20 0x08009030 
+f USB_User_GetConfiguration 2 0x08009a50 
 f Keyboard_Init 140 0x080040f4 
 f TIM4_Update_Flag_1 46 0x08004180 
 f Peripherals_Config 190 0x080041ae 
@@ -773,7 +775,6 @@ f main 12 0x0800a818
 "e anal.maxreflines = 0"
 "e anal.noncode = false"
 "e anal.nopskip = true"
-"e anal.pltujmp = true"
 "e anal.prelude = "
 "e anal.ptrdepth = 3"
 "e anal.pushret = false"
@@ -839,6 +840,7 @@ f main 12 0x0800a818
 "e asm.indentspace = 2"
 "e asm.invhex = false"
 "e asm.jmphints = true"
+"e asm.jmpsub = false"
 "e asm.lbytes = true"
 "e asm.leahints = false"
 "e asm.lines = true"
@@ -994,6 +996,7 @@ f main 12 0x0800a818
 "e dir.dbgsnap = ."
 "e dir.magic = /usr/share/radare2/2.2.0-git/magic"
 "e dir.plugins = /usr/lib/radare2/2.2.0-git/"
+"e dir.prefix = /usr"
 "e dir.projects = ~/.config/radare2/projects"
 "e dir.source = "
 "e dir.types = /usr/include"
@@ -1135,6 +1138,7 @@ f main 12 0x0800a818
 "e scr.breakword = "
 "e scr.color = true"
 "e scr.color.bytes = true"
+"e scr.color.grep = false"
 "e scr.color.ops = true"
 "e scr.columns = 0"
 "e scr.echo = false"
@@ -1181,7 +1185,7 @@ f main 12 0x0800a818
 "e search.flags = true"
 "e search.from = -1"
 "e search.in = io.maps"
-"e search.kwidx = 19"
+"e search.kwidx = 21"
 "e search.maxhits = 0"
 "e search.overlap = false"
 "e search.prefix = hit"
@@ -1211,10 +1215,6 @@ f main 12 0x0800a818
 ofs ../1.4/key.dfu.target0.image0.bin -r-x
 om 3 0x8004000 0x6a82 0x0 -r-x
 om 3 0x8004000 0x6a82 0x0 -r-x
-om 3 0x8004000 0x6a82 0x0 -r-x
-om 3 0x8004000 0x6a82 0x0 -r-x
-ofs ../1.4/key.dfu.target0.image0.bin -r-x
-ofs ../1.4/key.dfu.target0.image0.bin -r-x
 ofs ../1.4/key.dfu.target0.image0.bin -r-x
 # sections
 # meta
@@ -1479,6 +1479,7 @@ CCu base64:TVNHVFlQRV9MRURTVFlMRQ== @ 0x08005fe6
 CCu base64:Y29waWVzIExFRCBvciBCVCBSeCBwYWNrZXRzIHRvIE1TR19CdWZmZXIgZm9yIHBhcnNpbmcg @ 0x08006060
 CCu base64:Y29weSBCVF9SeEJ1ZmZlcg== @ 0x08006062
 CCu base64:Y29weSBMRURfUnhCdWZmZXI= @ 0x0800607c
+CCu base64:bWF5YmUgY2xlYXJzIFJvd19YX0JpdFNldCB3aGVyZSBYOjEtMw== @ 0x080060d8
 CCu base64:VElNNA== @ 0x0800616a
 CCu base64:cmVzZXQgdGltZXIgNA== @ 0x08006170
 CCu base64:VElNX1RpbWVCYXNlSW5pdFN0cnVjdC0+VElNX1BlcmlvZCA= @ 0x0800617a
@@ -1640,16 +1641,39 @@ CCu base64:ZmlsbHMgcmFuZ2UgW3IwLCByMCtyMV0gd2l0aCByMg== @ 0x08007adc
 CCu base64:Y2hlY2sgZnVuYw== @ 0x08007b42
 CCu base64:Y29weSByMiBieXRlcyBmcm9tIG1lbSBzdGFydCBAcjEgaW50byBtZW0gc3RhcnQgQHIw @ 0x08007b8c
 CCu base64:bG9vcCB0byByZXNldCBtYXRpcml4IGNvbHVtbnM= @ 0x08007c1c
+CCu base64:cmVzZXQgdGhlIGp1c3Qgc2Nhbm5lZCBjb2x1bW4= @ 0x08007c30
 CCu base64:c2V0IGNvbHVtbnMgb25lIGJ5IG9uZQ== @ 0x08007c44
-CCu base64:aXMgVElNNF9Nb2RlID0gMD8gd2FpdCAxMCBjeWNsZXMgaWYgaXQgaXM= @ 0x08007c4e
-CCu base64:cjYgaXMgYSAwIHRvIC4uIGNvdW50ZXI= @ 0x08007c5e
-CCu base64:cjAgaXMgaW5jcmVtZW50ZWQgYnkgMHhl @ 0x08007c60
+CCu base64:aXMgVElNNF9Nb2RlID0gMCAobG93IGZyZXF1ZW5jeSk/IHdhaXQgMTA= @ 0x08007c4e
+CCu base64:cjAgaGFzIHRoZSBrZXkncyBsb2NhdGlvbiBpbiB0aGUga2V5bWFwICg3MCBieXRlcyk= @ 0x08007c5e
+CCu base64:bG9hZCBjb250ZW50IGZyb20gb2Yga2V5IGZyb20gdGhlIG5leHQgNzBieXRlcyBhcnJheQ== @ 0x08007c60
 CCu base64:dmFsdWUgaW4gdGhhdCBsb2NhdGlvbiBpcyBpbmNyZW1lbnRlZCBhbmQgY29tcGFyZWQgdG8gMg== @ 0x08007c64
 CCu base64:Y29udGludWUgaWYgPDI6IGRlYm91bmNpbmcgcHJvYmFibHk= @ 0x08007c6c
-CCu base64:YWxsIHRoZXNlIHNoaWZ0cyBhcmUgdG8gZ2V0IG5leHQgcG9ydDpwaW4gY29tYmluYXRpb24= @ 0x08007c94
+CCu base64:MTdhOCsgcjgqMg== @ 0x08007c70
+CCu base64:bG9hZCBoYWxmIHdvcmQgdGhhdCByZXByZXNlbnRzIG50aCByb3cgYW5kIGNsZWFyIHRoZSBjb2x1bW4ndGggYml0 @ 0x08007c74
+CCu base64:Y2xlYXIgYnl0ZSBjb3JyZXNwb25kaW5nIHRvIHByZXNzZWQga2V5IGluIHRoZSBrZXltYXA= @ 0x08007c88
+CCu base64:cjgqOC1yODogMCwgNywgMTQsIDIxLCAyOA== @ 0x08007c94
+CCu base64:cjAqMjogICAwLCAxNCwgMjgsIDQyLCA1NiA= @ 0x08007c98
+CCu base64:YWxsIHRoZXNlIHNoaWZ0cyBhcmUgdG8gZ2V0IG5leHQgcG9ydDpwaW4gY29tYmluYXRpb24= @ 0x08007ca0
 CCu base64:cmVhZCBpbnB1dCByb3dzIDEgYnkgb25l @ 0x08007caa
-CCu base64:cjQgaGFzIHRoZSBALi4uMTdhOCByOSBpcyAweGUgaW5jcmVtZW50cw== @ 0x08007cb0
+CCu base64:cjQgaGFzIHRoZSAweDIwMDAxN2E4IDogcjAgaGFzIHRoZSBrZXkncyBsb2NhdGlvbiBpbiB0aGUga2V5bWFw @ 0x08007cb0
+CCu base64:aW5jcmVtZW50IHRoZSBwcmVzc2VkIGtleSBjb3VudGVyIEBDb2x1bW54Um93 @ 0x08007cb8
 CCu base64:b3IgaXMgdGhpcyB0aGUgZGVib3VuY2luZyBwYXJ0 @ 0x08007cbe
+CCu base64:MTdhOCsgcjgqMg== @ 0x08007cc2
+CCu base64:bG9hZCBoYWxmIHdvcmQgdGhhdCByZXByZXNlbnRzIG50aCByb3cgYW5kIHNldCB0aGUgY29sdW1uJ3RoIGJpdA== @ 0x08007cc6
+CCu base64:dGhvc2UgaGFsZnMgd29yZHMgc3RhcnQgYXQgMHgyMDAwMTgzNA== @ 0x08007cca
+CCu base64:Y2xlYXIgYnl0ZSBjb3JyZXNwb25kaW5nIHRvIHByZXNzZWQga2V5IGluIHRoZSBuZXh0IGFycmF5IG9mIDcwIGJ5dGVz @ 0x08007cdc
+CCu base64:aW5pdGlhbGl6ZWQgdG8gNCAoNXRoIHJvdyk= @ 0x08007cf6
+CCu base64:bG9hZCBSb3dfWF9CaXRTZXQgd2hlcmUgWCBpcyBub3cgNQ== @ 0x08007cfc
+CCu base64:aW5pdGlhbGl6ZWQgdG8gMHhiIChGbiBhdCB0aGUgMTJ0aCBwb3Mp @ 0x08007d00
+CCu base64:c2V0IHRvIDEgaWYgRm4gaXMgcHJlc3NlZA== @ 0x08007d0a
+CCu base64:aGFzIHRoZSByb3cgbnVtYmVy @ 0x08007d0e
+CCu base64:aGFzIHRoZSBrZXkncyBwb3NpdGlvbg== @ 0x08007d18
+CCu base64:aXMgc29tZSBrZXkgcHJlc3NlZD8= @ 0x08007d22
+CCu base64:bG9hZCBSb3dfNV9CaXRTZXQ= @ 0x08007d28
+CCu base64:aXMgY3RybCtjdHJsIHByZXNzZWQ= @ 0x08007d2a
+CCu base64:dXBkYXRlIHNvbWUgZmxhZ3MgYW5kIHJldHVybg== @ 0x08007d3a
+CCu base64:Um93XzVfQml0U2V0 @ 0x08007d80
+CCu base64:aXMgYWx0K2FsdCBwcmVzc2Vk @ 0x08007d82
 CCu base64:MCBpbml0aWFsbHk= @ 0x0800861a
 CCu base64:MCBpbml0aWFsbHk= @ 0x08008632
 CCu base64:YW4gRVhUbCBpbnRlcnJ1cHQgY291bnRlcg== @ 0x0800866e
@@ -1658,7 +1682,6 @@ CCu base64:cjA9MHgyMDAwMThiYw== @ 0x08008d76
 CCu base64:c3RvcmVzIFRJTTRfSW50Q291bnRlciBhbmQgYW5vdGhlciB2YWx1ZQ== @ 0x08008f1e
 CCu base64:JkRldmljZV9JbmZv @ 0x08009030
 CCu base64:JkRldmljZV9Qcm9wZXJ0eQ== @ 0x08009038
-CCu base64: @ 0x0800903a
 CCu base64:JlVzZXJfU3RhbmRhcmRfUmVxdWVzdHM= @ 0x0800903c
 CCu base64:cFByb3BlcnR5LT5Jbml0KCk= @ 0x08009042
 CCu base64:RVhUbF9MaW5lMTggY29ubmVjdGVkIHRvIFVTQiBGUyB3YWtldXAgZXZlbnQ= @ 0x08009052
@@ -6635,4 +6658,4 @@ tk func.llround.args=1
 tk strndup=func
 # macros
 # seek
-s 0x08007c04
+s 0x08007d90
