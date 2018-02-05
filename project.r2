@@ -29,6 +29,7 @@
 "e anal.maxreflines = 0"
 "e anal.noncode = false"
 "e anal.nopskip = true"
+"e anal.pltujmp = true"
 "e anal.prelude = "
 "e anal.ptrdepth = 3"
 "e anal.pushret = false"
@@ -94,7 +95,6 @@
 "e asm.indentspace = 2"
 "e asm.invhex = false"
 "e asm.jmphints = true"
-"e asm.jmpsub = false"
 "e asm.lbytes = true"
 "e asm.leahints = false"
 "e asm.lines = true"
@@ -250,7 +250,6 @@
 "e dir.dbgsnap = ."
 "e dir.magic = /usr/share/radare2/2.2.0-git/magic"
 "e dir.plugins = /usr/lib/radare2/2.2.0-git/"
-"e dir.prefix = /usr"
 "e dir.projects = ~/.config/radare2/projects"
 "e dir.source = "
 "e dir.types = /usr/include"
@@ -392,7 +391,6 @@
 "e scr.breakword = "
 "e scr.color = true"
 "e scr.color.bytes = true"
-"e scr.color.grep = false"
 "e scr.color.ops = true"
 "e scr.columns = 0"
 "e scr.echo = false"
@@ -439,7 +437,7 @@
 "e search.flags = true"
 "e search.from = -1"
 "e search.in = io.maps"
-"e search.kwidx = 21"
+"e search.kwidx = 33"
 "e search.maxhits = 0"
 "e search.overlap = false"
 "e search.prefix = hit"
@@ -487,8 +485,9 @@ CCu base64:Y29sdW1uczogb3V0cHV0LCByb3dzOiBpbnB1dA== @ 0x08004102
 CCu base64:YWxsIHplcm9lcyA7IHNyYw== @ 0x0800410a
 CCu base64:c2l6ZQ== @ 0x0800410e
 CCu base64:ZHN0IC5kYXRh @ 0x08004110
+CCu base64:bG9hZCBjdXN0b20gS0VZX0xBWU9VVA== @ 0x08004114
 CCu base64:YWxsIHplcm9lcyA= @ 0x08004118
-CCu base64:LmRhdGE= @ 0x0800411e
+CCu base64:bG9hZCBjdXN0b20gS0VZX0xBWU9VVF9GTg== @ 0x08004122
 CCu base64:Y2hlY2sgaWYgbG9hZGVkIGJ5dGUgbWF0Y2hlcyBpbml0IHZhbHVlIG9mIHNvbWUgdmFyaWFibGU= @ 0x0800412a
 CCu base64:MSwgcHJldmlvdXNseSBsb2FkZWQgZnJvbSBlZXByb20= @ 0x08004132
 CCu base64:c2V0IHRoYXQgYnl0ZSB0byAxIGlmIGl0IGlzbid0IGFscmVhZHk= @ 0x0800413a
@@ -580,10 +579,12 @@ CCu base64:c3BlZWQ= @ 0x0800466a
 CCu base64:ZG8gYSB3cml0ZSAxIHRlc3QsIElucHV0IHBpbiBzaG91bGQgbWlycm9yIG91dHB1dCBwaW4= @ 0x0800467e
 CCu base64:ZG8gYSB3cml0ZSAwIHRlc3Q= @ 0x08004698
 CCu base64:c2V0IHBvcnRBIHBpbiAxMSBhcyBhbiBpbnB1dCBpbnN0ZWFkIG9mIGFuIG91dHB1dA== @ 0x080046ca
+CCu base64:c2VlIGh3X2NvbmZpZy5jIFNldF9TeXN0ZW0oKQ== @ 0x080046f0
 CCu base64:UG9ydCBBIHBpbiAxMA== @ 0x080046f6
 CCu base64:bW9kZQ== @ 0x080046fa
 CCu base64:b3R5cGU= @ 0x08004700
 CCu base64:c3BlZWQgbG93IHNwZWVk @ 0x08004706
+CCu base64:c2VlIGh3X2NvbmZpZy5j @ 0x08004724
 CCu base64:RVhUbF9MaW5lMTggY29ubmVjdGVkIHRvIHRoZSBVU0IgZGV2aWNlIEZTIFdha2V1cCBmcm9tIHN1c3BlbmQgZXZlbnQ= @ 0x08004726
 CCu base64:RVhUSV9UcmlnZ2VyX1Jpc2luZw== @ 0x08004734
 CCu base64:RW5hYmxl @ 0x0800473a
@@ -595,11 +596,42 @@ CCu base64:ZW5hYmxl @ 0x08004760
 CCu base64:VVNCX0ZTX1dLVVBfSVJRbiBVU0IgRlMgd2FrZXVwIHRocm91Z2ggRVhUbCBpbnRlcnJ1cHQ= @ 0x0800476c
 CCu base64:cHJlbWVtcHRpb24gcHJpb3JpdHkxLCBzdWJwcmlvcml0eSAw @ 0x08004774
 CCu base64:ZW5hYmxl @ 0x08004778
+CCu base64:c2VlIGh3X2NvbmZpZy5j @ 0x08004784
 CCu base64:cjI6IHNpemUsIHIxOiB3aGVyZSB0byBzdG9yZSBpdCwgcjA6IG51bWJlciB0byBjb252ZXJ0 @ 0x0800478e
+CCu base64:MHgyMDAwMDdjZCBCTEVfQ09NUF9NT0RF @ 0x08004926
+CCu base64:bm9ybWFsIG1vZGU6IDAwIGZmIDAw @ 0x08004930
+CCu base64:Y29tcGF0aWJpbGl0eSBtb2RlOiBmZiBmZiAwMA== @ 0x08004938
+CCu base64:MHgyMDAwMTg5NiBBVVRPX1BXUk9GRg== @ 0x0800494a
+CCu base64:YXV0byBwb3dlciBvZmY6IGZm @ 0x08004952
+CCu base64:bm8gYXV0byBwb3dlciBvZmY6IDAw @ 0x08004958
+CCu base64:YXV0byBwb3dlciBvZmY6IDAw @ 0x08004960
+CCu base64:bm8gYXV0byBwb3dlciBvZmY6IGZm @ 0x08004964
+CCu base64:QkxFX09GRg== @ 0x080049b6
+CCu base64:QkxFX1NBVkVfSE9TVA== @ 0x080049ba
+CCu base64:QkxFX0NPTk5FQ1RfSE9TVA== @ 0x080049be
+CCu base64:QkxFX0JST0FEQ0FTVA== @ 0x080049c2
+CCu base64:QkxFX0NPTVBfTU9ERQ== @ 0x080049c6
+CCu base64:MiBmb3IgQkxFIDMgZm9yIExFRA== @ 0x08004aaa
+CCu base64:TVNHX1NJWkU= @ 0x08004aae
+CCu base64:ZGF0YQ== @ 0x08004ab0
+CCu base64:QkxFX0NPTk5FQ1RfSE9TVA== @ 0x08004ab2
+CCu base64:TVNHVFlQRV9CTEU= @ 0x08004ab4
+CCu base64:bm8gQUNL @ 0x08004ab6
 CCu base64:c3RvcmUgZGV2aWNlJ3MgVUlEIGluIG1lbW9yeQ== @ 0x08004cc0
 CCu base64:R2VuZXJhdGUgYSAxMiBjaGFyIHN0cmluZyB1c2luZyB0aGUgTUNVIFVJRCA= @ 0x08004cd6
 CCu base64:U2V0cyBvciByZXNldHMgVVNCIEQrIChQQTEwKSA= @ 0x08004d02
 CCu base64:UG9ydEEgcGluIDEw @ 0x08004d04
+CCu base64:MHgyMDAwMTg1MA== @ 0x08004d24
+CCu base64:RVAyX0lO @ 0x08004d28
+CCu base64:RU5EUDI= @ 0x08004d2e
+CCu base64:MHgyMDAwMTg3OA== @ 0x08004d40
+CCu base64:RVAzX09VVA== @ 0x08004d44
+CCu base64:RU5EUDM= @ 0x08004d4a
+CCu base64:MHgyMDAwMDdjMA== @ 0x08004d72
+CCu base64:MHgyMDAwMDc4Yg== @ 0x08004d78
+CCu base64:MHgyMDAwMDc4OA== @ 0x08004d7a
+CCu base64:MHgyMDAwMDdhYw== @ 0x08004d94
+CCu base64:MHgyMDAwMGVkNA== @ 0x08004dcc
 CCu base64:cGluIDE1 @ 0x08004e46
 CCu base64:UG9ydCBD @ 0x08004e48
 CCu base64:Y2hlY2sgaWYgcGluIHdhcyBzZXQgdG8gMQ== @ 0x08004e64
@@ -673,10 +705,19 @@ CCu base64:VVNBUlQz @ 0x080050a6
 CCu base64:RE1BIGNoYW5uZWwy @ 0x08005136
 CCu base64:VVNBUlQz @ 0x08005140
 CCu base64:RE1B @ 0x08005180
+CCu base64:Y29weSBtc2cgaGVhZGVyIHRvIHR4IGJ1ZmZlcg== @ 0x08005202
+CCu base64:Y29weSBwYXlsb2FkIHRvIHR4IGJ1ZmZlcg== @ 0x0800520c
 CCu base64:RE1BIGNoYW5uZWwy @ 0x0800520e
+CCu base64:MHgyMDAwMDc2Yw== @ 0x08005234
+CCu base64:MHgyMDAwMDc4NQ== @ 0x08005244
+CCu base64:MHgyMDAwMDdjZA== @ 0x080052fe
+CCu base64:MHgyMDAwMTg5Ng== @ 0x08005324
 CCu base64:RE1BIGNoYW5uZWwy @ 0x08005382
 CCu base64:RE1BIGNoYW5uZWwy @ 0x08005448
+CCu base64:Y29weSBLRVlQT1NfQlMgdG8gTEVEIERNQSBUeCBidWZmZXI= @ 0x0800548e
+CCu base64:Y29weSBtc2cgaGVhZGVyIHRvIGJ1ZmZlcg== @ 0x080054b6
 CCu base64:RE1BIGNoYW5uZWwy @ 0x080054be
+CCu base64:Y2xlYXIgS0VZUE9TX0JT @ 0x080054d2
 CCu base64:RE1BMSBjaGFubmVsIDY= @ 0x080054e0
 CCu base64:ZGlzYWJsZSBETUExX0NoYW5uZWw2 @ 0x080054e8
 CCu base64:RE1BMV9DaGFubmVsNiBnbG9iYWwgaW50ZXJydXB0IGNsZWFy @ 0x080054f0
@@ -693,19 +734,53 @@ CCu base64:Y29weSAweDIwMDAwOWQ0LWFkMyB0byAweDIwMDAwMGFkNC1iZDM= @ 0x08005558
 CCu base64:Y2xlYXIgMHgyMDAwMDlkNC1hZDM= @ 0x08005564
 CCu base64:ZW5hYmxlIERNQTFfQ2hhbm5lbDM= @ 0x0800556c
 CCu base64:c2V0IGZsYWc= @ 0x08005572
+CCu base64:U1lTVEVNX0dFVF9JRA== @ 0x0800557c
+CCu base64:U1lTVEVNX0dFVF9GV19WRVI= @ 0x08005580
+CCu base64:U1lTVEVNX0lTX1NZTkNfQ09ERQ== @ 0x08005584
+CCu base64:U1lTVEVNX1NFVF9TWU5DX0NPREU= @ 0x0800558a
 CCu base64:RE1BIGNoYW5uZWw3 @ 0x08005764
+CCu base64:Y29udmVydCBzaXplIHRvIDAgaWYgZW1wdHkgb3IgMSBvdGhlcndpc2U= @ 0x08005782
+CCu base64:MHgyMDAwMDdiZA== @ 0x0800578e
+CCu base64:cjA6IE1TR19BQ0ssIHIxOiBNU0dfVFlQRSwgcjI6IE1TR19DTUQsIHIzOiAwIG9yIGRhdGEgYWRkcmVzcw== @ 0x080057a0
+CCu base64:TVNHX1RZUEU= @ 0x080057aa
+CCu base64:TVNHX1NJWkUgKyAx @ 0x080057b2
+CCu base64:KE1TR19BQ0sgPDwgNykgKyBNU0dfQ01E @ 0x080057ce
+CCu base64:Q01E @ 0x080057d2
+CCu base64:anVtcCBpZiBDTUQgIT0gMg== @ 0x080057d6
+CCu base64:ZmlsbCBpbiBtc2cgaGVhZGVy @ 0x080057dc
+CCu base64:ZmlsbCBpbiBtc2cgZGF0YQ== @ 0x080057e8
+CCu base64:anVtcCBpZiBDTUQgIT0gMw== @ 0x080057f0
+CCu base64:MHgyMDAwMDc4Mw== @ 0x080057f6
+CCu base64:anVtcCBpZiBMRUQgTUNVIGlzIG5vdCBhc2xlZXAg @ 0x080057fa
+CCu base64:ZmlsbCBwYXlsb2FkIGJ5dGVzIGluIExFRF9UeEJ1ZmZlciA/ @ 0x08005814
+CCu base64:Y2xlYXIgTVNHIEhlYWRlciBpbiBMRURfVHhCdWZmZXI= @ 0x08005822
+CCu base64:Y29weSBuZXcgTVNHIEhlYWRlciB0byBMRURfVHhCdWZmZXI= @ 0x0800582c
 CCu base64:RE1BIGNoYW5uZWwy @ 0x08005836
 CCu base64:ZW5hYmxlIERNQTEgQ2hhbm5lbDI= @ 0x08005848
+CCu base64:S0VZQk9BUkRfTU9ERV9kbF91c2VyX2xheW91dA== @ 0x08005864
+CCu base64:S0VZQk9BUkRfTU9ERV9rZXk= @ 0x08005868
+CCu base64:S0VZQk9BUkRfTU9ERV9nZXRfbGF5b3V0X2lk @ 0x0800586c
+CCu base64:S0VZQk9BUkRfTU9ERV9zZXRfbGF5b3V0X2lk @ 0x08005870
+CCu base64:S0VZQk9BUkRfTU9ERV91cF91c2VyX2xheW91dA== @ 0x08005872
 CCu base64:REFUQSBFRVBST00= @ 0x080058d8
+CCu base64:QkxFX0hPU1RfTElTVF9RVUVSWQ== @ 0x080059d8
+CCu base64:QkxFX0JST0FEQ0FTVA== @ 0x080059dc
+CCu base64:QkxFX0NPTVBfTU9ERQ== @ 0x080059e2
 CCu base64:cHJvYmFibHkgbm90IHRoaXMgZnVuY3Rpb24gbmFtZQ== @ 0x08005dcc
 CCu base64:TVNHVFlQRV9TWVNURU0= @ 0x08005fd6
 CCu base64:TVNHVFlQRV9NQUNSTw== @ 0x08005fda
 CCu base64:TVNHVFlQRV9CTEU= @ 0x08005fde
 CCu base64:TVNHVFlQRV9LRVlCT0FSRA== @ 0x08005fe2
 CCu base64:TVNHVFlQRV9MRURTVFlMRQ== @ 0x08005fe6
+CCu base64:ZGF0YSA= @ 0x08005fee
+CCu base64:c2l6ZQ== @ 0x08005ff2
+CCu base64:Y21k @ 0x08005ff6
+CCu base64:YWNr @ 0x08005ffa
 CCu base64:Y29waWVzIExFRCBvciBCVCBSeCBwYWNrZXRzIHRvIE1TR19CdWZmZXIgZm9yIHBhcnNpbmcg @ 0x08006060
 CCu base64:Y29weSBCVF9SeEJ1ZmZlcg== @ 0x08006062
 CCu base64:Y29weSBMRURfUnhCdWZmZXI= @ 0x0800607c
+CCu base64:MHgyMDAwMGRkNw== @ 0x08006098
+CCu base64:MHgyMDAwMGRkNA== @ 0x0800609c
 CCu base64:ZGVmYXVsdCBsYXlvdXQgbG9jYXRpb24= @ 0x080060bc
 CCu base64:ZGVmYXVsdCBGbiByb3c= @ 0x080060cc
 CCu base64:ZGVmYXVsdCBGbiBjb2x1bW4= @ 0x080060d0
@@ -761,14 +836,21 @@ CCu base64:cG9ydCBD @ 0x0800661a
 CCu base64:cG9ydCBC @ 0x08006636
 CCu base64:MS44ViByYW5nZQ== @ 0x08006644
 CCu base64:U3lzVGljayB0aW1lciBTVEtfQ1RSTA== @ 0x0800666c
+CCu base64:MHgyMDAwMTg5NiBBVVRPX1BXUk9GRiBmbGFn @ 0x080066ae
 CCu base64:Zmlyc3QgYnl0ZSBpcyAxIHJlc3QgaXMgMHM= @ 0x080066cc
+CCu base64:MHgyMDAwMDc5OCBsYXlvdXQgc2VsZWN0b3I= @ 0x080066d0
+CCu base64:MHgyMDAwMTg5NiBBVVRPX1BXUk9GRg== @ 0x080066dc
 CCu base64:Y29udGludWUgdG8gbG9ja2luZyBlZXByb20= @ 0x080066e4
 CCu base64:U2F2ZSBLRVlfTEFZT1VUX1NFTEVDVE9S @ 0x08006706
 CCu base64:YWxsIHplcm9lcw== @ 0x08006776
 CCu base64:emVybyBvdXQgcmVzZXJ2ZWQgcG9ydGlvbiBvZiBzdGFjayBpbiB0aGlzIGxvb3A= @ 0x0800677a
+CCu base64:MHgyMDAwMDc3MA== @ 0x080067e0
+CCu base64:MHgyMDAwMDc3NA== @ 0x080067e4
 CCu base64:Y29udGludWUgdG8gcGFydCB3aGVyZSB3ZSBsb2NrIGVlcHJvbQ== @ 0x080068d0
 CCu base64:cmV0dXJuIGlmIGZ1bmMgd2FzIHJ1biBiZWZvcmU= @ 0x080068d8
+CCu base64:MHgyMDAwMDdiNA== @ 0x080068e8
 CCu base64:MDogbG93IGZyZXEsIDI6IGhpZ2ggZnJlcSwgZWxzZTogZGVmYXVsdCBjb25maWc= @ 0x080068ea
+CCu base64:MHgyMDAwMDdjOQ== @ 0x08006914
 CCu base64:cjA6IHMsIHIxOiBjaGFyLCByMjogc2l6ZQ== @ 0x08006970
 CCu base64:YWx3YXlzIGNhbGxlZCB3aXRoIHIwOiBbMHgyMDAwMDc5OF0sIHIxOiAweDIwMDAxN2E4 @ 0x08006984
 CCu base64:MHgyMDAwMTg0OA== @ 0x0800698c
@@ -859,9 +941,11 @@ CCu base64:U1lTQ0ZHX0VYVElDUjE= @ 0x08007060
 CCu base64:RVhUSTE= @ 0x08007082
 CCu base64:c2hvdWxkIGNoZWNrIHRoaXMgaXMgdGhlIGNvcnJlY3QgZnVudGlvbiBuYW1l @ 0x080070e6
 CCu base64:U1RLX0NUUkw= @ 0x08007104
-CCu base64:bXVsdGlwbHkgYnkgNDAwMCBpZiBUSU00X01vZGUgaXMgMA== @ 0x08007112
+CCu base64:MHgyMDAwMDc4NA== @ 0x08007108
+CCu base64:anVtcCBpZiBUSU00IGlzIGluIGhpZ2ggZnJlcSBtb2RlIA== @ 0x0800710c
+CCu base64:bXVsdGlwbHkgY291bnQgdmFsdWUgYnkgNDAwMA== @ 0x08007112
 CCu base64:U1RLX0xPQUQgdmFsdWU= @ 0x08007114
-CCu base64:bXVsdGlwbHkgYnkgMTI1IGlmIFRJTTRfTW9kZSBpcyBub3QgMA== @ 0x0800711a
+CCu base64:bXVsdGlwbHkgY291bnQgdmFsdWUgYnkgMTI1 @ 0x0800711a
 CCu base64:U1RLX0xPQUQgdmFsdWU= @ 0x0800711c
 CCu base64:U1RLX1ZBTCBjbGVhciB0aGUgc3lzdGljayBjb3VudGVy @ 0x08007120
 CCu base64:ZW5hYmxlIHN5c3RpY2sgY291bnRlciB3aXRob3V0IGFzc2VydGluZyBTeXNUaWNrIGV4Y2VwdGlvbiByZXF1ZXN0 @ 0x08007124
@@ -885,6 +969,7 @@ CCu base64:ZG9lcyBMU0IgPSAxPw== @ 0x080071e0
 CCu base64:dGhpcyBsc2wgMiBkb2Vzbid0IHNlZW0gdG8gYmUgaW4gdGhpcyBmdW5jdGlvbiBpbiB0aGUgbGli @ 0x0800720c
 CCu base64:Y2hlY2sgdGhpcyBpcyB0aGUgY29ycmVjdCBmdW5jIG9yIGxpYg== @ 0x08007220
 CCu base64:Y2hlY2sgdGhpcyBpcyB0aGUgY29ycmVjdCBmdW5jIG9yIGxpYg== @ 0x08007250
+CCu base64:Y2hlY2sgZnVuYyBuYW1l @ 0x08007280
 CCu base64:Y2hlY2sgZnVuY3Rpb24= @ 0x080072a0
 CCu base64:VVNBUlQx @ 0x0800740e
 CCu base64:VVNBUlQy @ 0x0800742c
@@ -898,6 +983,9 @@ CCu base64:aXMgdGhpcyB0aGlzIGZ1bnRpb24/ @ 0x0800774e
 CCu base64:aXMgdGhpcyB0aGlzIGZ1bnRpb24/ @ 0x08007766
 CCu base64:aXMgdGhpcyB0aGlzIGZ1bmN0aW9uPw== @ 0x0800776a
 CCu base64:cjA6IGRzdCBiYXNlLCByMTogc3JjIGJhc2UsIHIyOiBzaXpl @ 0x080077fc
+CCu base64:anVtcCBpZiBNU0dTSVpFICE9IDA= @ 0x080078a8
+CCu base64:MTRhNDpuZXcgYnl0ZSBjb3VudGVyLCAxNGE2OiBvbGQgY291bnRlcg== @ 0x08007904
+CCu base64:b3BlcmF0aW9ucyB0byBtYWtlIHN1cmUgdHJhbnNmZXIgc2l6ZSBpcyB3aXRoaW4gYm91bmRz @ 0x08007906
 CCu base64:aXMgcjAgVElNMj8= @ 0x08007926
 CCu base64:VElNMz8= @ 0x08007940
 CCu base64:VElNND8= @ 0x0800795a
@@ -934,19 +1022,21 @@ CCu base64:MTdhOCsgcjgqMg== @ 0x08007cc2
 CCu base64:bG9hZCBoYWxmIHdvcmQgdGhhdCByZXByZXNlbnRzIG50aCByb3cgYW5kIHNldCB0aGUgY29sdW1uJ3RoIGJpdA== @ 0x08007cc6
 CCu base64:dGhvc2UgaGFsZnMgd29yZHMgc3RhcnQgYXQgMHgyMDAwMTgzNA== @ 0x08007cca
 CCu base64:Y2xlYXIgYnl0ZSBjb3JyZXNwb25kaW5nIHRvIHByZXNzZWQga2V5IGluIHRoZSBuZXh0IGFycmF5IG9mIDcwIGJ5dGVz @ 0x08007cdc
-CCu base64:aW5pdGlhbGl6ZWQgdG8gNCAoNXRoIHJvdyk= @ 0x08007cf6
+CCu base64:cm93IG51bWJlciBvZiBGbiBrZXk= @ 0x08007cf6
 CCu base64:bG9hZCBSb3dfWF9CaXRTZXQgd2hlcmUgWCBpcyBub3cgNQ== @ 0x08007cfc
 CCu base64:aW5pdGlhbGl6ZWQgdG8gMHhiIChGbiBhdCB0aGUgMTJ0aCBwb3Mp @ 0x08007d00
+CCu base64:anVtcCBpZiBGbiBpcyBub3QgcHJlc3NlZA== @ 0x08007d08
 CCu base64:c2V0IHRvIDEgaWYgRm4gaXMgcHJlc3NlZA== @ 0x08007d0a
-CCu base64:aGFzIHRoZSByb3cgbnVtYmVy @ 0x08007d0e
+CCu base64:aGFzIHRoZSByb3cgbnVtYmVyIG9mIGFubmUga2V5 @ 0x08007d0e
 CCu base64:aGFzIHRoZSBrZXkncyBwb3NpdGlvbg== @ 0x08007d18
-CCu base64:aXMgYW5uZSBrZXkgcHJlc3NlZD8= @ 0x08007d22
+CCu base64:anVtcCBpcyBhbm5lIGtleSBpcyBub3QgcHJlc3NlZA== @ 0x08007d20
 CCu base64:bG9hZCBSb3dfNV9CaXRTZXQ= @ 0x08007d28
 CCu base64:aXMgY3RybCtjdHJsIHByZXNzZWQ= @ 0x08007d2a
+CCu base64:anVtcCBpZiBub3RoaW5nIGNoYW5nZWQgKGN0cmwrY3RybCBoZWxkKQ== @ 0x08007d36
 CCu base64:MHgyMDAwMTg0NjsgdXBkYXRlIHNvbWUgZmxhZ3MgYW5kIHJldHVybg== @ 0x08007d3a
 CCu base64:MHgyMDAwMTg5MA== @ 0x08007d42
 CCu base64:aXMgY3RybCtjdHJsICsgb3RoZXIga2V5cyBpbiB0aGUgc2FtZSByb3cgcHJlc3NlZA== @ 0x08007d4a
-CCu base64:MHgyMDAwMTg5MQ== @ 0x08007d52
+CCu base64:MHgyMDAwMTg5MSBMQVlPVVRfQ1RSTF9NT0RF @ 0x08007d52
 CCu base64:ZG8gbm90aGluZyBpZiBjdHJsK2N0cmwgd2Fzbid0IHByZXNzZWQgYmVmb3JlIHRoaXMgbmV3IGNvbWJp @ 0x08007d56
 CCu base64:MHgyMDAwMTg0Njsgc3RvcmUgUm93XzVfQml0U2V0 @ 0x08007d58
 CCu base64:Y2xlYXIgZmxhZw== @ 0x08007d5c
@@ -958,22 +1048,57 @@ CCu base64:MHgyMDAwMTg3Yw== @ 0x08007d7a
 CCu base64:MHgyMDAwMTg3YQ== @ 0x08007d7c
 CCu base64:Um93XzVfQml0U2V0 @ 0x08007d80
 CCu base64:aXMgYWx0K2FsdCBwcmVzc2Vk @ 0x08007d82
+CCu base64:anVtcCBpZiBub3RoaW5nIGNoYW5nZWQgKGFsdCthbHQgaGVsZCk= @ 0x08007d8e
 CCu base64:MHgyMDAwMTg0Ng== @ 0x08007d92
 CCu base64:MHgyMDAwMTg4MyBpZiAwIHNldCBpdCB0byAxOyBpZiAxIHNldCBpdCB0byAw @ 0x08007d94
 CCu base64:MHgyMDAwMDc4NSA= @ 0x08007da8
-CCu base64:Um93XzJfQml0U2V0 @ 0x08007db0
+CCu base64:anVtcCBpZiBGbiBpcyBub3QgYWN0aXZl @ 0x08007dae
+CCu base64:Uk9XMl9CUw== @ 0x08007db0
 CCu base64:aXMgYW55IG9mIFIsVCxZLFUgcHJlc3NlZCAoTEVEIGNvbnRyb2wga2V5cyk= @ 0x08007db6
-CCu base64:MHgyMDAwMTg0MA== @ 0x08007dba
+CCu base64:MHgyMDAwMTg0MCBST1cyX0JTX09MRA== @ 0x08007dba
+CCu base64:anVtcCBpZiB0aGUga2V5J3Mgc3RhdGUgZGlkbid0IGNoYW5nZQ== @ 0x08007dbe
 CCu base64:MHgyMDAwMDdjZg== @ 0x08007dc6
 CCu base64:MHgyMDAwMTg3Yw== @ 0x08007dc8
 CCu base64:Um93XzJfQml0U2V0 @ 0x08007dca
 CCu base64:MHgyMDAwMTg0MA== @ 0x08007dcc
 CCu base64:cjAgaXMgc2V0IHdoZW4gYW5uZSBrZXkgaXMgcHJlc3NlZA== @ 0x08007dd0
+CCu base64:anVtcCBpZiBhbm5lIGlzIG5vdCBwcmVzc2Vk @ 0x08007dd2
 CCu base64:bG9vcCBvdmVyIHJvd3M= @ 0x08007de6
 CCu base64:bG9vcCBvdmVyIGNvbHVtbnM= @ 0x08007df2
+CCu base64:a2V5J3MgcG9zaXRpb24gaW4gNzAgYnl0ZXMgYXJyYXk= @ 0x08007e00
 CCu base64:Z2V0IFJvd19YX0JpdFNldA== @ 0x08007e06
 CCu base64:Z2V0IGNvbHVtbg== @ 0x08007e0a
 CCu base64:Y29udGludWUgaWYga2V5IGlzIG5vdCBwcmVzc2Vk @ 0x08007e0e
+CCu base64:MHgwLDk0LDEyOCwxYmMsMjUwLDJlNCwzNzgsNDBjLDRhMCw1MzQ= @ 0x08007e24
+CCu base64:MHgyMDAwMGVkYyxmNzAsMTAwNCwxMDk4LDExMmMsMTFjMCwxMjU0LDEyZTgsMTM3YywxNDEw @ 0x08007e28
+CCu base64:MHgyMDAwMTg0YyBnZXQgS0VZX0xBWU9VVA== @ 0x08007e36
+CCu base64:bG9hZCBrZXkncyB2YWx1ZSBmcm9tIGxheW91dA== @ 0x08007e3a
+CCu base64:anVtcCBpZiBmaXJzdCBieXRlIGlzIG5vdCAwOyBjb250aW51ZQ== @ 0x08007e4a
+CCu base64:MHgyMDAwMDdhZg== @ 0x08007e50
+CCu base64:MHgyMDAwMDdhZQ== @ 0x08007e58
+CCu base64:MHgyMDAwMGVkYyxmNzAsMTAwNCwxMDk4LDExMmMsMTFjMCwxMjU0LDEyZTgsMTM3YywxNDEw @ 0x08007e62
+CCu base64:Y2xlYXIgZmlyc3QgYnl0ZQ== @ 0x08007e66
+CCu base64:MHgyMDAwMGVkYyxmNzAsMTAwNCwxMDk4LDExMmMsMTFjMCwxMjU0LDEyZTgsMTM3YywxNDEw @ 0x08007e74
+CCu base64:Y2xlYXIgc2Vjb25kIHdvcmQ= @ 0x08007e7c
+CCu base64:Y2xlYXIgM3JkIHdvcmQ= @ 0x08007e80
+CCu base64:c2V0IGZpcnN0IGJ5dGU= @ 0x08007e84
+CCu base64:c3RvcmUgVElNNF9JbnRDb3VudGVyIGF0IHRoZSAyNHRoIHdvcmQ= @ 0x08007e8e
+CCu base64:MHgyMDAwMDdhZg== @ 0x08007e92
+CCu base64:MHgyMDAwMDdiNA== @ 0x08007e96
+CCu base64:MHgyMDAwMDdiMA== @ 0x08007e9a
+CCu base64:MHgyMDAwMDdiMQ== @ 0x08007e9c
+CCu base64:MHgyMDAwMTg4OA== @ 0x08007ea6
+CCu base64:MHgyMDAwMTg4NA== @ 0x08007eac
+CCu base64:MHgyMDAwMDc4NQ== @ 0x08007eb0
+CCu base64:anVtcCBpZiBGbiBhY3RpdmU= @ 0x08007eb6
+CCu base64:MHgyMDAwMTg3Zg== @ 0x08007eb8
+CCu base64:Z2V0IFJPVzVfQlMy @ 0x08007ebe
+CCu base64:Z2V0IFJPVzVfQlM= @ 0x08007ec2
+CCu base64:anVtcCBpZiBrZXkncyBzdGF0ZSBkaWRuJ3QgY2hhbmdl @ 0x08007ec8
+CCu base64:cmV0dXJuIGlmIGFueSBvZiB0aGUgUk9XWF9CUyBpcyBub3QgMA== @ 0x08007ee4
+CCu base64:Y2xlYXIgYWxsIFJPV1hfQlMy @ 0x08007f06
+CCu base64:Y2xlYXIgKl9LRVlDT0RFX0JTIGJpdHNldHM= @ 0x08007f10
+CCu base64:Y2xlYXIgKl9LRVlDT0RFX0JTMiBhbmQgS0VZQ09ERV9LUk8= @ 0x08007f1c
 CCu base64:aW5jIHJvdyBpdGVyYXRvcg== @ 0x08007f4c
 CCu base64:bG9vcCBvdmVyIFJPV19YX0JpdFNldHM= @ 0x08007f58
 CCu base64:cjQ6IDB4MjAwMDE3YTggKyAwLDIsNCw2LDg= @ 0x08007f5a
@@ -989,6 +1114,7 @@ CCu base64:MHgyMDAwMDc4NQ== @ 0x08007fa0
 CCu base64:MHgyMDAwMTg3Yw== @ 0x08007faa
 CCu base64:Y29sdW1u @ 0x08007fac
 CCu base64:cm93 @ 0x08007fae
+CCu base64:c2V0IHRoZSBrZXkncyBiaXQgaW4gdGhlIEtFWVBPU19CUw== @ 0x08007fb2
 CCu base64:aW5jIGNvbHVtbiBpdGVyYXRvcg== @ 0x08007fb6
 CCu base64:MHgyMDAwMTdhOCArIDAsMiw0LDYsOA== @ 0x08007fba
 CCu base64:Um93X1hfQml0U2V0 @ 0x08007fbc
@@ -1002,11 +1128,12 @@ CCu base64:Z2V0IGNvbHVtbidzIGJpdA== @ 0x08007fdc
 CCu base64:Z2V0IGtleSdzIG9sZCBzdGF0ZQ== @ 0x08007fe0
 CCu base64:Z2l0IGtleSdzIG5ldyBzdGF0ZQ== @ 0x08007fe4
 CCu base64:aXMgdGhpcyBrZXkgdGhhdCBoYXMgY2hhbmdlZCBiZXR3ZWVuIHRoZSB0d28gc2V0cz8= @ 0x08007fe8
+CCu base64:anVtcCBpZiBub3Q= @ 0x08007fea
 CCu base64:dGhpcyBieXRlIGlzIHNldCB3aGVuIEZuIGlzIGFjdGl2ZQ== @ 0x08007fec
 CCu base64:anVtcCB0byBoYW5kbGluZyByZWd1bGFyIGtleSBwcmVzcw== @ 0x08007ff0
 CCu base64:MHgyMDAwMTg3MA== @ 0x08007ff4
-CCu base64:MHgyMDAwMTg4MyBnZXQgRk5fTE9DSw== @ 0x08007ff8
-CCu base64:anVtcCB0byBoYW5kbGluZyBGTl9MT0NLICsgc29tZSBrZXk= @ 0x08007ffc
+CCu base64:MHgyMDAwMTg4MyBnZXQgRk5fTE9DS19NT0RF @ 0x08007ff8
+CCu base64:anVtcCB0byBoYW5kbGluZyBGTl9MT0NLX01PREUgKyBrZXkgd2hlbiBGbiBpcyBhY3RpdmU= @ 0x08007ffc
 CCu base64:MHgyMDAwMTg0YyBnZXQgS0VZX0xBWU9VVF9GTg== @ 0x08007ffe
 CCu base64:bG9hZCBrZXkncyB2YWx1ZSBmcm9tIGxheW91dA== @ 0x08008000
 CCu base64:MHgyMDAwMTdhOCArIDAsMiw0LDYsOA== @ 0x0800800a
@@ -1026,12 +1153,29 @@ CCu base64:cmVsZWFzZSBrZXkncyByZWd1bGFyIGNvZGU= @ 0x0800803c
 CCu base64:MHgyMDAwMTg0OCBnZXQgS0VZX0xBWU9VVA== @ 0x0800803e
 CCu base64:bG9hZCBrZXkncyB2YWx1ZSBmcm9tIGxheW91dA== @ 0x08008040
 CCu base64:MHgyMDAwMTg3MA== @ 0x08008044
+CCu base64:MHgyMDAwMTg0OCBnZXQgS0VZX0xBWU9VVA== @ 0x0800804c
+CCu base64:bG9hZCBrZXkncyB2YWx1ZSBmcm9tIGxheW91dA== @ 0x0800804e
+CCu base64:MHgyMDAwMTdhOCArIDAsMiw0LDYsOA== @ 0x08008058
+CCu base64:Z2V0IFJPV1hfQlM= @ 0x0800805a
+CCu base64:Z2V0IGNvbHVtbidzIGJpdA== @ 0x0800805e
+CCu base64:Z2V0IGtleSdzIHN0YXRl @ 0x08008062
+CCu base64:MHgyMDAwMTg0OCBnZXQgS0VZX0xBWU9VVA== @ 0x08008066
+CCu base64:bG9hZCBrZXkncyB2YWx1ZSBmcm9tIGxheW91dA== @ 0x08008068
+CCu base64:MHgyMDAwMTg3MA== @ 0x0800806c
+CCu base64:anVtcCBpZiBGbiBkb2VzIG5vdCBhbHRlciBrZXkncyBjb2Rl @ 0x08008080
+CCu base64:cmVsZWFzZSB0aGUga2V5IGluIHRoZSBrZXljb2RlIGJpdHNldA== @ 0x08008086
+CCu base64:cmVtb3ZlIGtleSdzIEZuIGNvZGUgZnJvbSB0aGUgNnNsb3Rz @ 0x08008094
 CCu base64:MHgyMDAwMTg0YyBnZXQgS0VZX0xBWU9VVF9GTg== @ 0x08008098
 CCu base64:bG9hZCBrZXkncyB2YWx1ZSBmcm9tIGxheW91dA== @ 0x0800809a
 CCu base64:anVtcCBpZiBsZWZ0IG1ldGEga2V5 @ 0x080080a2
 CCu base64:MHgyMDAwMTg0YyBnZXQgS0VZX0xBWU9VVA== @ 0x080080a4
 CCu base64:bG9hZCBrZXkncyB2YWx1ZSBmcm9tIGxheW91dA== @ 0x080080a6
 CCu base64:anVtcCBpZiByaWdodCBtZXRhIGtleQ== @ 0x080080ac
+CCu base64:Z2V0IFJPV1hfQlM= @ 0x080080b8
+CCu base64:anVtcCBpZiBrZXkgcmVsZWFzZWQ= @ 0x080080c2
+CCu base64:cmVtb3ZlIGtleSdzIEZuIGNvZGUgZnJvbSB0aGUgNnNsb3Rz @ 0x080080c8
+CCu base64:MHgyMDAwMTg4MQ== @ 0x080080cc
+CCu base64:dG9nZ2xlIFdJTl9MT0NLX01PREU= @ 0x080080ce
 CCu base64:MHgyMDAwMTg0YyBnZXQgS0VZX0xBWU9VVF9GTg== @ 0x080080d4
 CCu base64:bG9hZCBrZXkncyB2YWx1ZSBmcm9tIGxheW91dA== @ 0x080080d6
 CCu base64:MHgyMDAwMTdhOCArIDAsMiw0LDYsOA== @ 0x080080da
@@ -1043,8 +1187,69 @@ CCu base64:b3IgdGhpcyBpcyB0aGUgMjJuZCBrZXk= @ 0x080080ee
 CCu base64:MHgyMDAwMTg3Yw== @ 0x080080f6
 CCu base64:MHgyMDAwMDc2OQ== @ 0x080080f8
 CCu base64:anVtcCBpZiBMRUQgQnJpZ2h0bmVzcyBrZXk= @ 0x080080fe
+CCu base64:b3IgaXMgdGhlIDIxJ3N0IGtleQ== @ 0x08008100
+CCu base64:MHgyMDAwMTg3Yw== @ 0x08008108
+CCu base64:MHgyMDAwMDc2YQ== @ 0x0800810a
 CCu base64:anVtcCBpZiBMRUQgU3BlZWQga2V5 @ 0x08008112
+CCu base64:b3IgaXMgdGhlIDIwJ3RoIGtleQ== @ 0x08008114
+CCu base64:MHgyMDAwMTg3Yw== @ 0x0800811c
+CCu base64:MHgyMDAwMDc2Yg== @ 0x0800811e
 CCu base64:anVtcCBpZiBMRUQgQmFja2xpZ2h0IGtleQ== @ 0x08008126
+CCu base64:b3IgaXMgdGhlIDE5dGgga2V5 @ 0x08008128
+CCu base64:MHgyMDAwMTg3Yw== @ 0x08008130
+CCu base64:MHgyMDAwMDc2ZA== @ 0x08008132
+CCu base64:aXMgdGhlIGtleSBpbiB0aGUgNDgndGggcG9zaXRpb24gKEIp @ 0x08008138
+CCu base64:MHgyMDAwMDc4NQ== @ 0x0800813e
+CCu base64:MHgyMDAwMDc2OQ== @ 0x0800814c
+CCu base64:MHgyMDAwMDc2Yw== @ 0x0800814e
+CCu base64:MHgyMDAwMTg3Yw== @ 0x08008152
+CCu base64:anVtcCBpZiBGbiBpcyBub3QgYWN0aXZl @ 0x0800816c
+CCu base64:aXMgdGhpcyB0aGUga2V5IGluIHRoZSAybmQgcG9zICgxKQ== @ 0x08008170
+CCu base64:MHgyMDAwMDc4OQ== @ 0x08008178
+CCu base64:MHgyMDAwMDc4OA== @ 0x0800817c
+CCu base64:MHgyMDAwMDc4YQ== @ 0x0800818c
+CCu base64:MHgyMDAwMTg3Yg== @ 0x08008190
+CCu base64:aXMgdGhpcyB0aGUga2V5IGluIHRoZSAzcmQgcG9zICgyKQ== @ 0x08008194
+CCu base64:aXMgdGhpcyB0aGUga2V5IGluIHRoZSA0dGggcG9zICgzKQ== @ 0x080081ba
+CCu base64:aXMgdGhpcyB0aGUga2V5IGluIHRoZSA1dGggcG9zICg0KQ== @ 0x080081de
+CCu base64:aXMgdGhpcyB0aGUga2V5IGluIHRoZSAxMXRoIHBvcyAoMCk= @ 0x08008204
+CCu base64:MHgyMDAwMDdjZA== @ 0x0800821a
+CCu base64:dG9nZ2xlIEJMRV9DT01QX01PREU= @ 0x0800821c
+CCu base64:MHgyMDAwMDc4YQ== @ 0x0800822e
+CCu base64:MHgyMDAwMDc4NQ== @ 0x08008236
+CCu base64:anVtcCBpZiBGbiBpcyBhY3RpdmU= @ 0x0800823c
+CCu base64:MHgyMDAwMTg4MQ== @ 0x0800823e
+CCu base64:anVtcCBpZiBub3QgV0lOX0xPQ0tfTU9ERQ== @ 0x08008242
+CCu base64:ZGlzYWJsZSB3aW4ga2V5 @ 0x08008244
+CCu base64:MHgyMDAwMTg3MA== @ 0x08008256
+CCu base64:MHgyMDAwMTg4MyBnZXQgRk5fTE9DS19NT0RF @ 0x0800825a
+CCu base64:anVtcCBvZiBpbiBGbiBsb2NrIG1vZGU= @ 0x0800825e
+CCu base64:anVtcCBpZiBrZXkgcmVsZWFzZWQ= @ 0x080082b8
+CCu base64:aXMgdGhpcyB0aGUga2V5IGluIHRoZSAxc3QgcG9zIChFc2Mp @ 0x080082bc
+CCu base64:MHgyMDAwMDc4NQ== @ 0x080082c4
+CCu base64:MHgyMDAwMDc2OQ== @ 0x080082ca
+CCu base64:MHgyMDAwMDc2Yw== @ 0x080082cc
+CCu base64:MHgyMDAwMTg3Yw== @ 0x080082d0
+CCu base64:aXMgdGhpcyB0aGUga2V5IGluIHRoZSAybmQgcG9zICgxKQ== @ 0x080082d4
+CCu base64:MHgyMDAwMDc4OQ== @ 0x080082dc
+CCu base64:MHgyMDAwMDc4OA== @ 0x080082e0
+CCu base64:MHgyMDAwMDc4Yg== @ 0x080082ea
+CCu base64:MHgyMDAwMDc4YQ== @ 0x080082f4
+CCu base64:MHgyMDAwMTg3Yg== @ 0x080082f8
+CCu base64:aXMgdGhpcyB0aGUga2V5IGluIHRoZSAzcmQgcG9zICgyKQ== @ 0x080082fc
+CCu base64:aXMgdGhpcyB0aGUga2V5IGluIHRoZSA0dGggcG9zICgzKQ== @ 0x08008326
+CCu base64:aXMgdGhpcyB0aGUga2V5IGluIHRoZSA1dGggcG9zICg0KQ== @ 0x08008350
+CCu base64:aXMgdGhpcyB0aGUga2V5IGluIHRoZSAxM3RoIHBvcyAoKyk= @ 0x08008378
+CCu base64:MHgyMDAwMDc4YQ== @ 0x0800838e
+CCu base64:aXMgdGhpcyB0aGUga2V5IGluIHRoZSAxMnRoIHBvcyAoLSk= @ 0x0800839a
+CCu base64:MHgyMDAwMDc4Yg== @ 0x080083b4
+CCu base64:aXMgdGhpcyB0aGUga2V5IGluIHRoZSAxMXRoIHBvcyAoMCk= @ 0x080083bc
+CCu base64:aXMgdGhpcyB0aGUga2V5IGluIHRoZSAzMHRoIHBvcyAoQSk= @ 0x080083c4
+CCu base64:MHgyMDAwMTg5Ng== @ 0x080083d0
+CCu base64:dG9nZ2xlIGF1dG8gcG93ZXIgb2ZmIG1vZGUgKEEga2V5IGluIEJMRSBtb2RlKQ== @ 0x080083d8
+CCu base64:MHgyMDAwMDc2OQ== @ 0x080083ea
+CCu base64:MHgyMDAwMDc2Yw== @ 0x080083ec
+CCu base64:MHgyMDAwMTg3Yw== @ 0x080083f0
 CCu base64:cjA6IHJvdywgcjE6IGNvbHVtbg== @ 0x080083f4
 CCu base64:MCw3LDE0LDIxLDI4 @ 0x080083f6
 CCu base64:Z2V0IGtleSdzIHBvc2l0aW9uIGluIHRoZSA3MCBieXRlcyBhcnJheQ== @ 0x080083fa
@@ -1094,8 +1299,66 @@ CCu base64:MCBpbml0aWFsbHk= @ 0x0800861a
 CCu base64:MCBpbml0aWFsbHk= @ 0x08008632
 CCu base64:YW4gRVhUbCBpbnRlcnJ1cHQgY291bnRlcg== @ 0x0800866e
 CCu base64:cmV0dXJuIGlmIDA= @ 0x08008672
+CCu base64:MHgyMDAwMTg3Yg== @ 0x080086d8
+CCu base64:MHgyMDAwMTg3YQ== @ 0x080086de
+CCu base64:MHgyMDAwMTg5OA== @ 0x080086e4
+CCu base64:cmV0dXJuIGlmIG5vdCBhbnkgb2YgdGhlIGtleWJvYXJkJ3MgbW9kZXM= @ 0x080086ec
+CCu base64:MHgyMDAwMTg3YQ== @ 0x080086f0
+CCu base64:MHgyMDAwMTg4Yw== @ 0x080086f4
+CCu base64:dGhpcyBtaWdodCBiZSBCTEUgcmVsYXRlZCAweDIwMDAxODdi @ 0x08008702
+CCu base64:MHgyMDAwMTg3YiBjbGVhciB0aGUgZmxhZw== @ 0x08008706
+CCu base64:MHgyMDAwMDc4YQ== @ 0x08008708
+CCu base64:YkRldmljZVN0YXRl @ 0x08008716
+CCu base64:anVtcCBpZiBzdGF0ZSBpcyBub3QgQ09ORklHVVJFRA== @ 0x0800871a
+CCu base64:MHgyMDAwMDc3Zg== @ 0x0800871c
+CCu base64:MHgyMDAwMDc4Mg== @ 0x08008724
+CCu base64:MHgyMDAwMDdjMA== @ 0x08008738
+CCu base64:MHgyMDAwMDc4OA== @ 0x0800873a
+CCu base64:MHgyMDAwMDc3ZQ== @ 0x08008740
+CCu base64:MHgyMDAwMDdhYw== @ 0x08008744
+CCu base64:MHgyMDAwMDc4NQ== @ 0x0800874c
+CCu base64:MHgyMDAwMDc4OA== @ 0x08008762
+CCu base64:MHgyMDAwMTg5NA== @ 0x0800876c
+CCu base64:MHgyMDAwMTg3Yw== @ 0x0800876e
+CCu base64:MHgyMDAwMDc2ZA== @ 0x0800877c
+CCu base64:MHgyMDAwMTg4Yw== @ 0x08008782
+CCu base64:MHgyMDAwMTg5OA== @ 0x08008786
+CCu base64:MHgyMDAwMTg5Nw== @ 0x0800878e
+CCu base64:MHgyMDAwMTg5Nw== @ 0x080087be
+CCu base64:bG9vcCBvdmVyIHJvd3M= @ 0x080087d8
+CCu base64:Z2V0IFJPV1hfQlM= @ 0x080087e0
+CCu base64:anVtcCBpZiBubyBrZXkgaW4gcm93IGlzIHByZXNzZWQg @ 0x080087e6
+CCu base64:MHgyMDAwMDc4NiBzZXQgZmxhZyBpZiBrZXlzIGFyZSBwcmVzc2Vk @ 0x080087ee
+CCu base64:MHgyMDAwMTg3MA== @ 0x08008802
+CCu base64:MHgyMDAwMTg5OA== @ 0x0800880c
+CCu base64:MHgyMDAwMTg3Yw== @ 0x08008854
+CCu base64:MHgyMDAwMDc4Mw== @ 0x08008874
+CCu base64:MHgyMDAwMTg5Yw== @ 0x08008886
+CCu base64:MHgyMDAwMDdjOQ== @ 0x08008a16
+CCu base64:MHgyMDAwMDdjOQ== @ 0x08008a74
+CCu base64:MHgyMDAwMDc4Mw== @ 0x08008a78
+CCu base64:MHgyMDAwMDc4NQ== @ 0x08008a7e
+CCu base64:cHV0IExFRCBNQ1UgdG8gc2xlZXA= @ 0x08008ac8
+CCu base64:MHgyMDAwMTg5Mg== @ 0x08008b00
+CCu base64:MHgyMDAwMTg5MA== @ 0x08008b0e
+CCu base64:MHgyMDAwMDc5OA== @ 0x08008b1c
+CCu base64:MHgyMDAwMDdjZQ== @ 0x08008b20
+CCu base64:cmV0dXJuIGlmIE1TR1NJWkUgaXMgMA== @ 0x08008c44
+CCu base64:MHgyMDAwMDdiZQ== @ 0x08008c4c
+CCu base64:MHgyMDAwMDc3Yw== @ 0x08008cd6
+CCu base64:MHgyMDAwMDc3Yg== @ 0x08008cd8
+CCu base64:anVtcCBpZiBhIG1lc3NhZ2Ugd2FzIHJlY2VpdmVkIHVzaW5nIHVzYXJ0Mi8z @ 0x08008cde
+CCu base64:anVtcCBpZiBpdCBpcyBub3QgYSBCTEUgbWVzc2FnZQ== @ 0x08008ce6
+CCu base64:anVtcCBpZiBpdCBpcyBub3QgYSBMRUQgbWVzc2FnZQ== @ 0x08008cf6
+CCu base64:MHgyMDAwMTg4NA== @ 0x08008d30
 CCu base64:cjA9MHgyMDAwMThiYw== @ 0x08008d76
 CCu base64:c3RvcmVzIFRJTTRfSW50Q291bnRlciBhbmQgYW5vdGhlciB2YWx1ZQ== @ 0x08008f1e
+CCu base64:MHgyMDAwMTg4OA== @ 0x08008f3a
+CCu base64:cjA6IDB4MjAwMDE3YTgsIHIxOiBUSU00X0ludENvdW50ZXI= @ 0x08008f68
+CCu base64:MHgyMDAwMTg4OA== @ 0x08008f70
+CCu base64:MHgyMDAwMTg3MA== @ 0x08008f98
+CCu base64:MHgyMDAwMTg4OA== @ 0x08008fa2
+CCu base64:MHgyMDAwMTg1MA== @ 0x08008faa
 CCu base64:JkRldmljZV9JbmZv @ 0x08009030
 CCu base64:JkRldmljZV9Qcm9wZXJ0eQ== @ 0x08009038
 CCu base64:JlVzZXJfU3RhbmRhcmRfUmVxdWVzdHM= @ 0x0800903c
@@ -1119,6 +1382,8 @@ CCu base64:Zm9yY2UgdXNiIHJlc2V0 @ 0x080090f4
 CCu base64:Y2xlYXIgYWxsIGJpdHMgaW4gVVNCX0lTVFI= @ 0x080090fa
 CCu base64:c29mdHdhcmUgZGlzY29ubmVjdCBwaW4= @ 0x080090fc
 CCu base64:cG93ZXJkb3duIGFuZCByZXNldCBVU0IgcGVyaXBoZXJhbA== @ 0x08009102
+CCu base64:c2VlIHVzYl9wd3IuYw== @ 0x08009120
+CCu base64:Y2hlY2sgZnVuYw== @ 0x080094c4
 CCu base64:Y2hlY2sgZnVuYw== @ 0x08009566
 CCu base64:Y2hlY2sgZnVuYw== @ 0x0800990c
 CCu base64:dGhpcyBpcyBwVXNlcl9TdGFuZGFyZF9SZXF1ZXN0cy5Vc2VyX0dldENvbmZpZ3VyYXRpb24oKQ== @ 0x08009a50
@@ -1132,6 +1397,7 @@ CCu base64:Y2xlYXIgaXQgaWYgc2V0 @ 0x08009d61
 CCu base64:Y2xlYXIgaXQgaWYgc2V0 @ 0x08009d64
 CCu base64:Z2V0IFBSMTUgc3RhdHVz @ 0x08009d6c
 CCu base64:Y2xlYXIgaXQgaWYgc2V0 @ 0x08009d78
+CCu base64:MHgyMDAwMDc4MQ== @ 0x08009d80
 CCu base64:aGFuZGxlciBpbmNyZW1lbnRzIGEgY291bnRlcg== @ 0x08009d84
 CCu base64:UFI5 @ 0x08009d86
 CCu base64:UFI4 @ 0x08009da2
@@ -1147,9 +1413,13 @@ CCu base64:Z2V0IHN0YXR1cyBvZiBETUExX0lUX1RDMg== @ 0x08009e7a
 CCu base64:ZGlzYWJsZSBkbWExY2hhbm5lbDI= @ 0x08009e90
 CCu base64:VVNBUlRfSVRfVEM= @ 0x08009e9a
 CCu base64:VVNBUlRfSVRfSURMRQ== @ 0x08009eba
+CCu base64:VElNX0lUX1VwZGF0ZQ== @ 0x08009edc
 CCu base64:aW5jcmVtZW50IGNvdW50ZXIgQCA3YzQ= @ 0x08009efa
 CCu base64:QDE4OTU= @ 0x08009f0c
 CCu base64:QDE4OTI= @ 0x08009f2a
+CCu base64:MHgyMDAwMDdiYw== @ 0x08009f2c
+CCu base64:MHgyMDAwMDdiNA== @ 0x08009f44
+CCu base64:MHgyMDAwMDdhZg== @ 0x08009f4a
 CCu base64:MCBnZXRzIHN0YXJ0OmVuZCBhcyBwYXJhbWV0ZXJzIGlmIGJvdGggbmlsIGl0IGFsc28gZ2V0cyBwYXJhbXMgdG8gY29tcHV0ZSBkYXRhIGxvY2F0aW9uIGFuZCBzaXpl @ 0x0800a254
 CCu base64:MHgwODAwYTdiYw== @ 0x0800a258
 CCu base64:ZjQ= @ 0x0800a25a
@@ -1196,6 +1466,12 @@ CCu base64:UmVzZXQgSFNJT04sIEhTRU9OLCBDU1NPTiBhbmQgUExMT04gYml0cw== @ 0x0800a69c
 CCu base64:U0NCX1ZUT1IgcmVnaXN0ZXI= @ 0x0800a6a4
 CCu base64:RkxBU0hfQUNS @ 0x0800a6a8
 CCu base64:UFdSX0NS @ 0x0800a6ac
+CCu base64:c2VlIHVzYl9lbmRwLmM= @ 0x0800a6b0
+CCu base64:RVAxX09VVA== @ 0x0800a6b6
+CCu base64:KCpwRXBJbnRfT1VUW0VQaW5kZXgtMV0pKCk7IG9yIElO @ 0x0800a6fe
+CCu base64:c2VlIHVzYl9lbmRwLmM= @ 0x0800a706
+CCu base64:KCpwRXBJbnRfT1VUW0VQaW5kZXgtMV0pKCk7IG9yIElO @ 0x0800a754
+CCu base64:KCpwRXBJbnRfT1VUW0VQaW5kZXgtMV0pKCk7IG9yIElO @ 0x0800a75c
 CCu base64:cjEgPSAweDA4MDBBN0EwIDB4MDgwMGE3YjA= @ 0x0800a77e
 CCu base64:cjQgPSAweDA4MDBBN0ND @ 0x0800a784
 CCu base64:cjIgPSAweGZmZmZjYTM3IDB4ZmZmZmZiMDc= @ 0x0800a788
@@ -1540,8 +1816,8 @@ Cd 4 @ 0x0800aa52
 afc arm32 @ 0x08004000
 afb+ 0x08004000 0x08004000 244 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8004000
-"f _Keyboard_Init 140 0x080040f4"
-"af+ 0x080040f4 _Keyboard_Init f n"
+"f _KBD_Init 140 0x080040f4"
+"af+ 0x080040f4 _KBD_Init f n"
 afc arm32 @ 0x080040f4
 afb+ 0x080040f4 0x080040f4 140 0x080068d4 0xffffffffffffffff n
 afS 0 @ 0x80040f4
@@ -1555,8 +1831,8 @@ afS 0 @ 0x8004180
 afc arm32 @ 0x080041ae
 afb+ 0x080041ae 0x080041ae 190 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80041ae
-"f _Keyboard_UseHSIClock 88 0x08004270"
-"af+ 0x08004270 _Keyboard_UseHSIClock f n"
+"f _KBD_UseHSIClock 88 0x08004270"
+"af+ 0x08004270 _KBD_UseHSIClock f n"
 afc arm32 @ 0x08004270
 afb+ 0x08004270 0x08004270 88 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8004270
@@ -1586,13 +1862,13 @@ afS 12 @ 0x80043d8
 afc arm32 @ 0x080044b6
 afb+ 0x080044b6 0x080044b6 32 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80044b6
-"f _Keyboard_WKUPInterruptsEnable_2 310 0x080044d6"
-"af+ 0x080044d6 _Keyboard_WKUPInterruptsEnable_2 f n"
+"f _KBD_WKUPInterruptsEnable_2 310 0x080044d6"
+"af+ 0x080044d6 _KBD_WKUPInterruptsEnable_2 f n"
 afc arm32 @ 0x080044d6
 afb+ 0x080044d6 0x080044d6 310 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80044d6
-"f _Keyboard_USBPlugCheck 42 0x0800460c"
-"af+ 0x0800460c _Keyboard_USBPlugCheck f n"
+"f _KBD_USBPlugCheck 42 0x0800460c"
+"af+ 0x0800460c _KBD_USBPlugCheck f n"
 afc arm32 @ 0x0800460c
 afb+ 0x0800460c 0x0800460c 24 0x08004634 0x08004624 n
 afb+ 0x0800460c 0x08004624 6 0x08004630 0x0800462a n
@@ -1610,18 +1886,18 @@ afb+ 0x08004636 0x080046e4 4 0x080046ec 0x080046e8 n
 afb+ 0x08004636 0x080046e8 4 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08004636 0x080046ec 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 12 @ 0x8004636
-"f _USB_DataPlus_LowSpeedSet_Maybe 52 0x080046f0"
-"af+ 0x080046f0 _USB_DataPlus_LowSpeedSet_Maybe f n"
+"f _USB_DisconnectPinConfig 52 0x080046f0"
+"af+ 0x080046f0 _USB_DisconnectPinConfig f n"
 afc arm32 @ 0x080046f0
 afb+ 0x080046f0 0x080046f0 52 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80046f0
-"f _USB_WakeUpIntEnable 96 0x08004724"
-"af+ 0x08004724 _USB_WakeUpIntEnable f n"
+"f _USB_Interrupts_Config 96 0x08004724"
+"af+ 0x08004724 _USB_Interrupts_Config f n"
 afc arm32 @ 0x08004724
 afb+ 0x08004724 0x08004724 96 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8004724
-"f _USB_Clock_Enable 10 0x08004784"
-"af+ 0x08004784 _USB_Clock_Enable f n"
+"f _USB_Set_USBClock 10 0x08004784"
+"af+ 0x08004784 _USB_Set_USBClock f n"
 afc arm32 @ 0x08004784
 afb+ 0x08004784 0x08004784 10 0x08006c5e 0xffffffffffffffff n
 afS 0 @ 0x8004784
@@ -1644,8 +1920,8 @@ afb+ 0x080047be 0x08004836 34 0x08004858 0xffffffffffffffff n
 afb+ 0x080047be 0x08004858 6 0x08004836 0x0800485e n
 afb+ 0x080047be 0x0800485e 14 0xffffffffffffffff 0xffffffffffffffff n
 afS 20 @ 0x80047be
-"f fcn.0800486c 316 0x0800486c"
-"af+ 0x0800486c fcn.0800486c f n"
+"f _LED_BLEStyleUpdate 316 0x0800486c"
+"af+ 0x0800486c _LED_BLEStyleUpdate f n"
 afc arm32 @ 0x0800486c
 afb+ 0x0800486c 0x0800486c 194 0x08004938 0x0800492e n
 afb+ 0x0800486c 0x0800492e 10 0x08004940 0xffffffffffffffff n
@@ -1661,8 +1937,8 @@ afb+ 0x0800486c 0x08004972 34 0x08004994 0xffffffffffffffff n
 afb+ 0x0800486c 0x08004994 6 0x08004972 0x0800499a n
 afb+ 0x0800486c 0x0800499a 14 0xffffffffffffffff 0xffffffffffffffff n
 afS 52 @ 0x800486c
-"f fcn.080049b0 756 0x080049b0"
-"af+ 0x080049b0 fcn.080049b0 f n"
+"f _BLE_CMDSend 756 0x080049b0"
+"af+ 0x080049b0 _BLE_CMDSend f n"
 afc arm32 @ 0x080049b0
 afb+ 0x080049b0 0x080049b0 10 0x080049cc 0x080049ba n
 afb+ 0x080049b0 0x080049ba 4 0x08004a74 0x080049be n
@@ -1704,15 +1980,15 @@ afb+ 0x08004d02 0x08004d02 12 0x08004d12 0x08004d0e n
 afb+ 0x08004d02 0x08004d0e 4 0x0800701a 0xffffffffffffffff n
 afb+ 0x08004d02 0x08004d12 4 0x0800701e 0xffffffffffffffff n
 afS 0 @ 0x8004d02
-"f _USB_Send_Something 68 0x08004d16"
-"af+ 0x08004d16 _USB_Send_Something f n"
+"f _USB_SendKeyStroke 68 0x08004d16"
+"af+ 0x08004d16 _USB_SendKeyStroke f n"
 afc arm32 @ 0x08004d16
 afb+ 0x08004d16 0x08004d16 40 0x08004d58 0x08004d3e n
 afb+ 0x08004d16 0x08004d3e 26 0x08004d58 0xffffffffffffffff n
 afb+ 0x08004d16 0x08004d58 2 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8004d16
-"f fcn.08004d68 134 0x08004d68"
-"af+ 0x08004d68 fcn.08004d68 f n"
+"f _BLE_KeyPress_Something 134 0x08004d68"
+"af+ 0x08004d68 _BLE_KeyPress_Something f n"
 afc arm32 @ 0x08004d68
 afb+ 0x08004d68 0x08004d68 32 0x08004dc0 0x08004d88 n
 afb+ 0x08004d68 0x08004d88 20 0x08004dac 0x08004d9c n
@@ -1803,13 +2079,13 @@ afc arm32 @ 0x080051ce
 afb+ 0x080051ce 0x08005114 186 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x080051ce 0x080051ce 20 0x08005114 0xffffffffffffffff n
 afS 52 @ 0x80051ce
-"f _LED_4BytesSend 60 0x080051e8"
-"af+ 0x080051e8 _LED_4BytesSend f n"
+"f _LED_C_CMDSend 60 0x080051e8"
+"af+ 0x080051e8 _LED_C_CMDSend f n"
 afc arm32 @ 0x080051e8
 afb+ 0x080051e8 0x080051e8 60 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80051e8
-"f _LED_SomethingSend 572 0x08005228"
-"af+ 0x08005228 _LED_SomethingSend f n"
+"f _LED_CMDSend 572 0x08005228"
+"af+ 0x08005228 _LED_CMDSend f n"
 afc arm32 @ 0x08005228
 afb+ 0x08005228 0x08005228 20 0x080053d0 0x0800523c n
 afb+ 0x08005228 0x0800523c 16 0x080053b0 0x0800524c n
@@ -1844,8 +2120,8 @@ afb+ 0x08005228 0x08005438 16 0x08005448 0xffffffffffffffff n
 afb+ 0x08005228 0x08005448 24 0x08005460 0xffffffffffffffff n
 afb+ 0x08005228 0x08005460 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 64 @ 0x8005228
-"f _LED_StyleMsgSend_Maybe 118 0x08005468"
-"af+ 0x08005468 _LED_StyleMsgSend_Maybe f n"
+"f _LED_KeyPosBSSend 118 0x08005468"
+"af+ 0x08005468 _LED_KeyPosBSSend f n"
 afc arm32 @ 0x08005468
 afb+ 0x08005468 0x08005468 118 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8005468
@@ -1859,23 +2135,23 @@ afS 0 @ 0x80054de
 afc arm32 @ 0x0800552c
 afb+ 0x0800552c 0x0800552c 74 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800552c
-"f _MSG_SystemTypeAction 480 0x08005576"
-"af+ 0x08005576 _MSG_SystemTypeAction f n"
+"f _MSG_HandleSystemCMD 480 0x08005576"
+"af+ 0x08005576 _MSG_HandleSystemCMD f n"
 afc arm32 @ 0x08005576
 afb+ 0x08005576 0x08005576 480 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8005576
-"f _BLE_SendPacket_Maybe 36 0x08005756"
-"af+ 0x08005756 _BLE_SendPacket_Maybe f n"
+"f _BLE_SendMSG 36 0x08005756"
+"af+ 0x08005756 _BLE_SendMSG f n"
 afc arm32 @ 0x08005756
 afb+ 0x08005756 0x08005756 36 0x0800774e 0xffffffffffffffff n
 afS 0 @ 0x8005756
-"f func_0x0800577a 26 0x0800577a"
-"af+ 0x0800577a func_0x0800577a f n"
+"f _BLE_IsMSGPending 26 0x0800577a"
+"af+ 0x0800577a _BLE_IsMSGPending f n"
 afc arm32 @ 0x0800577a
 afb+ 0x0800577a 0x0800577a 26 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800577a
-"f _LED_SendPacket 174 0x080057a0"
-"af+ 0x080057a0 _LED_SendPacket f n"
+"f _MSG_CMDPrepareOrSend 174 0x080057a0"
+"af+ 0x080057a0 _MSG_CMDPrepareOrSend f n"
 afc arm32 @ 0x080057a0
 afb+ 0x080057a0 0x080057a0 56 0x080057ee 0x080057d8 n
 afb+ 0x080057a0 0x080057d8 12 0x0800584c 0x080057e4 n
@@ -1889,38 +2165,38 @@ afb+ 0x080057a0 0x0800581e 4 0x08005814 0x08005822 n
 afb+ 0x080057a0 0x08005822 42 0x0800584c 0xffffffffffffffff n
 afb+ 0x080057a0 0x0800584c 2 0xffffffffffffffff 0xffffffffffffffff n
 afS 8 @ 0x80057a0
-"f _MSG_KeyboardTypeAction 344 0x08005860"
-"af+ 0x08005860 _MSG_KeyboardTypeAction f n"
+"f _MSG_HandleKeyboardCMD 344 0x08005860"
+"af+ 0x08005860 _MSG_HandleKeyboardCMD f n"
 afc arm32 @ 0x08005860
 afb+ 0x08005860 0x08005860 344 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8005860
-"f _MSG_BLETypeAction 528 0x080059d0"
-"af+ 0x080059d0 _MSG_BLETypeAction f n"
+"f _MSG_HandleBLECMD 528 0x080059d0"
+"af+ 0x080059d0 _MSG_HandleBLECMD f n"
 afc arm32 @ 0x080059d0
 afb+ 0x080059d0 0x080059d0 528 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80059d0
-"f _MSG_LedStyleTypeAction 462 0x08005bf8"
-"af+ 0x08005bf8 _MSG_LedStyleTypeAction f n"
+"f _MSG_HandleLEDStyleCMD 462 0x08005bf8"
+"af+ 0x08005bf8 _MSG_HandleLEDStyleCMD f n"
 afc arm32 @ 0x08005bf8
 afb+ 0x08005bf8 0x08005bf8 462 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8005bf8
-"f MSG_MacroTypeAction_Maybe 514 0x08005dcc"
-"af+ 0x08005dcc MSG_MacroTypeAction_Maybe f n"
+"f _MSG_HandleMacroCMD 514 0x08005dcc"
+"af+ 0x08005dcc _MSG_HandleMacroCMD f n"
 afc arm32 @ 0x08005dcc
 afb+ 0x08005dcc 0x08005dcc 514 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8005dcc
-"f _Msg_TypeParse 146 0x08005fce"
-"af+ 0x08005fce _Msg_TypeParse f n"
+"f _MSG_Handle 146 0x08005fce"
+"af+ 0x08005fce _MSG_Handle f n"
 afc arm32 @ 0x08005fce
 afb+ 0x08005fce 0x08005fce 146 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8005fce
-"f _MSG_PacketGet 70 0x08006060"
-"af+ 0x08006060 _MSG_PacketGet f n"
+"f _MSG_Get 70 0x08006060"
+"af+ 0x08006060 _MSG_Get f n"
 afc arm32 @ 0x08006060
 afb+ 0x08006060 0x08006060 70 0x08005fce 0xffffffffffffffff n
 afS 0 @ 0x8006060
-"f _Keyboard_DefaultsLoad 82 0x080060ac"
-"af+ 0x080060ac _Keyboard_DefaultsLoad f n"
+"f _KBD_DefaultsLoad 82 0x080060ac"
+"af+ 0x080060ac _KBD_DefaultsLoad f n"
 afc arm32 @ 0x080060ac
 afb+ 0x080060ac 0x080060ac 82 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80060ac
@@ -1960,8 +2236,8 @@ afb+ 0x080062a0 0x080062f4 22 0x08006310 0x0800630a n
 afb+ 0x080062a0 0x0800630a 6 0x08006310 0xffffffffffffffff n
 afb+ 0x080062a0 0x08006310 10 0x08006b34 0xffffffffffffffff n
 afS 0 @ 0x80062a0
-"f _Keyboard_WKUPInterruptsEnable 310 0x0800631a"
-"af+ 0x0800631a _Keyboard_WKUPInterruptsEnable f n"
+"f _KBD_WKUPInterruptsEnable 310 0x0800631a"
+"af+ 0x0800631a _KBD_WKUPInterruptsEnable f n"
 afc arm32 @ 0x0800631a
 afb+ 0x0800631a 0x0800631a 310 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800631a
@@ -1970,18 +2246,18 @@ afS 0 @ 0x800631a
 afc arm32 @ 0x08006450
 afb+ 0x08006450 0x08006450 494 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8006450
-"f _Keyboard_LowPowerMode 90 0x0800663e"
-"af+ 0x0800663e _Keyboard_LowPowerMode f n"
+"f _KBD_LowPowerMode 90 0x0800663e"
+"af+ 0x0800663e _KBD_LowPowerMode f n"
 afc arm32 @ 0x0800663e
 afb+ 0x0800663e 0x0800663e 90 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800663e
-"f _EEPROM_Write_Something 44 0x08006698"
-"af+ 0x08006698 _EEPROM_Write_Something f n"
+"f _KBD_StoreAutoPWROffFlag 44 0x08006698"
+"af+ 0x08006698 _KBD_StoreAutoPWROffFlag f n"
 afc arm32 @ 0x08006698
 afb+ 0x08006698 0x08006698 44 0x08006d7e 0xffffffffffffffff n
 afS 0 @ 0x8006698
-"f update_vars_fromeeprom_init_others 36 0x080066c4"
-"af+ 0x080066c4 update_vars_fromeeprom_init_others f n"
+"f _KBD_LoadLayoutAndPWRFlags 36 0x080066c4"
+"af+ 0x080066c4 _KBD_LoadLayoutAndPWRFlags f n"
 afc arm32 @ 0x080066c4
 afb+ 0x080066c4 0x080066c4 36 0x08006d7e 0xffffffffffffffff n
 afS 0 @ 0x80066c4
@@ -1995,13 +2271,13 @@ afS 8 @ 0x80066e8
 afc arm32 @ 0x08006728
 afb+ 0x08006728 0x08006728 166 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8006728
-"f init_vars_from_eeprom 32 0x080067ce"
-"af+ 0x080067ce init_vars_from_eeprom f n"
+"f _KBD_LoadSyncCode 32 0x080067ce"
+"af+ 0x080067ce _KBD_LoadSyncCode f n"
 afc arm32 @ 0x080067ce
 afb+ 0x080067ce 0x080067ce 32 0x08006d7e 0xffffffffffffffff n
 afS 0 @ 0x80067ce
-"f _EEPROM_Write_Something2 48 0x080067ee"
-"af+ 0x080067ee _EEPROM_Write_Something2 f n"
+"f _KBD_StoreSyncCode 48 0x080067ee"
+"af+ 0x080067ee _KBD_StoreSyncCode f n"
 afc arm32 @ 0x080067ee
 afb+ 0x080067ee 0x080067ee 48 0x08006d7e 0xffffffffffffffff n
 afS 0 @ 0x80067ee
@@ -2015,16 +2291,16 @@ afb+ 0x0800681e 0x08006854 22 0x0800686a 0xffffffffffffffff n
 afb+ 0x0800681e 0x0800686a 4 0x08006854 0x0800686e n
 afb+ 0x0800681e 0x0800686e 8 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800681e
-"f _EEPROM_Write_Something4 50 0x08006876"
-"af+ 0x08006876 _EEPROM_Write_Something4 f n"
+"f _KBD_StoreLayout 50 0x08006876"
+"af+ 0x08006876 _KBD_StoreLayout f n"
 afc arm32 @ 0x08006876
 afb+ 0x08006876 0x08006876 22 0x0800689c 0xffffffffffffffff n
 afb+ 0x08006876 0x0800688c 16 0x0800689c 0xffffffffffffffff n
 afb+ 0x08006876 0x0800689c 4 0x0800688c 0x080068a0 n
 afb+ 0x08006876 0x080068a0 8 0x08006d7e 0xffffffffffffffff n
 afS 0 @ 0x8006876
-"f copy_from_eeprom_to_mem 44 0x080068a8"
-"af+ 0x080068a8 copy_from_eeprom_to_mem f n"
+"f _KBD_LoadLayout 44 0x080068a8"
+"af+ 0x080068a8 _KBD_LoadLayout f n"
 afc arm32 @ 0x080068a8
 afb+ 0x080068a8 0x080068a8 44 0x08006d7e 0xffffffffffffffff n
 afS 0 @ 0x80068a8
@@ -2053,8 +2329,8 @@ afS 0 @ 0x8006912
 afc arm32 @ 0x08006970
 afb+ 0x08006970 0x08006970 20 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8006970
-"f _Keyboard_LayoutInit 278 0x08006984"
-"af+ 0x08006984 _Keyboard_LayoutInit f n"
+"f _KBD_LayoutInit 278 0x08006984"
+"af+ 0x08006984 _KBD_LayoutInit f n"
 afc arm32 @ 0x08006984
 afb+ 0x08006984 0x08006984 278 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8006984
@@ -2323,8 +2599,8 @@ afS 0 @ 0x80070e6
 afc arm32 @ 0x080070f6
 afb+ 0x080070f6 0x080070f6 6 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80070f6
-"f _Wait_x4000_x125 52 0x08007104"
-"af+ 0x08007104 _Wait_x4000_x125 f n"
+"f _Wait 52 0x08007104"
+"af+ 0x08007104 _Wait f n"
 afc arm32 @ 0x08007104
 afb+ 0x08007104 0x08007104 10 0x08007118 0x0800710e n
 afb+ 0x08007104 0x0800710e 10 0x0800711e 0xffffffffffffffff n
@@ -2333,8 +2609,8 @@ afb+ 0x08007104 0x0800711e 8 0x08007126 0xffffffffffffffff b
 afb+ 0x08007104 0x08007126 10 0x08007126 0x08007130 n
 afb+ 0x08007104 0x08007130 8 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007104
-"f _Wait_x4_at_AHB/8 42 0x08007138"
-"af+ 0x08007138 _Wait_x4_at_AHB/8 f n"
+"f _Wait_AHBby8 42 0x08007138"
+"af+ 0x08007138 _Wait_AHBby8 f n"
 afc arm32 @ 0x08007138
 afb+ 0x08007138 0x08007138 42 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007138
@@ -2378,8 +2654,8 @@ afS 0 @ 0x8007220
 afc arm32 @ 0x08007250
 afb+ 0x08007250 0x08007250 48 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007250
-"f USB_5 32 0x08007280"
-"af+ 0x08007280 USB_5 f n"
+"f USB_SetEPTxValid 32 0x08007280"
+"af+ 0x08007280 USB_SetEPTxValid f n"
 afc arm32 @ 0x08007280
 afb+ 0x08007280 0x08007280 32 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007280
@@ -2438,8 +2714,8 @@ afS 0 @ 0x8007396
 afc arm32 @ 0x080073d0
 afb+ 0x080073d0 0x080073d0 22 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80073d0
-"f fcn.08007400 12 0x08007400"
-"af+ 0x08007400 fcn.08007400 f n"
+"f USB_ByteSwap 12 0x08007400"
+"af+ 0x08007400 USB_ByteSwap f n"
 afc arm32 @ 0x08007400
 afb+ 0x08007400 0x08007400 12 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007400
@@ -2535,8 +2811,8 @@ afS 0 @ 0x80077a8
 afc arm32 @ 0x080077fc
 afb+ 0x080077fc 0x080077fc 12 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80077fc
-"f fcn.08007808 116 0x08007808"
-"af+ 0x08007808 fcn.08007808 f n"
+"f _BLE_TxBufferFill 116 0x08007808"
+"af+ 0x08007808 _BLE_TxBufferFill f n"
 afc arm32 @ 0x08007808
 afb+ 0x08007808 0x08007808 46 0x08007878 0x08007836 n
 afb+ 0x08007808 0x08007836 24 0x08007868 0x0800784e n
@@ -2545,8 +2821,8 @@ afb+ 0x08007808 0x08007868 10 0x08007872 0xffffffffffffffff b
 afb+ 0x08007808 0x08007872 6 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08007808 0x08007878 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007808
-"f fcn.0800787c 136 0x0800787c"
-"af+ 0x0800787c fcn.0800787c f n"
+"f _BLE_DMATxBufferFill 136 0x0800787c"
+"af+ 0x0800787c _BLE_DMATxBufferFill f n"
 afc arm32 @ 0x0800787c
 afb+ 0x0800787c 0x0800787c 46 0x080078ae 0x080078aa n
 afb+ 0x0800787c 0x080078aa 4 0x08007900 0xffffffffffffffff n
@@ -2560,8 +2836,8 @@ afb+ 0x0800787c 0x080078fc 2 0x080078fe 0xffffffffffffffff n
 afb+ 0x0800787c 0x080078fe 2 0x08007900 0xffffffffffffffff b
 afb+ 0x0800787c 0x08007900 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800787c
-"f some_math 28 0x08007904"
-"af+ 0x08007904 some_math f n"
+"f _BLE_MSGGetPendingTransferSize 28 0x08007904"
+"af+ 0x08007904 _BLE_MSGGetPendingTransferSize f n"
 afc arm32 @ 0x08007904
 afb+ 0x08007904 0x08007904 28 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8007904
@@ -2773,8 +3049,8 @@ afb+ 0x08007ce6 0x080083cc 16 0x080083e0 0x080083dc n
 afb+ 0x08007ce6 0x080083dc 4 0x080083e0 0xffffffffffffffff n
 afb+ 0x08007ce6 0x080083e0 20 0x08007f92 0xffffffffffffffff n
 afS 20 @ 0x8007ce6
-"f _Keyboard_KeyPosBSUpdate 56 0x080083f4"
-"af+ 0x080083f4 _Keyboard_KeyPosBSUpdate f n"
+"f _KBD_KeyPosBSUpdate 56 0x080083f4"
+"af+ 0x080083f4 _KBD_KeyPosBSUpdate f n"
 afc arm32 @ 0x080083f4
 afb+ 0x080083f4 0x080083f4 56 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80083f4
@@ -2786,8 +3062,8 @@ afb+ 0x0800842c 0x08008440 6 0x0800844c 0xffffffffffffffff n
 afb+ 0x0800842c 0x08008446 6 0x0800844c 0xffffffffffffffff b
 afb+ 0x0800842c 0x0800844c 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800842c
-"f _Keyboard_UpdateKeyCodeBitSets 156 0x08008450"
-"af+ 0x08008450 _Keyboard_UpdateKeyCodeBitSets f n"
+"f _KBD_UpdateKeyCodeBitSets 156 0x08008450"
+"af+ 0x08008450 _KBD_UpdateKeyCodeBitSets f n"
 afc arm32 @ 0x08008450
 afb+ 0x08008450 0x08008450 12 0x08008480 0x0800845c n
 afb+ 0x08008450 0x0800845c 18 0x08008476 0x0800846e n
@@ -2810,8 +3086,8 @@ afb+ 0x08008450 0x080084dc 6 0x080084e2 0xffffffffffffffff n
 afb+ 0x08008450 0x080084e2 6 0x080084e8 0xffffffffffffffff n
 afb+ 0x08008450 0x080084e8 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8008450
-"f _Keyboard_6KROSlotFill_Maybe 112 0x080084ec"
-"af+ 0x080084ec _Keyboard_6KROSlotFill_Maybe f n"
+"f _KBD_6KROSlotFill_Maybe 112 0x080084ec"
+"af+ 0x080084ec _KBD_6KROSlotFill_Maybe f n"
 afc arm32 @ 0x080084ec
 afb+ 0x080084ec 0x080084ec 8 0x08008512 0x080084f4 n
 afb+ 0x080084ec 0x080084f4 16 0x0800850a 0x08008504 n
@@ -2844,18 +3120,18 @@ afS 0 @ 0x800855c
 afc arm32 @ 0x080085b0
 afb+ 0x080085b0 0x080085b0 100 0x080085c6 0xffffffffffffffff n
 afS 0 @ 0x80085b0
-"f _Keyboard_StateUpdate 166 0x08008614"
-"af+ 0x08008614 _Keyboard_StateUpdate f n"
+"f _KBD_StateUpdate 166 0x08008614"
+"af+ 0x08008614 _KBD_StateUpdate f n"
 afc arm32 @ 0x08008614
 afb+ 0x08008614 0x08008614 166 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8008614
-"f func_xxxx2 232 0x080086ba"
-"af+ 0x080086ba func_xxxx2 f n"
+"f _KBD_KeyStrokeHandle 232 0x080086ba"
+"af+ 0x080086ba _KBD_KeyStrokeHandle f n"
 afc arm32 @ 0x080086ba
 afb+ 0x080086ba 0x080086ba 232 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80086ba
-"f fcn.080087a2 120 0x080087a2"
-"af+ 0x080087a2 fcn.080087a2 f n"
+"f _KBD_IdleFlagsUpdate 120 0x080087a2"
+"af+ 0x080087a2 _KBD_IdleFlagsUpdate f n"
 afc arm32 @ 0x080087a2
 afb+ 0x080087a2 0x080087a2 10 0x080087b4 0x080087ac n
 afb+ 0x080087a2 0x080087ac 6 0x080087ba 0x080087b2 n
@@ -2872,8 +3148,8 @@ afb+ 0x080087a2 0x080087f0 10 0x080087b4 0x080087fa n
 afb+ 0x080087a2 0x080087fa 24 0x080087b4 0xffffffffffffffff n
 afb+ 0x080087a2 0x08008812 8 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80087a2
-"f fcn.0800881a 562 0x0800881a"
-"af+ 0x0800881a fcn.0800881a f n"
+"f _LED_StateUpdate 562 0x0800881a"
+"af+ 0x0800881a _LED_StateUpdate f n"
 afc arm32 @ 0x0800881a
 afb+ 0x0800881a 0x0800881a 12 0x0800884a 0x08008826 n
 afb+ 0x0800881a 0x08008826 8 0x08008850 0x0800882e n
@@ -2975,8 +3251,8 @@ afb+ 0x08008ade 0x08008c0a 12 0x08008af2 0xffffffffffffffff n
 afb+ 0x08008ade 0x08008c16 6 0x08008c1c 0xffffffffffffffff n
 afb+ 0x08008ade 0x08008c1c 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 60 @ 0x8008ade
-"f _BLE_Init_Maybe 152 0x08008c20"
-"af+ 0x08008c20 _BLE_Init_Maybe f n"
+"f _BLE_StateUpdate 152 0x08008c20"
+"af+ 0x08008c20 _BLE_StateUpdate f n"
 afc arm32 @ 0x08008c20
 afb+ 0x08008c20 0x08008c20 10 0x08008c38 0x08008c2a n
 afb+ 0x08008c20 0x08008c2a 8 0x08008c3e 0x08008c32 n
@@ -2993,8 +3269,8 @@ afb+ 0x08008c20 0x08008c9a 14 0x08008c38 0x08008ca8 n
 afb+ 0x08008c20 0x08008ca8 8 0x08008c38 0xffffffffffffffff n
 afb+ 0x08008c20 0x08008cb0 8 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8008c20
-"f _Msg_Receive 84 0x08008cb8"
-"af+ 0x08008cb8 _Msg_Receive f n"
+"f _KBD_MSGReceive 84 0x08008cb8"
+"af+ 0x08008cb8 _KBD_MSGReceive f n"
 afc arm32 @ 0x08008cb8
 afb+ 0x08008cb8 0x08008cb8 10 0x08008ccc 0x08008cc2 n
 afb+ 0x08008cb8 0x08008cc2 8 0x08008cd2 0x08008cca n
@@ -3026,8 +3302,8 @@ afb+ 0x08008d0c 0x08008d64 4 0x08008d26 0x08008d68 n
 afb+ 0x08008d0c 0x08008d68 4 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08008d0c 0x08008d6c 8 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8008d0c
-"f _Keyboard_PWRManage 340 0x08008d74"
-"af+ 0x08008d74 _Keyboard_PWRManage f n"
+"f _KBD_PWRManage 340 0x08008d74"
+"af+ 0x08008d74 _KBD_PWRManage f n"
 afc arm32 @ 0x08008d74
 afb+ 0x08008d74 0x08008d74 10 0x08008d86 0x08008d7e n
 afb+ 0x08008d74 0x08008d7e 6 0x08008d8c 0x08008d84 n
@@ -3063,33 +3339,33 @@ afS 0 @ 0x8008d74
 afc arm32 @ 0x08008ee8
 afb+ 0x08008ee8 0x08008ee8 4 0x0800690c 0xffffffffffffffff n
 afS 0 @ 0x8008ee8
-"f _TIM4_IntCounter_Something2 50 0x08008eec"
-"af+ 0x08008eec _TIM4_IntCounter_Something2 f n"
+"f _Timer_Compare 50 0x08008eec"
+"af+ 0x08008eec _Timer_Compare f n"
 afc arm32 @ 0x08008eec
 afb+ 0x08008eec 0x08008eec 10 0x08008f1a 0x08008ef6 n
 afb+ 0x08008eec 0x08008ef6 36 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08008eec 0x08008f1a 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8008eec
-"f _TIM4_IntCounter_Something 14 0x08008f1e"
-"af+ 0x08008f1e _TIM4_IntCounter_Something f n"
+"f _Timer_Init 14 0x08008f1e"
+"af+ 0x08008f1e _Timer_Init f n"
 afc arm32 @ 0x08008f1e
 afb+ 0x08008f1e 0x08008f1e 14 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8008f1e
-"f fcn.08008f2c 6 0x08008f2c"
-"af+ 0x08008f2c fcn.08008f2c f n"
+"f _Timer_Clear 6 0x08008f2c"
+"af+ 0x08008f2c _Timer_Clear f n"
 afc arm32 @ 0x08008f2c
 afb+ 0x08008f2c 0x08008f2c 6 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8008f2c
-"f fcn.08008f32 54 0x08008f32"
-"af+ 0x08008f32 fcn.08008f32 f n"
+"f _KBD_Macro_Something 54 0x08008f32"
+"af+ 0x08008f32 _KBD_Macro_Something f n"
 afc arm32 @ 0x08008f32
 afb+ 0x08008f32 0x08008f32 28 0x08008f62 0x08008f4e n
 afb+ 0x08008f32 0x08008f4e 6 0x08008f62 0x08008f54 n
 afb+ 0x08008f32 0x08008f54 14 0x08008f62 0xffffffffffffffff n
 afb+ 0x08008f32 0x08008f62 6 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8008f32
-"f fcn.08008f68 198 0x08008f68"
-"af+ 0x08008f68 fcn.08008f68 f n"
+"f _KBD_Macro_Something2 198 0x08008f68"
+"af+ 0x08008f68 _KBD_Macro_Something2 f n"
 afc arm32 @ 0x08008f68
 afb+ 0x08008f68 0x08008f68 18 0x08008f7e 0x08008f7a n
 afb+ 0x08008f68 0x08008f7a 4 0xffffffffffffffff 0xffffffffffffffff n
@@ -3109,8 +3385,8 @@ afS 0 @ 0x8008f68
 afc arm32 @ 0x08009030
 afb+ 0x08009030 0x08009030 20 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009030
-"f _USB_WakeUpIntDisable_Maybe 92 0x08009050"
-"af+ 0x08009050 _USB_WakeUpIntDisable_Maybe f n"
+"f _USB_Interrupts_Disable 92 0x08009050"
+"af+ 0x08009050 _USB_Interrupts_Disable f n"
 afc arm32 @ 0x08009050
 afb+ 0x08009050 0x08009050 92 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009050
@@ -3134,8 +3410,8 @@ afS 0 @ 0x80090e6
 afc arm32 @ 0x08009108
 afb+ 0x08009108 0x08009108 20 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009108
-"f USB_Something7 152 0x08009120"
-"af+ 0x08009120 USB_Something7 f n"
+"f _USB_Resume 152 0x08009120"
+"af+ 0x08009120 _USB_Resume f n"
 afc arm32 @ 0x08009120
 afb+ 0x08009120 0x08009120 8 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08009120 0x08009128 2 0x0800912a 0xffffffffffffffff n
@@ -3143,13 +3419,13 @@ afb+ 0x08009120 0x0800912a 6 0x080091b2 0x08009130 n
 afb+ 0x08009120 0x08009130 4 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08009120 0x080091b2 6 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009120
-"f USB_Something6 36 0x080091c4"
-"af+ 0x080091c4 USB_Something6 f n"
+"f USB_Standard_GetConfiguration 36 0x080091c4"
+"af+ 0x080091c4 USB_Standard_GetConfiguration f n"
 afc arm32 @ 0x080091c4
 afb+ 0x080091c4 0x080091c4 36 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80091c4
-"f USB_Something5 52 0x080091e8"
-"af+ 0x080091e8 USB_Something5 f n"
+"f USB_Standard_SetConfiguration 52 0x080091e8"
+"af+ 0x080091e8 USB_Standard_SetConfiguration f n"
 afc arm32 @ 0x080091e8
 afb+ 0x080091e8 0x080091e8 20 0x08009218 0x080091fc n
 afb+ 0x080091e8 0x080091fc 6 0x08009218 0x08009202 n
@@ -3157,13 +3433,13 @@ afb+ 0x080091e8 0x08009202 6 0x08009218 0x08009208 n
 afb+ 0x080091e8 0x08009208 16 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x080091e8 0x08009218 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80091e8
-"f USB_Something4 36 0x0800921c"
-"af+ 0x0800921c USB_Something4 f n"
+"f USB_Standard_GetInterface 36 0x0800921c"
+"af+ 0x0800921c USB_Standard_GetInterface f n"
 afc arm32 @ 0x0800921c
 afb+ 0x0800921c 0x0800921c 36 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800921c
-"f USB_Something3 76 0x08009240"
-"af+ 0x08009240 USB_Something3 f n"
+"f USB_Standard_SetInterface 76 0x08009240"
+"af+ 0x08009240 USB_Standard_SetInterface f n"
 afc arm32 @ 0x08009240
 afb+ 0x08009240 0x08009240 30 0x08009288 0x0800925e n
 afb+ 0x08009240 0x0800925e 4 0x08009288 0x08009262 n
@@ -3172,13 +3448,13 @@ afb+ 0x08009240 0x08009268 6 0x08009288 0x0800926e n
 afb+ 0x08009240 0x0800926e 26 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08009240 0x08009288 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009240
-"f USB_Something2 170 0x0800928c"
-"af+ 0x0800928c USB_Something2 f n"
+"f USB_Class_Data_Setup_Maybe 170 0x0800928c"
+"af+ 0x0800928c USB_Class_Data_Setup_Maybe f n"
 afc arm32 @ 0x0800928c
 afb+ 0x0800928c 0x0800928c 170 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800928c
-"f USB_Something 214 0x08009336"
-"af+ 0x08009336 USB_Something f n"
+"f USB_Standard_ClearFeature 214 0x08009336"
+"af+ 0x08009336 USB_Standard_ClearFeature f n"
 afc arm32 @ 0x08009336
 afb+ 0x08009336 0x08009336 16 0x08009352 0x08009346 n
 afb+ 0x08009336 0x08009346 12 0xffffffffffffffff 0xffffffffffffffff n
@@ -3201,8 +3477,8 @@ afb+ 0x08009336 0x080093e4 22 0x080093fa 0xffffffffffffffff n
 afb+ 0x08009336 0x080093fa 14 0xffffffffffffffff 0xffffffffffffffff n
 afb+ 0x08009336 0x08009408 4 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009336
-"f USB_Something8 126 0x0800940c"
-"af+ 0x0800940c USB_Something8 f n"
+"f USB_Standard_SetEndPointFeature 126 0x0800940c"
+"af+ 0x0800940c USB_Standard_SetEndPointFeature f n"
 afc arm32 @ 0x0800940c
 afb+ 0x0800940c 0x0800940c 26 0x0800942c 0x08009426 n
 afb+ 0x0800940c 0x08009426 6 0x08009430 0xffffffffffffffff n
@@ -3217,18 +3493,18 @@ afb+ 0x0800940c 0x0800945a 18 0x0800947c 0xffffffffffffffff n
 afb+ 0x0800940c 0x0800946c 16 0x0800947c 0xffffffffffffffff b
 afb+ 0x0800940c 0x0800947c 14 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800940c
-"f USB_Something9 30 0x0800948a"
-"af+ 0x0800948a USB_Something9 f n"
+"f USB_Standard_SetDeviceFeature 30 0x0800948a"
+"af+ 0x0800948a USB_Standard_SetDeviceFeature f n"
 afc arm32 @ 0x0800948a
 afb+ 0x0800948a 0x0800948a 30 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800948a
-"f USB_Something10 28 0x080094a8"
-"af+ 0x080094a8 USB_Something10 f n"
+"f USB_Standard_GetDescriptorData 28 0x080094a8"
+"af+ 0x080094a8 USB_Standard_GetDescriptorData f n"
 afc arm32 @ 0x080094a8
 afb+ 0x080094a8 0x080094a8 28 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80094a8
-"f USB_Something11 162 0x080094c4"
-"af+ 0x080094c4 USB_Something11 f n"
+"f USB_DataStageOut 162 0x080094c4"
+"af+ 0x080094c4 USB_DataStageOut f n"
 afc arm32 @ 0x080094c4
 afb+ 0x080094c4 0x080094c4 20 0x08009506 0x080094d8 n
 afb+ 0x080094c4 0x080094d8 4 0x08009506 0x080094dc n
@@ -3245,8 +3521,8 @@ afb+ 0x080094c4 0x08009542 2 0x08009564 0x08009544 n
 afb+ 0x080094c4 0x08009544 32 0x08009564 0xffffffffffffffff n
 afb+ 0x080094c4 0x08009564 2 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80094c4
-"f USB_DataStageIn_Maybe 166 0x08009566"
-"af+ 0x08009566 USB_DataStageIn_Maybe f n"
+"f USB_DataStageIn 166 0x08009566"
+"af+ 0x08009566 USB_DataStageIn f n"
 afc arm32 @ 0x08009566
 afb+ 0x08009566 0x08009566 20 0x080095b4 0x0800957a n
 afb+ 0x08009566 0x0800957a 6 0x080095b4 0x08009580 n
@@ -3261,8 +3537,8 @@ afb+ 0x08009566 0x080095c4 2 0x080095c6 0xffffffffffffffff n
 afb+ 0x08009566 0x080095c6 62 0x08009604 0xffffffffffffffff b
 afb+ 0x08009566 0x08009604 8 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009566
-"f USB_Something12 218 0x0800960c"
-"af+ 0x0800960c USB_Something12 f n"
+"f USB_NoData_Setup0 218 0x0800960c"
+"af+ 0x0800960c USB_NoData_Setup0 f n"
 afc arm32 @ 0x0800960c
 afb+ 0x0800960c 0x0800960c 20 0x0800967c 0x08009620 n
 afb+ 0x0800960c 0x08009620 4 0x0800962a 0x08009624 n
@@ -3299,8 +3575,8 @@ afb+ 0x0800960c 0x080096c0 4 0x080096e0 0xffffffffffffffff n
 afb+ 0x0800960c 0x080096c4 28 0x080096e0 0xffffffffffffffff b
 afb+ 0x0800960c 0x080096e0 6 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800960c
-"f USB_Something13 438 0x080096e6"
-"af+ 0x080096e6 USB_Something13 f n"
+"f USB_Data_Setup0 438 0x080096e6"
+"af+ 0x080096e6 USB_Data_Setup0 f n"
 afc arm32 @ 0x080096e6
 afb+ 0x080096e6 0x08009566 20 0x080095b4 0x0800957a n
 afb+ 0x080096e6 0x0800957a 6 0x080095b4 0x08009580 n
@@ -3371,18 +3647,18 @@ afb+ 0x080096e6 0x08009876 6 0x0800987c 0xffffffffffffffff n
 afb+ 0x080096e6 0x0800987c 18 0x08009566 0xffffffffffffffff n
 afb+ 0x080096e6 0x0800988e 14 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x80096e6
-"f USB_Something14 112 0x0800989c"
-"af+ 0x0800989c USB_Something14 f n"
+"f USB_Setup0_Process 112 0x0800989c"
+"af+ 0x0800989c USB_Setup0_Process f n"
 afc arm32 @ 0x0800989c
 afb+ 0x0800989c 0x0800989c 112 0x0800999e 0xffffffffffffffff n
 afS 0 @ 0x800989c
-"f USB_In0_Process_Maybe 82 0x0800990c"
-"af+ 0x0800990c USB_In0_Process_Maybe f n"
+"f USB_In0_Process 82 0x0800990c"
+"af+ 0x0800990c USB_In0_Process f n"
 afc arm32 @ 0x0800990c
 afb+ 0x0800990c 0x0800990c 82 0x0800999e 0xffffffffffffffff n
 afS 0 @ 0x800990c
-"f USB_Something15 116 0x0800995e"
-"af+ 0x0800995e USB_Something15 f n"
+"f USB_Out0_Process 116 0x0800995e"
+"af+ 0x0800995e USB_Out0_Process f n"
 afc arm32 @ 0x0800995e
 afb+ 0x0800995e 0x0800995e 12 0x0800996e 0x0800996a n
 afb+ 0x0800995e 0x0800996a 4 0x08009972 0x0800996e n
@@ -3451,6 +3727,83 @@ afS 0 @ 0x8009b94
 afc arm32 @ 0x08009b96
 afb+ 0x08009b96 0x08009b96 152 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009b96
+"f USB_Something 20 0x08009c30"
+"af+ 0x08009c30 USB_Something f n"
+afc arm32 @ 0x08009c30
+afb+ 0x08009c30 0x08009c30 4 0x08009c40 0x08009c34 n
+afb+ 0x08009c30 0x08009c34 12 0xffffffffffffffff 0xffffffffffffffff n
+afb+ 0x08009c30 0x08009c40 4 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x8009c30
+"f _USB_Class_NoData_Setup_Wrapper 38 0x08009c44"
+"af+ 0x08009c44 _USB_Class_NoData_Setup_Wrapper f n"
+afc arm32 @ 0x08009c44
+afb+ 0x08009c44 0x08009c44 38 0x08009cd2 0xffffffffffffffff n
+afS 0 @ 0x8009c44
+"f _USB_GetDescriptor1 6 0x08009c6a"
+"af+ 0x08009c6a _USB_GetDescriptor1 f n"
+afc arm32 @ 0x08009c6a
+afb+ 0x08009c6a 0x08009c6a 6 0x080094a8 0xffffffffffffffff n
+afS 0 @ 0x8009c6a
+"f _USB_GetDescriptor2 6 0x08009c70"
+"af+ 0x08009c70 _USB_GetDescriptor2 f n"
+afc arm32 @ 0x08009c70
+afb+ 0x08009c70 0x08009c70 6 0x080094a8 0xffffffffffffffff n
+afS 0 @ 0x8009c70
+"f _USB_Class_Data_Setup 14 0x08009c76"
+"af+ 0x08009c76 _USB_Class_Data_Setup f n"
+afc arm32 @ 0x08009c76
+afb+ 0x08009c76 0x08009c76 14 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x8009c76
+"f _USB_GetDescriptor3 10 0x08009c84"
+"af+ 0x08009c84 _USB_GetDescriptor3 f n"
+afc arm32 @ 0x08009c84
+afb+ 0x08009c84 0x08009c84 10 0x080094a8 0xffffffffffffffff n
+afS 0 @ 0x8009c84
+"f _USB_GetDescriptor4 6 0x08009c90"
+"af+ 0x08009c90 _USB_GetDescriptor4 f n"
+afc arm32 @ 0x08009c90
+afb+ 0x08009c90 0x08009c90 6 0x080094a8 0xffffffffffffffff n
+afS 0 @ 0x8009c90
+"f _USB_GetDescriptor5 6 0x08009c98"
+"af+ 0x08009c98 _USB_GetDescriptor5 f n"
+afc arm32 @ 0x08009c98
+afb+ 0x08009c98 0x08009c98 6 0x080094a8 0xffffffffffffffff n
+afS 0 @ 0x8009c98
+"f _USB_GetDescriptor6 6 0x08009ca0"
+"af+ 0x08009ca0 _USB_GetDescriptor6 f n"
+afc arm32 @ 0x08009ca0
+afb+ 0x08009ca0 0x08009ca0 6 0x080094a8 0xffffffffffffffff n
+afS 0 @ 0x8009ca0
+"f _USB_GetDescriptor7 6 0x08009ca8"
+"af+ 0x08009ca8 _USB_GetDescriptor7 f n"
+afc arm32 @ 0x08009ca8
+afb+ 0x08009ca8 0x08009ca8 6 0x080094a8 0xffffffffffffffff n
+afS 0 @ 0x8009ca8
+"f _USB_GetDescriptor8 6 0x08009cb0"
+"af+ 0x08009cb0 _USB_GetDescriptor8 f n"
+afc arm32 @ 0x08009cb0
+afb+ 0x08009cb0 0x08009cb0 6 0x080094a8 0xffffffffffffffff n
+afS 0 @ 0x8009cb0
+"f _USB_GetDescriptor9 6 0x08009cb8"
+"af+ 0x08009cb8 _USB_GetDescriptor9 f n"
+afc arm32 @ 0x08009cb8
+afb+ 0x08009cb8 0x08009cb8 6 0x080094a8 0xffffffffffffffff n
+afS 0 @ 0x8009cb8
+"f fcn.08009cbe 20 0x08009cbe"
+"af+ 0x08009cbe fcn.08009cbe f n"
+afc arm32 @ 0x08009cbe
+afb+ 0x08009cbe 0x08009cbe 20 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x8009cbe
+"f _USB_Class_NoData_Setup 14 0x08009cd2"
+"af+ 0x08009cd2 _USB_Class_NoData_Setup f n"
+afc arm32 @ 0x08009cd2
+afb+ 0x08009cd2 0x08009cd2 14 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x8009cd2
+"f USB_Something2 20 0x08009ce0"
+"af+ 0x08009ce0 USB_Something2 f n"
+afc arm32 @ 0x08009ce0
+afb+ 0x08009ce0 0x08009ce0 20 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x8009ce0
 "f NMI_Handler 2 0x08009d34"
 "af+ 0x08009d34 NMI_Handler f n"
 afc arm32 @ 0x08009d34
@@ -3546,13 +3899,13 @@ afS 0 @ 0x8009e96
 afc arm32 @ 0x08009ed8
 afb+ 0x08009ed8 0x08009ed8 130 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009ed8
-"f USB_LP_IRQRoutine 288 0x08009f78"
-"af+ 0x08009f78 USB_LP_IRQRoutine f n"
+"f USB_Istr 288 0x08009f78"
+"af+ 0x08009f78 USB_Istr f n"
 afc arm32 @ 0x08009f78
 afb+ 0x08009f78 0x08009f78 288 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x8009f78
-"f fcn.0800a0b0 394 0x0800a0b0"
-"af+ 0x0800a0b0 fcn.0800a0b0 f n"
+"f USB_CTR_LP 394 0x0800a0b0"
+"af+ 0x0800a0b0 USB_CTR_LP f n"
 afc arm32 @ 0x0800a0b0
 afb+ 0x0800a0b0 0x0800a0b0 20 0x0800a118 0xffffffffffffffff n
 afb+ 0x0800a0b0 0x0800a0c4 16 0x0800a0f0 0x0800a0d4 n
@@ -3628,6 +3981,31 @@ afS 0 @ 0x800a5a0
 afc arm32 @ 0x0800a5dc
 afb+ 0x0800a5dc 0x0800a5dc 182 0xffffffffffffffff 0xffffffffffffffff n
 afS 0 @ 0x800a5dc
+"f _USB_EP1_OUT_Callback 78 0x0800a6b0"
+"af+ 0x0800a6b0 _USB_EP1_OUT_Callback f n"
+afc arm32 @ 0x0800a6b0
+afb+ 0x0800a6b0 0x0800a6b0 78 0x08007250 0xffffffffffffffff n
+afS 0 @ 0x800a6b0
+"f USB_Something5 8 0x0800a6fe"
+"af+ 0x0800a6fe USB_Something5 f n"
+afc arm32 @ 0x0800a6fe
+afb+ 0x0800a6fe 0x0800a6fe 8 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x800a6fe
+"f _USB_EP2_OUT_Callback 78 0x0800a706"
+"af+ 0x0800a706 _USB_EP2_OUT_Callback f n"
+afc arm32 @ 0x0800a706
+afb+ 0x0800a706 0x0800a706 78 0x08007250 0xffffffffffffffff n
+afS 0 @ 0x800a706
+"f USB_Something3 8 0x0800a754"
+"af+ 0x0800a754 USB_Something3 f n"
+afc arm32 @ 0x0800a754
+afb+ 0x0800a754 0x0800a754 8 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x800a754
+"f USB_Something4 8 0x0800a75c"
+"af+ 0x0800a75c USB_Something4 f n"
+afc arm32 @ 0x0800a75c
+afb+ 0x0800a75c 0x0800a75c 8 0xffffffffffffffff 0xffffffffffffffff n
+afS 0 @ 0x800a75c
 "f initialize_memory_regions 32 0x0800a778"
 "af+ 0x0800a778 initialize_memory_regions f n"
 afc arm32 @ 0x0800a778

@@ -8,11 +8,11 @@
 int16_t EXTl_Counter;
 char PWR_SaveMode, VAR_782;
 
-void _Keyboard_Init(){
+void _KBD_Init(){
 
 }
 
-int func_0x800577a(){
+int _BLE_IsMsgPending(){
 
 }
 
@@ -20,7 +20,7 @@ void _Scan_Matrix(0x200017a8){
 
 }
 
-int func_xxxx(int16_t *Struct_2_VAR_18a4){
+int _KBD_StateUpdate(int16_t *Struct_2_VAR_18a4){
 
     if((Struct_2_VAR_18a4 == 0 && PWR_SaveMode == 0) || (Struct_2_VAR_18a4 == 0 && PWR_SaveMode != 0 && VAR_782 != 2) || Struct_2_VAR_18a4 == 0x92){
         Struct_2_VAR_18a4 = 0x92
@@ -29,7 +29,7 @@ int func_xxxx(int16_t *Struct_2_VAR_18a4){
             return 0;
 
         } else {
-            res = func_0x800577a();
+            res = _BLE_IsMsgPending();
 
             if(res == 0){
                 _Scan_Matrix(args);
@@ -37,7 +37,7 @@ int func_xxxx(int16_t *Struct_2_VAR_18a4){
                 EXTl_Counter = 0;
 
                 for(int i=0; i<5; i++){
-                    if(Row_1_BitSet == 0){
+                    if(ROW1_BS == 0){
                        continue;
 
                     } else {
@@ -69,7 +69,7 @@ int func_xxxx(int16_t *Struct_2_VAR_18a4){
             EXTl_Counter = 0;
 
             for(int i=0; i<5; i++){
-                if(Row_1_BitSet == 0){
+                if(ROW1_BS == 0){
                    continue;
 
                 } else {
@@ -91,13 +91,13 @@ int func_xxxx(int16_t *Struct_2_VAR_18a4){
     }
 }
 
-void fcn.08008d74(Struct_2){
+void _KBD_PWRManage(Struct_2){
     if(Struct_2_VAR_18bc == 0){
         Struct_2_VAR_18bc = 0x35c;
-        if(USB_Plugged_EXTl == 0){
+        if(USB_Plugged_EXTI == 0){
             return 0;
         } else {
-            _PWR_SaveMode_FlagUpdate();
+            _KBD_USBPlugCheck();
             if(PWR_SaveMode == 0){
                 if(VAR_782 == 2){
                     if(PWR_SaveMode == 0){
@@ -107,16 +107,16 @@ void fcn.08008d74(Struct_2){
 void main_loop(){
     int16_t Struct_2 = {0};
 
-    func_xxxx(Struct_2_VAR_18a4);
+    _KBD_StateUpdate(Struct_2_VAR_18a4);
     // ....
-    fcn.08008d74(Struct_2_VAR_18bc);
+    _KBD_PWRManage(Struct_2_VAR_18bc);
     // ....
 }
 
 int main(){
 
     // initialize peripherals, clocks and gpios
-    _Keyboard_Init();
+    _KBD_Init();
 
     // keyboard scan loop
     main_loop();
