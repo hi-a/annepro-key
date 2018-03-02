@@ -124,3 +124,19 @@ Data is a 10 byte array where each byte represents the state of 8 keys. Each bit
 Before being sent to the destination MCU using USART/DMA, the messages are put in 2 buffers of 256 bytes each:
 - The BLE message buffer is at `0x200007d4`
 - The LED message buffer is at `0x200016a8`
+
+## Generating an HTML listing of the disassembly
+
+To generate a nice html listing you first need to dump the disassembly to a text file. Run the following commands in radare2's prompt
+
+```
+[0x08004000]> aar                                   
+[0x08004000]> pD 27266 > listing.txt
+```
+
+Then you can use the script at `utils/disasm2htm.py` to generate a nice `listing.htm` file. All thanks go to the [MD380 project](https://github.com/travisgoodspeed/md380tools)
+
+```sh
+$ python utils/disasm2htm.py listing
+```
+A current listing can be found at [https://hi-a.github.io/annepro-key/](https://hi-a.github.io/annepro-key/)
