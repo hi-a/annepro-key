@@ -2,7 +2,13 @@
 Understanding how the Anne Pro keyboard works
 
 ```shell
-r2 -a arm -b 16 -m 0x08004000 -i project.r2 <image_from_1.40_key_dfu>
+$ r2 -a arm -b 16 -m 0x08004000 -i key.r2 <image_from_1.40_key_dfu>
+```
+
+The see what the keyboard's bootloader does, you can run:
+
+```shell
+$ r2 -a arm -b 16 -m 0x08000000 -i key_bootloader.r2 <key_bootloader_image>
 ```
 
 ## Hardware
