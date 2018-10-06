@@ -100,7 +100,7 @@
 "0x20001410","AS",,,"Macro related",,,,,,,
 "0x200014a3","AE",,,,,,,,,,
 "0x200014a4","H",,"BLE_TxBufferNewTop","points to the new BLE_TxBufferTop in BLE_TxBuffer after a msg has been sent",,,,,,,
-"0x200014a6","H",,"BLE_TxBufferTop,"points to the last transferred byte+1 in BLE_TxBuffer",,,,,,,
+"0x200014a6","H",,"BLE_TxBufferTop","points to the last transferred byte+1 in BLE_TxBuffer",,,,,,,
 "0x200014a8","AS",,"BLE_TxBuffer","BLE Tx buffer 512 bytes (0x200)",,,,,,,
 "0x200016a7","AE",,,,,,,,,,
 "0x200016a8","AS",,"DMA_LED_TxBuffer","LED Tx packet: 256 bytes (0x100)",,,,,,,
